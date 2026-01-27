@@ -67,6 +67,10 @@ export interface Config {
   };
   blocks: {};
   collections: {
+    transmissions: Transmission;
+    authors: Author;
+    categories: Category;
+    tags: Tag;
     users: User;
     media: Media;
     'payload-kv': PayloadKv;
@@ -76,6 +80,10 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
+    transmissions: TransmissionsSelect<false> | TransmissionsSelect<true>;
+    authors: AuthorsSelect<false> | AuthorsSelect<true>;
+    categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    tags: TagsSelect<false> | TagsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -118,6 +126,255 @@ export interface UserAuthOperations {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "transmissions".
+ */
+export interface Transmission {
+  id: number;
+  /**
+   * The headline of this transmission
+   */
+  title: string;
+  /**
+   * URL-friendly identifier
+   */
+  slug: string;
+  /**
+   * Brief summary for listings and SEO
+   */
+  excerpt?: string | null;
+  heroImage: number | Media;
+  /**
+   * Compose the transmission using modular blocks
+   */
+  layout: (CinematicVideoBlock | StatementBlock | CodeTerminalBlock | GalleryWallBlock | RichTextBlock)[];
+  author: number | Author;
+  /**
+   * Select the frequency channel for this transmission
+   */
+  category: number | Category;
+  tags?: (number | Tag)[] | null;
+  /**
+   * Manually select related content (or leave empty for auto)
+   */
+  relatedTransmissions?: (number | Transmission)[] | null;
+  status: 'draft' | 'published';
+  /**
+   * Schedule for future publication
+   */
+  publishedAt?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: number;
+  /**
+   * Describe this image for accessibility (required)
+   */
+  altText: string;
+  /**
+   * Optional caption or description
+   */
+  caption?: string | null;
+  /**
+   * Credit for the image creator
+   */
+  photographer?: string | null;
+  license?: ('rights-reserved' | 'cc0' | 'cc-by' | 'cc-by-sa' | 'cc-by-nc' | 'unsplash') | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CinematicVideoBlock".
+ */
+export interface CinematicVideoBlock {
+  /**
+   * YouTube, Vimeo, or direct video URL
+   */
+  url: string;
+  /**
+   * Thumbnail shown before video plays
+   */
+  posterImage?: (number | null) | Media;
+  autoplay?: boolean | null;
+  loop?: boolean | null;
+  caption?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'cinematicVideo';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StatementBlock".
+ */
+export interface StatementBlock {
+  /**
+   * The quote or manifesto text
+   */
+  text: string;
+  size: 'display' | 'h1' | 'h2';
+  alignment: 'left' | 'center' | 'right';
+  /**
+   * Optional author or source of the quote
+   */
+  attribution?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'statement';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CodeTerminalBlock".
+ */
+export interface CodeTerminalBlock {
+  /**
+   * The code snippet to display
+   */
+  code: string;
+  language: 'typescript' | 'javascript' | 'python' | 'bash' | 'css' | 'html' | 'json' | 'sql' | 'go' | 'rust';
+  showLineNumbers?: boolean | null;
+  /**
+   * Optional filename to display (e.g., app.ts)
+   */
+  filename?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'codeTerminal';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "GalleryWallBlock".
+ */
+export interface GalleryWallBlock {
+  /**
+   * Select multiple images for the gallery
+   */
+  images: (number | Media)[];
+  layoutType: 'grid' | 'masonry' | 'carousel';
+  columns?: ('2' | '3' | '4') | null;
+  caption?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'galleryWall';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "RichTextBlock".
+ */
+export interface RichTextBlock {
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'richText';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "authors".
+ */
+export interface Author {
+  id: number;
+  name: string;
+  /**
+   * e.g., Architect, Writer, Developer
+   */
+  role?: string | null;
+  bio?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Profile photo
+   */
+  avatar?: (number | null) | Media;
+  socialLinks?:
+    | {
+        platform: 'twitter' | 'linkedin' | 'github' | 'instagram' | 'website';
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  status: 'active' | 'guest' | 'inactive';
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories".
+ */
+export interface Category {
+  id: number;
+  title: string;
+  /**
+   * URL-friendly identifier
+   */
+  slug: string;
+  /**
+   * Brief description of this category
+   */
+  description?: string | null;
+  /**
+   * Hex color code (e.g., #FF5500)
+   */
+  accentColor?: string | null;
+  /**
+   * Featured image for this category
+   */
+  heroImage?: (number | null) | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags".
+ */
+export interface Tag {
+  id: number;
+  title: string;
+  /**
+   * URL-friendly identifier
+   */
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
@@ -139,23 +396,6 @@ export interface User {
       }[]
     | null;
   password?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "media".
- */
-export interface Media {
-  id: number;
-  alt: string;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -181,6 +421,22 @@ export interface PayloadKv {
 export interface PayloadLockedDocument {
   id: number;
   document?:
+    | ({
+        relationTo: 'transmissions';
+        value: number | Transmission;
+      } | null)
+    | ({
+        relationTo: 'authors';
+        value: number | Author;
+      } | null)
+    | ({
+        relationTo: 'categories';
+        value: number | Category;
+      } | null)
+    | ({
+        relationTo: 'tags';
+        value: number | Tag;
+      } | null)
     | ({
         relationTo: 'users';
         value: number | User;
@@ -233,6 +489,134 @@ export interface PayloadMigration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "transmissions_select".
+ */
+export interface TransmissionsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  excerpt?: T;
+  heroImage?: T;
+  layout?:
+    | T
+    | {
+        cinematicVideo?: T | CinematicVideoBlockSelect<T>;
+        statement?: T | StatementBlockSelect<T>;
+        codeTerminal?: T | CodeTerminalBlockSelect<T>;
+        galleryWall?: T | GalleryWallBlockSelect<T>;
+        richText?: T | RichTextBlockSelect<T>;
+      };
+  author?: T;
+  category?: T;
+  tags?: T;
+  relatedTransmissions?: T;
+  status?: T;
+  publishedAt?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CinematicVideoBlock_select".
+ */
+export interface CinematicVideoBlockSelect<T extends boolean = true> {
+  url?: T;
+  posterImage?: T;
+  autoplay?: T;
+  loop?: T;
+  caption?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "StatementBlock_select".
+ */
+export interface StatementBlockSelect<T extends boolean = true> {
+  text?: T;
+  size?: T;
+  alignment?: T;
+  attribution?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "CodeTerminalBlock_select".
+ */
+export interface CodeTerminalBlockSelect<T extends boolean = true> {
+  code?: T;
+  language?: T;
+  showLineNumbers?: T;
+  filename?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "GalleryWallBlock_select".
+ */
+export interface GalleryWallBlockSelect<T extends boolean = true> {
+  images?: T;
+  layoutType?: T;
+  columns?: T;
+  caption?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "RichTextBlock_select".
+ */
+export interface RichTextBlockSelect<T extends boolean = true> {
+  content?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "authors_select".
+ */
+export interface AuthorsSelect<T extends boolean = true> {
+  name?: T;
+  role?: T;
+  bio?: T;
+  avatar?: T;
+  socialLinks?:
+    | T
+    | {
+        platform?: T;
+        url?: T;
+        id?: T;
+      };
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories_select".
+ */
+export interface CategoriesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  accentColor?: T;
+  heroImage?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags_select".
+ */
+export interface TagsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
@@ -258,7 +642,10 @@ export interface UsersSelect<T extends boolean = true> {
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
-  alt?: T;
+  altText?: T;
+  caption?: T;
+  photographer?: T;
+  license?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

@@ -8,15 +8,19 @@ import { CloudflareContext, getCloudflareContext } from '@opennextjs/cloudflare'
 import { GetPlatformProxyOptions } from 'wrangler'
 import { r2Storage } from '@payloadcms/storage-r2'
 
-import { Transmissions } from './collections/Transmissions';
+// Collections
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { Transmissions } from './collections/Transmissions'
+import { Categories } from './collections/Categories'
+import { Tags } from './collections/Tags'
+import { Authors } from './collections/Authors'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 const realpath = (value: string) => (fs.existsSync(value) ? fs.realpathSync(value) : undefined)
 
-const isCLI = process.argv.some((value) => realpath(value).endsWith(path.join('payload', 'bin.js')))
+const isCLI = process.argv.some((value) => realpath(value)?.endsWith(path.join('payload', 'bin.js')))
 const isProduction = process.env.NODE_ENV === 'production'
 
 const cloudflare =
@@ -30,8 +34,21 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    meta: {
+      titleSuffix: ' | Soni CMS',
+    },
   },
-  collections: [Transmissions, Users, Media],
+  collections: [
+    // Content
+    Transmissions,
+    Authors,
+    // Taxonomy
+    Categories,
+    Tags,
+    // System
+    Users,
+    Media,
+  ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
