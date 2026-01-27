@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { AllBlocks } from '../blocks'
+import { formatSlug, ensureUniqueSlug } from '../hooks'
 
 export const Transmissions: CollectionConfig = {
   slug: 'transmissions',
@@ -7,6 +8,7 @@ export const Transmissions: CollectionConfig = {
     useAsTitle: 'title',
     group: 'Content',
     defaultColumns: ['title', 'author', 'category', 'status', 'publishedAt'],
+    description: 'Your transmissions to the world',
   },
   access: {
     read: () => true,
@@ -28,22 +30,14 @@ export const Transmissions: CollectionConfig = {
       required: true,
       unique: true,
       index: true,
+      label: 'Signal ID',
       admin: {
         position: 'sidebar',
-        description: 'URL-friendly identifier',
+        description: 'URL-friendly identifier (auto-generated from title)',
       },
       hooks: {
-        beforeValidate: [
-          ({ value, data }) => {
-            if (!value && data?.title) {
-              return data.title
-                .toLowerCase()
-                .replace(/ /g, '-')
-                .replace(/[^\w-]+/g, '')
-            }
-            return value
-          },
-        ],
+        beforeValidate: [formatSlug({ sourceField: 'title' })],
+        beforeChange: [ensureUniqueSlug('transmissions')],
       },
     },
     {
@@ -123,6 +117,7 @@ export const Transmissions: CollectionConfig = {
       type: 'select',
       required: true,
       defaultValue: 'draft',
+      index: true,
       options: [
         { label: 'Draft', value: 'draft' },
         { label: 'Published', value: 'published' },
@@ -135,6 +130,7 @@ export const Transmissions: CollectionConfig = {
       name: 'publishedAt',
       type: 'date',
       label: 'Published At',
+      index: true,
       admin: {
         position: 'sidebar',
         date: {

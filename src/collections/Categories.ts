@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { formatSlug, ensureUniqueSlug } from '../hooks'
 
 export const Categories: CollectionConfig = {
   slug: 'categories',
@@ -6,6 +7,7 @@ export const Categories: CollectionConfig = {
     useAsTitle: 'title',
     group: 'Taxonomy',
     defaultColumns: ['title', 'slug', 'accentColor'],
+    description: 'Content frequency channels',
   },
   access: {
     read: () => true,
@@ -25,20 +27,11 @@ export const Categories: CollectionConfig = {
       index: true,
       admin: {
         position: 'sidebar',
-        description: 'URL-friendly identifier',
+        description: 'URL-friendly identifier (auto-generated)',
       },
       hooks: {
-        beforeValidate: [
-          ({ value, data }) => {
-            if (!value && data?.title) {
-              return data.title
-                .toLowerCase()
-                .replace(/ /g, '-')
-                .replace(/[^\w-]+/g, '')
-            }
-            return value
-          },
-        ],
+        beforeValidate: [formatSlug({ sourceField: 'title' })],
+        beforeChange: [ensureUniqueSlug('categories')],
       },
     },
     {

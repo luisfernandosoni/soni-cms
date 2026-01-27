@@ -125,6 +125,8 @@ export interface UserAuthOperations {
   };
 }
 /**
+ * Your transmissions to the world
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "transmissions".
  */
@@ -135,7 +137,7 @@ export interface Transmission {
    */
   title: string;
   /**
-   * URL-friendly identifier
+   * URL-friendly identifier (auto-generated from title)
    */
   slug: string;
   /**
@@ -162,6 +164,14 @@ export interface Transmission {
    * Schedule for future publication
    */
   publishedAt?: string | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -200,7 +210,7 @@ export interface Media {
  */
 export interface CinematicVideoBlock {
   /**
-   * YouTube, Vimeo, or direct video URL
+   * YouTube, Vimeo, or direct video URL (must start with https://)
    */
   url: string;
   /**
@@ -334,6 +344,8 @@ export interface Author {
   createdAt: string;
 }
 /**
+ * Content frequency channels
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "categories".
  */
@@ -341,7 +353,7 @@ export interface Category {
   id: number;
   title: string;
   /**
-   * URL-friendly identifier
+   * URL-friendly identifier (auto-generated)
    */
   slug: string;
   /**
@@ -360,6 +372,8 @@ export interface Category {
   createdAt: string;
 }
 /**
+ * Flexible content labels
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "tags".
  */
@@ -367,7 +381,7 @@ export interface Tag {
   id: number;
   title: string;
   /**
-   * URL-friendly identifier
+   * URL-friendly identifier (auto-generated)
    */
   slug: string;
   updatedAt: string;
@@ -511,6 +525,13 @@ export interface TransmissionsSelect<T extends boolean = true> {
   relatedTransmissions?: T;
   status?: T;
   publishedAt?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

@@ -1,8 +1,10 @@
 import type { Block } from 'payload'
+import { minimalEditor } from '../lexical'
 
 /**
  * RichTextBlock
  * Standard narrative paragraphs with minimal Lexical editor
+ * Uses the "Jony Ive" mode - clean, focused, no distractions
  */
 export const RichTextBlock: Block = {
   slug: 'richText',
@@ -17,8 +19,7 @@ export const RichTextBlock: Block = {
       type: 'richText',
       required: true,
       label: 'Content',
-      // Uses default Lexical editor for now
-      // Will be customized in Sprint 2 with minimal features
+      editor: minimalEditor,
     },
   ],
 }

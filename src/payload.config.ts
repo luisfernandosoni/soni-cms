@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url'
 import { CloudflareContext, getCloudflareContext } from '@opennextjs/cloudflare'
 import { GetPlatformProxyOptions } from 'wrangler'
 import { r2Storage } from '@payloadcms/storage-r2'
+import { seoPlugin } from '@payloadcms/plugin-seo'
 
 // Collections
 import { Users } from './collections/Users'
@@ -59,6 +60,22 @@ export default buildConfig({
     r2Storage({
       bucket: (process.env.R2 || cloudflare?.env?.R2) as any,
       collections: { media: true },
+    }),
+    seoPlugin({
+      collections: ['transmissions'],
+      uploadsCollection: 'media',
+      generateTitle: ({ doc }) => {
+        const title = (doc as any)?.title
+        return title ? `${title} | Soni New Media` : 'Soni New Media'
+      },
+      generateDescription: ({ doc }) => {
+        const excerpt = (doc as any)?.excerpt
+        return excerpt || 'A transmission from Soni New Media'
+      },
+      generateURL: ({ doc }) => {
+        const slug = (doc as any)?.slug
+        return slug ? `https://soninewmedia.com/transmission/${slug}` : 'https://soninewmedia.com'
+      },
     }),
   ],
 })

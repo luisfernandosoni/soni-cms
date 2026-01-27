@@ -18,7 +18,14 @@ export const CinematicVideoBlock: Block = {
       required: true,
       label: 'Video URL',
       admin: {
-        description: 'YouTube, Vimeo, or direct video URL',
+        description: 'YouTube, Vimeo, or direct video URL (must start with https://)',
+      },
+      validate: (val: string | null | undefined) => {
+        if (!val) return 'URL is required'
+        if (!/^https?:\/\//.test(val)) {
+          return 'Must be a valid URL starting with https://'
+        }
+        return true
       },
     },
     {
