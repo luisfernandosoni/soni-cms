@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { AllBlocks } from '../blocks'
-import { formatSlug, ensureUniqueSlug } from '../hooks'
-import { authenticatedOrPublished, canEditOwnContent, isEditor } from '../access'
+import { formatSlug, ensureUniqueSlug, purgeCacheAfterChange } from '../hooks'
+import { authenticatedOrPublished, canEditOwnContent, isEditor, isAuthor } from '../access'
 
 export const Transmissions: CollectionConfig = {
   slug: 'transmissions',
@@ -13,9 +13,12 @@ export const Transmissions: CollectionConfig = {
   },
   access: {
     read: authenticatedOrPublished,
-    create: isEditor,
+    create: isAuthor, // Authors, Editors, and Admins can create
     update: canEditOwnContent,
-    delete: isEditor,
+    delete: isEditor, // Only Editors/Admins can delete
+  },
+  hooks: {
+    afterChange: [purgeCacheAfterChange],
   },
   fields: [
     // === Main Content ===

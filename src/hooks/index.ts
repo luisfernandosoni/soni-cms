@@ -4,3 +4,4 @@
  */
 
 export { formatSlug, formatSlugString, ensureUniqueSlug } from './formatSlug'
+export { purgeCacheAfterChange } from './purgeCache'
