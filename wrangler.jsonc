@@ -60,6 +60,23 @@
 	"ai": {
 		"binding": "AI"
 	},
+	// Routes for soninewmedia.com integration (Option A: Path-Based Routing)
+	// These routes serve /transmissions/*, /admin/*, and /api/* from this Worker
+	// while the main site (Vite SPA) handles all other paths
+	"routes": [
+		{
+			"pattern": "soninewmedia.com/transmissions/*",
+			"zone_name": "soninewmedia.com"
+		},
+		{
+			"pattern": "soninewmedia.com/admin/*",
+			"zone_name": "soninewmedia.com"
+		},
+		{
+			"pattern": "soninewmedia.com/api/*",
+			"zone_name": "soninewmedia.com"
+		}
+	],
 	// Here's how to configure an additional environment
 	// It can be deployed with `CLOUDFLARE_ENV=staging pnpm run deploy`
 	// "env": {

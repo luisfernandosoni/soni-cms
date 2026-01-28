@@ -1,12 +1,19 @@
 import type { Metadata } from 'next'
-import { Outfit, JetBrains_Mono } from 'next/font/google'
+import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import React from 'react'
 import './styles.css'
 import '#components/Blocks/blocks.scss'
 
-const outfit = Outfit({
+// Typography matching Soni-New-Media design system
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-outfit',
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-display',
   display: 'swap',
 })
 
@@ -39,11 +46,12 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <body>
+        {/* Noise overlay - Soni signature effect */}
+        <div className="noise-overlay" aria-hidden="true" />
         <main>{children}</main>
       </body>
     </html>
   )
 }
-

@@ -18,7 +18,7 @@ import { Tags } from './collections/Tags'
 import { Authors } from './collections/Authors'
 
 // Endpoints
-import { publishScheduledEndpoint, searchEndpoint, semanticSearchEndpoint, oauthEndpoints } from './endpoints'
+import { publishScheduledEndpoint, searchEndpoint, semanticSearchEndpoint, oauthEndpoints, latestEndpointConfig } from './endpoints'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -96,7 +96,7 @@ export default buildConfig({
       },
     }),
   ],
-  endpoints: [publishScheduledEndpoint, searchEndpoint, semanticSearchEndpoint, ...oauthEndpoints],
+  endpoints: [publishScheduledEndpoint, searchEndpoint, semanticSearchEndpoint, latestEndpointConfig, ...oauthEndpoints],
 })
 
 // Adapted from https://github.com/opennextjs/opennextjs-cloudflare/blob/d00b3a13e42e65aad76fba41774815726422cc39/packages/cloudflare/src/api/cloudflare-context.ts#L328C36-L328C46
