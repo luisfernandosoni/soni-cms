@@ -40,8 +40,10 @@ const isCLI = process.argv.some((value) =>
 )
 const isProduction = process.env.NODE_ENV === 'production'
 
+const isBuild =
+  process.argv.includes('build') || process.env.NEXT_PHASE === 'phase-production-build'
 const cloudflare =
-  isCLI || !isProduction
+  isCLI || isBuild || !isProduction
     ? await getCloudflareContextFromWrangler()
     : await getCloudflareContext({ async: true })
 
