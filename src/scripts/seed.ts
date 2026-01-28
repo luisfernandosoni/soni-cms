@@ -1,6 +1,6 @@
 /**
  * Seed Script
- * 
+ *
  * Creates sample data for development and testing.
  * Run with: npx tsx src/scripts/seed.ts
  */
@@ -8,6 +8,12 @@
 import 'dotenv/config'
 import { getPayload } from 'payload'
 import config from '../payload.config'
+import path from 'path'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+
+const filename = fileURLToPath(import.meta.url)
+const dirname = path.dirname(filename)
 
 async function seed() {
   console.log('🌱 Starting seed...')
@@ -90,7 +96,10 @@ async function seed() {
         altText: 'Seed Image',
       },
       file: {
-        data: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=', 'base64'),
+        data: Buffer.from(
+          'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=',
+          'base64',
+        ),
         name: 'seed-image.png',
         mimetype: 'image/png',
         size: 68,
@@ -138,7 +147,7 @@ async function seed() {
       })
       console.log('   ✅ Created admin user (admin@soninewmedia.com)')
     } else {
-    console.log('   ⏭️ Admin user already exists')
+      console.log('   ⏭️ Admin user already exists')
     }
 
     // ============================================
@@ -163,7 +172,7 @@ async function seed() {
           layout: [
             {
               blockType: 'statement',
-              text: 'The future of search is not keywords. It\'s meaning.',
+              text: "The future of search is not keywords. It's meaning.",
               size: 'h2',
               alignment: 'center',
             },
@@ -270,7 +279,8 @@ async function seed() {
         data: {
           title: 'Building at the Speed of Thought',
           slug: 'building-speed-of-thought',
-          excerpt: 'How Payload 3.0 and Next.js 15 enable rapid iteration without sacrificing quality.',
+          excerpt:
+            'How Payload 3.0 and Next.js 15 enable rapid iteration without sacrificing quality.',
           status: 'published',
           publishedAt: new Date(Date.now() - 172800000).toISOString(),
           author: authors[0].id,
@@ -362,7 +372,6 @@ const posts = await payload.find({ collection: 'transmissions' })`,
     console.log('   • Email: admin@soninewmedia.com')
     console.log('   • Password: Admin123!@#')
     console.log('   ⚠️ Change this password immediately!')
-
   } catch (err) {
     console.error(JSON.stringify(err, null, 2))
     process.exit(1)
