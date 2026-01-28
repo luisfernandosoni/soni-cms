@@ -26,9 +26,9 @@ import { IndentFeatureClient as IndentFeatureClient_e70f5e05f09f93e00b997edb1ef0
 import { AlignFeatureClient as AlignFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { SuperscriptFeatureClient as SuperscriptFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { SubscriptFeatureClient as SubscriptFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
-import { components/Dashboard/StatsWidget as components/Dashboard/StatsWidget_d41d8cd98f00b204e9800998ecf8427e } from ''
-import { components/Dashboard/QuickActions as components/Dashboard/QuickActions_d41d8cd98f00b204e9800998ecf8427e } from ''
-import { components/Dashboard/RecentTransmissions as components/Dashboard/RecentTransmissions_d41d8cd98f00b204e9800998ecf8427e } from ''
+import { default as default_effda26b9df750a58aa09f75d7d6aebd } from '../../../components/Dashboard/StatsWidget.tsx'
+import { default as default_943b031f2a50bab351ae72111f4f1e4f } from '../../../components/Dashboard/QuickActions.tsx'
+import { default as default_e327016d0fd62d249dbb62b86b867e96 } from '../../../components/Dashboard/RecentTransmissions.tsx'
 import { CollectionCards as CollectionCards_ab83ff7e88da8d3530831f296ec4756a } from '@payloadcms/ui/rsc'
 
 export const importMap = {
@@ -60,8 +60,8 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#AlignFeatureClient": AlignFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#SuperscriptFeatureClient": SuperscriptFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#SubscriptFeatureClient": SubscriptFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
-  "#components/Dashboard/StatsWidget": components/Dashboard/StatsWidget_d41d8cd98f00b204e9800998ecf8427e,
-  "#components/Dashboard/QuickActions": components/Dashboard/QuickActions_d41d8cd98f00b204e9800998ecf8427e,
-  "#components/Dashboard/RecentTransmissions": components/Dashboard/RecentTransmissions_d41d8cd98f00b204e9800998ecf8427e,
+  "./components/Dashboard/StatsWidget.tsx#default": default_effda26b9df750a58aa09f75d7d6aebd,
+  "./components/Dashboard/QuickActions.tsx#default": default_943b031f2a50bab351ae72111f4f1e4f,
+  "./components/Dashboard/RecentTransmissions.tsx#default": default_e327016d0fd62d249dbb62b86b867e96,
   "@payloadcms/ui/rsc#CollectionCards": CollectionCards_ab83ff7e88da8d3530831f296ec4756a
 }

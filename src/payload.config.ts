@@ -26,6 +26,11 @@ import {
   latestEndpointConfig,
 } from './endpoints'
 
+// Components
+// import StatsWidget from './components/Dashboard/StatsWidget'
+// import QuickActions from './components/Dashboard/QuickActions'
+// import RecentTransmissions from './components/Dashboard/RecentTransmissions'
+
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 const realpath = (value: string) => (fs.existsSync(value) ? fs.realpathSync(value) : undefined)
@@ -51,9 +56,9 @@ export default buildConfig({
     },
     components: {
       afterDashboard: [
-        '/components/Dashboard/StatsWidget.tsx',
-        '/components/Dashboard/QuickActions.tsx',
-        '/components/Dashboard/RecentTransmissions.tsx',
+        './components/Dashboard/StatsWidget.tsx',
+        './components/Dashboard/QuickActions.tsx',
+        './components/Dashboard/RecentTransmissions.tsx',
       ],
     },
   },

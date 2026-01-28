@@ -39,7 +39,7 @@ async function seedRemote() {
       })
 
       if (loginRes.ok) {
-        const data = await loginRes.json()
+        const data = (await loginRes.json()) as any
         token = data.token
         console.log('   ✅ Logged in successfully')
       } else {
@@ -63,17 +63,17 @@ async function seedRemote() {
           })
 
           if (simpleCreate.ok) {
-            const data = await simpleCreate.json()
+            const data = (await simpleCreate.json()) as any
             token =
               data.token ||
               (
-                await (
+                (await (
                   await fetch(`${API_URL}/api/users/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(START_USER),
                   })
-                ).json()
+                ).json()) as any
               ).token
             console.log('   ✅ Created initial admin user')
           } else {
@@ -117,7 +117,7 @@ async function seedRemote() {
         })
 
         if (res.ok) {
-          const doc = await res.json()
+          const doc = (await res.json()) as any
           mediaMap.set(img.file, doc.doc.id)
           console.log(`   ✅ Uploaded ${img.file} -> ID: ${doc.doc.id}`)
         } else {
@@ -136,15 +136,27 @@ async function seedRemote() {
         `${API_URL}/api/${slug}?where[${uniqueField}][equals]=${data[uniqueField]}`,
         { headers },
       )
-      const queryData = await query.json()
-      if (queryData.docs && queryData.docs.length > 0) return queryData.docs[0].id
+      const queryData = (await query.json()) as any
+
+      if (queryData.docs && queryData.docs.length > 0) {
+        const id = queryData.docs[0].id
+        console.log(`   🔄 Updating existing ${slug}: ${data[uniqueField]} (ID: ${id})`)
+
+        // Update the existing document
+        await fetch(`${API_URL}/api/${slug}/${id}`, {
+          method: 'PATCH',
+          headers: { ...headers, 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        })
+        return id
+      }
 
       const res = await fetch(`${API_URL}/api/${slug}`, {
         method: 'POST',
         headers: { ...headers, 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       })
-      const json = await res.json()
+      const json = (await res.json()) as any
       return json.doc.id
     }
 
