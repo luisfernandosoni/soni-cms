@@ -11,6 +11,10 @@
     // see https://developers.cloudflare.com/workers/configuration/compatibility-flags/#global-fetch-strictly-public
     "global_fetch_strictly_public",
   ],
+  "vars": {
+    "PAYLOAD_SECRET": "bf40702d84a7e949983995f32924194098492049819203980adfa",
+    "NEXT_PUBLIC_SERVER_URL": "https://www.soninewmedia.com",
+  },
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS",
