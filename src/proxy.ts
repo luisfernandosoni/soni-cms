@@ -18,7 +18,7 @@ function getClientIP(request: NextRequest): string {
   const cfIP = request.headers.get('cf-connecting-ip')
   const xForwardedFor = request.headers.get('x-forwarded-for')
   const xRealIP = request.headers.get('x-real-ip')
-  
+
   return cfIP || xForwardedFor?.split(',')[0]?.trim() || xRealIP || 'unknown'
 }
 
@@ -28,7 +28,7 @@ function getClientIP(request: NextRequest): string {
 function isRateLimited(ip: string): { limited: boolean; remaining: number; resetTime: number } {
   const now = Date.now()
   const record = rateLimitStore.get(ip)
-  
+
   // Clean up expired entries periodically
   if (rateLimitStore.size > 10000) {
     for (const [key, value] of rateLimitStore.entries()) {
@@ -37,31 +37,39 @@ function isRateLimited(ip: string): { limited: boolean; remaining: number; reset
       }
     }
   }
-  
+
   if (!record || record.resetTime < now) {
     // New window
     rateLimitStore.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS })
-    return { limited: false, remaining: RATE_LIMIT_MAX_REQUESTS - 1, resetTime: now + RATE_LIMIT_WINDOW_MS }
+    return {
+      limited: false,
+      remaining: RATE_LIMIT_MAX_REQUESTS - 1,
+      resetTime: now + RATE_LIMIT_WINDOW_MS,
+    }
   }
-  
+
   record.count++
-  
+
   if (record.count > RATE_LIMIT_MAX_REQUESTS) {
     return { limited: true, remaining: 0, resetTime: record.resetTime }
   }
-  
-  return { limited: false, remaining: RATE_LIMIT_MAX_REQUESTS - record.count, resetTime: record.resetTime }
+
+  return {
+    limited: false,
+    remaining: RATE_LIMIT_MAX_REQUESTS - record.count,
+    resetTime: record.resetTime,
+  }
 }
 
 /**
  * Intelligent Cache Headers & Rate Limiting Middleware
- * 
+ *
  * Applies optimal caching strategies based on route type:
  * - Public API routes: Edge-cached with stale-while-revalidate + rate limiting
  * - Admin routes: Private, no-cache
  * - Media/Assets: Long-lived edge cache
  */
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
   const response = NextResponse.next()
 
@@ -76,15 +84,18 @@ export function middleware(request: NextRequest) {
   if (pathname.startsWith('/api/')) {
     const clientIP = getClientIP(request)
     const { limited, remaining, resetTime } = isRateLimited(clientIP)
-    
+
     // Add rate limit headers
     response.headers.set('X-RateLimit-Limit', String(RATE_LIMIT_MAX_REQUESTS))
     response.headers.set('X-RateLimit-Remaining', String(remaining))
     response.headers.set('X-RateLimit-Reset', String(Math.ceil(resetTime / 1000)))
-    
+
     if (limited) {
       return new NextResponse(
-        JSON.stringify({ error: 'Too Many Requests', message: 'Rate limit exceeded. Please try again later.' }),
+        JSON.stringify({
+          error: 'Too Many Requests',
+          message: 'Rate limit exceeded. Please try again later.',
+        }),
         {
           status: 429,
           headers: {
@@ -94,7 +105,7 @@ export function middleware(request: NextRequest) {
             'X-RateLimit-Remaining': '0',
             'X-RateLimit-Reset': String(Math.ceil(resetTime / 1000)),
           },
-        }
+        },
       )
     }
 
@@ -117,7 +128,11 @@ export function middleware(request: NextRequest) {
     }
 
     // Other public API - moderate cache
-    if (pathname.startsWith('/api/categories') || pathname.startsWith('/api/tags') || pathname.startsWith('/api/authors')) {
+    if (
+      pathname.startsWith('/api/categories') ||
+      pathname.startsWith('/api/tags') ||
+      pathname.startsWith('/api/authors')
+    ) {
       response.headers.set('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=3600')
       return response
     }
@@ -128,7 +143,10 @@ export function middleware(request: NextRequest) {
   }
 
   // Media/Assets - long-lived cache
-  if (pathname.startsWith('/media/') || pathname.match(/\.(jpg|jpeg|png|gif|webp|svg|ico|mp4|webm)$/i)) {
+  if (
+    pathname.startsWith('/media/') ||
+    pathname.match(/\.(jpg|jpeg|png|gif|webp|svg|ico|mp4|webm)$/i)
+  ) {
     response.headers.set('Cache-Control', 'public, max-age=31536000, immutable')
     return response
   }
