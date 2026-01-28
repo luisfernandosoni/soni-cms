@@ -115,8 +115,152 @@ async function seed() {
       })
       console.log('   ✅ Created admin user (admin@soninewmedia.com)')
     } else {
-      console.log('   ⏭️ Admin user already exists')
+    console.log('   ⏭️ Admin user already exists')
     }
+
+    // ============================================
+    // 5. Create Sample Transmissions
+    // ============================================
+    console.log('📡 Creating Transmissions...')
+
+    const transmissions = await Promise.all([
+      // @ts-expect-error - heroImage required but not available in seed
+      payload.create({
+        collection: 'transmissions',
+        draft: false,
+        data: {
+          title: 'The Edge of Tomorrow: Cloudflare Workers AI',
+          slug: 'edge-of-tomorrow-cloudflare-workers-ai',
+          excerpt: 'How vector embeddings and semantic search are revolutionizing content discovery at the edge.',
+          status: 'published',
+          publishedAt: new Date().toISOString(),
+          author: authors[0].id,
+          category: categories[0].id,
+          tags: [tags[0].id, tags[3].id],
+          layout: [
+            {
+              blockType: 'statement',
+              text: 'The future of search is not keywords. It\'s meaning.',
+              size: 'display',
+              alignment: 'center',
+            },
+            {
+              blockType: 'codeTerminal',
+              code: `const embedding = await AI.run('@cf/baai/bge-base-en-v1.5', {
+  text: ['Your content here']
+})`,
+              language: 'typescript',
+              showLineNumbers: true,
+              filename: 'generateEmbedding.ts',
+            },
+          ],
+        },
+      }),
+      // @ts-expect-error - heroImage required but not available in seed
+      payload.create({
+        collection: 'transmissions',
+        draft: false,
+        data: {
+          title: 'Designing for the Invisible Interface',
+          slug: 'designing-invisible-interface',
+          excerpt: 'The best design is the one you don\'t notice. Exploring ambient computing and zero-UI paradigms.',
+          status: 'published',
+          publishedAt: new Date(Date.now() - 86400000).toISOString(),
+          author: authors[1].id,
+          category: categories[1].id,
+          tags: [tags[2].id],
+          layout: [
+            {
+              blockType: 'statement',
+              text: 'Design is not just what it looks like. Design is how it works.',
+              size: 'h1',
+              alignment: 'left',
+              attribution: 'Steve Jobs',
+            },
+          ],
+        },
+      }),
+      // @ts-expect-error - heroImage required but not available in seed
+      payload.create({
+        collection: 'transmissions',
+        draft: false,
+        data: {
+          title: 'Building at the Speed of Thought',
+          slug: 'building-speed-of-thought',
+          excerpt: 'How Payload 3.0 and Next.js 15 enable rapid iteration without sacrificing quality.',
+          status: 'published',
+          publishedAt: new Date(Date.now() - 172800000).toISOString(),
+          author: authors[0].id,
+          category: categories[0].id,
+          tags: [tags[4].id, tags[3].id],
+          layout: [
+            {
+              blockType: 'statement',
+              text: 'React Server Components changed everything.',
+              size: 'h1',
+              alignment: 'center',
+            },
+            {
+              blockType: 'codeTerminal',
+              code: `import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+
+const payload = await getPayload({ config: configPromise })
+const posts = await payload.find({ collection: 'transmissions' })`,
+              language: 'typescript',
+              showLineNumbers: true,
+              filename: 'page.tsx',
+            },
+          ],
+        },
+      }),
+      // @ts-expect-error - heroImage required but not available in seed
+      payload.create({
+        collection: 'transmissions',
+        draft: false,
+        data: {
+          title: 'The Renaissance of the Web',
+          slug: 'renaissance-of-the-web',
+          excerpt: 'After years of framework fatigue, the web platform is fighting back with native solutions.',
+          status: 'published',
+          publishedAt: new Date(Date.now() - 259200000).toISOString(),
+          author: authors[1].id,
+          category: categories[2].id,
+          tags: [tags[4].id],
+          layout: [
+            {
+              blockType: 'statement',
+              text: 'The platform is the framework.',
+              size: 'display',
+              alignment: 'center',
+            },
+          ],
+        },
+      }),
+      payload.create({
+        collection: 'transmissions',
+        draft: true, // Required for drafts
+        data: {
+          title: 'Glassmorphism: A Design Study',
+          slug: 'glassmorphism-design-study',
+          excerpt: 'Exploring the aesthetic of transparency, blur, and light in modern interfaces.',
+          status: 'draft',
+          author: authors[1].id,
+          category: categories[1].id,
+          tags: [tags[2].id],
+          layout: [
+            {
+              blockType: 'statement',
+              text: 'Depth through transparency.',
+              size: 'h2',
+              alignment: 'center',
+            },
+          ],
+        },
+      }),
+    ])
+
+    console.log(`   ✅ Created ${transmissions.length} transmissions (4 published, 1 draft)`)
 
     // ============================================
     // Complete
@@ -128,6 +272,7 @@ async function seed() {
     console.log(`   • Authors: ${authors.length}`)
     console.log(`   • Categories: ${categories.length}`)
     console.log(`   • Tags: ${tags.length}`)
+    console.log(`   • Transmissions: ${transmissions.length}`)
     console.log('')
     console.log('🔐 Admin Login:')
     console.log('   • Email: admin@soninewmedia.com')
