@@ -1,0 +1,95 @@
+@import '../../styles/variables';
+
+.recent-transmissions-widget {
+  background: rgba(20, 20, 25, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+
+  .widget-title {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .recent-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th {
+      text-align: left;
+      padding: 12px 15px;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    td {
+      padding: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+
+      &.title-cell {
+        font-weight: 500;
+        color: #fff;
+      }
+
+      &.date-cell {
+        color: rgba(255, 255, 255, 0.5);
+        font-family: monospace;
+      }
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .status-badge {
+      padding: 4px 8px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+
+      &.published {
+        background: rgba($neon-cyan, 0.15);
+        color: $neon-cyan;
+        border: 1px solid rgba($neon-cyan, 0.3);
+      }
+      &.draft {
+        background: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    .edit-link {
+      color: $neon-magenta;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s;
+
+      &:hover {
+        color: lighten($neon-magenta, 10%);
+        text-decoration: underline;
+      }
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 30px;
+      color: rgba(255, 255, 255, 0.3);
+      font-style: italic;
+    }
+  }
+}

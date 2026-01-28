@@ -198,6 +198,7 @@ export interface Media {
    */
   photographer?: string | null;
   license?: ('rights-reserved' | 'cc0' | 'cc-by' | 'cc-by-sa' | 'cc-by-nc' | 'unsplash') | null;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -683,6 +684,7 @@ export interface MediaSelect<T extends boolean = true> {
   caption?: T;
   photographer?: T;
   license?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

@@ -1,0 +1,435 @@
+/**
+ * Block Components Styles
+ * Neon Glassmorphism Aesthetic
+ */
+
+// Variables (match admin theme)
+$neon-cyan: #00f3ff;
+$neon-magenta: #ff00ff;
+$neon-purple: #bd00ff;
+$bg-dark: #0a0a0f;
+$bg-card: rgba(20, 20, 25, 0.7);
+
+// ============================================
+// Base Block Styles
+// ============================================
+
+.blocks-renderer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.block {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+// ============================================
+// Cinematic Video Block
+// ============================================
+
+.block--cinematic-video {
+  .video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: $bg-card;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .video-poster {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid $neon-cyan;
+    border-radius: 50%;
+    color: $neon-cyan;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+    
+    &:hover {
+      background: $neon-cyan;
+      color: $bg-dark;
+      box-shadow: 0 0 30px rgba($neon-cyan, 0.5);
+    }
+  }
+
+  .video-embed,
+  .video-native {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .video-caption {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+  }
+}
+
+// ============================================
+// Statement Block
+// ============================================
+
+.block--statement {
+  padding: 3rem 2rem;
+  margin: 0;
+  border-left: 3px solid $neon-magenta;
+  background: linear-gradient(135deg, rgba($neon-purple, 0.05), transparent);
+
+  .statement-text {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    line-height: 1.3;
+    background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &.statement--display .statement-text {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+  }
+
+  &.statement--h1 .statement-text {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  &.statement--h2 .statement-text {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  &.statement--align-left { text-align: left; }
+  &.statement--align-center { text-align: center; }
+  &.statement--align-right { text-align: right; }
+
+  .statement-attribution {
+    margin-top: 1.5rem;
+    
+    cite {
+      font-size: 1rem;
+      font-style: normal;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+// ============================================
+// Code Terminal Block
+// ============================================
+
+.block--code-terminal {
+  background: #1a1a2e;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .terminal-dots {
+    display: flex;
+    gap: 6px;
+    
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      
+      &--red { background: #ff5f56; }
+      &--yellow { background: #ffbd2e; }
+      &--green { background: #27ca41; }
+    }
+  }
+
+  .terminal-filename {
+    flex: 1;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .terminal-copy {
+    padding: 4px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: color 0.2s;
+    
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+    
+    &:hover {
+      color: $neon-cyan;
+    }
+  }
+
+  .terminal-body {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  pre {
+    margin: 0;
+    display: flex;
+    
+    &.with-line-numbers {
+      .line-numbers {
+        display: flex;
+        flex-direction: column;
+        padding-right: 1rem;
+        margin-right: 1rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.3);
+        user-select: none;
+        text-align: right;
+        
+        span {
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  code {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #e4e4e7;
+  }
+}
+
+// ============================================
+// Gallery Wall Block
+// ============================================
+
+.block--gallery-wall {
+  .gallery-grid {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  &.gallery--cols-2 .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  &.gallery--cols-3 .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  &.gallery--cols-4 .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+
+  &.gallery--masonry .gallery-grid {
+    display: block;
+    column-count: 3;
+    column-gap: 0.5rem;
+    
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &.gallery--carousel {
+    .gallery-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      
+      .gallery-item {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
+      }
+    }
+  }
+
+  .gallery-item {
+    margin: 0;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  .gallery-caption {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+  }
+
+  .gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.95);
+    cursor: pointer;
+    
+    img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+    
+    .lightbox-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 48px;
+      height: 48px;
+      font-size: 2rem;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s;
+      
+      &:hover {
+        border-color: $neon-cyan;
+        color: $neon-cyan;
+      }
+    }
+  }
+}
+
+// ============================================
+// Rich Text Block
+// ============================================
+
+.block--rich-text {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.9);
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    color: $neon-cyan;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    font-weight: 600;
+    color: #fff;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  blockquote {
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 3px solid $neon-purple;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.875em;
+    padding: 0.2em 0.4em;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  pre {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #1a1a2e;
+    border-radius: 8px;
+    overflow-x: auto;
+    
+    code {
+      padding: 0;
+      background: transparent;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+
+// ============================================
+// Responsive
+// ============================================
+
+@media (max-width: 768px) {
+  .block--gallery-wall {
+    &.gallery--cols-3 .gallery-grid,
+    &.gallery--cols-4 .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    &.gallery--masonry .gallery-grid {
+      column-count: 2;
+    }
+  }
+}

@@ -100,6 +100,30 @@ export const canEditOwnContent: Access = ({ req: { user } }) => {
   return false
 }
 
+/**
+ * Editors can only delete their own content (via createdBy field)
+ * Admins can delete all content
+ * Authors cannot delete (only draft/unpublish)
+ */
+export const canDeleteOwnContent: Access = ({ req: { user } }) => {
+  if (!user) return false
+
+  // Only Admins can delete any content
+  if (hasRole(user, 'admin')) return true
+
+  // Editors can only delete content they created
+  if (hasRole(user, 'editor')) {
+    return {
+      createdBy: {
+        equals: user.id,
+      },
+    }
+  }
+
+  // Authors cannot delete
+  return false
+}
+
 // ============================================
 // Field-Level Access Functions
 // ============================================

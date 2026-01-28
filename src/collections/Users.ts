@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { isAdmin, adminFieldAccess } from '../access'
+import { ensureAdminExists } from '../hooks'
 
 export const Users: CollectionConfig = {
   slug: 'users',
@@ -11,10 +12,20 @@ export const Users: CollectionConfig = {
   auth: {
     tokenExpiration: 60 * 60 * 24, // 24 hours
   },
+  hooks: {
+    beforeLogin: [ensureAdminExists],
+  },
   access: {
-    // Only admins can manage users
+    // Only admins can create new users
     create: isAdmin,
-    update: isAdmin,
+    // Users can update their own profile, admins can update all
+    update: ({ req: { user }, id }) => {
+      if (!user) return false
+      if (user.roles?.includes('admin')) return true
+      // Users can update their own profile
+      return { id: { equals: user.id } }
+    },
+    // Only admins can delete users
     delete: isAdmin,
     // Users can read their own profile, admins can read all
     read: ({ req: { user } }) => {

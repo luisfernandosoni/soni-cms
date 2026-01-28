@@ -1,0 +1,48 @@
+@import './variables';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700&display=swap');
+
+:root {
+  --font-body: 'Inter', sans-serif;
+  --font-header: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: $bg-dark;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba($neon-purple, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba($neon-cyan, 0.15) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+// Global Glassmorphism Override
+.payload-default-layout {
+  background: transparent !important;
+}
+
+.dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+// Override Payload UI components for consistency
+.btn--style-primary {
+  background: linear-gradient(135deg, $neon-purple, $neon-magenta);
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  &:hover {
+    box-shadow: 0 0 15px rgba($neon-magenta, 0.5);
+    transform: translateY(-1px);
+  }
+}
+
+.nav-group__toggle {
+  color: rgba(255, 255, 255, 0.7) !important;
+  
+  &:hover {
+    color: #fff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+}

@@ -18,7 +18,7 @@ import { Tags } from './collections/Tags'
 import { Authors } from './collections/Authors'
 
 // Endpoints
-import { publishScheduledEndpoint, searchEndpoint } from './endpoints'
+import { publishScheduledEndpoint, searchEndpoint, semanticSearchEndpoint } from './endpoints'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -41,6 +41,13 @@ export default buildConfig({
     meta: {
       titleSuffix: ' | Soni CMS',
     },
+    components: {
+      afterDashboard: [
+        '#components/Dashboard/StatsWidget',
+        '#components/Dashboard/QuickActions',
+        '#components/Dashboard/RecentTransmissions',
+      ],
+    },
   },
   collections: [
     // Content
@@ -62,7 +69,15 @@ export default buildConfig({
   plugins: [
     r2Storage({
       bucket: (process.env.R2 || cloudflare?.env?.R2) as any,
-      collections: { media: true },
+      collections: {
+        media: {
+          prefix: 'media',
+          generateFileURL: ({ filename, prefix }) => {
+            // Use custom CDN domain for production media URLs
+            return `https://cdn.soninewmedia.com/${prefix}/${filename}`
+          },
+        },
+      },
     }),
     seoPlugin({
       collections: ['transmissions'],
@@ -81,7 +96,7 @@ export default buildConfig({
       },
     }),
   ],
-  endpoints: [publishScheduledEndpoint, searchEndpoint],
+  endpoints: [publishScheduledEndpoint, searchEndpoint, semanticSearchEndpoint],
 })
 
 // Adapted from https://github.com/opennextjs/opennextjs-cloudflare/blob/d00b3a13e42e65aad76fba41774815726422cc39/packages/cloudflare/src/api/cloudflare-context.ts#L328C36-L328C46
