@@ -18,13 +18,21 @@ import { Tags } from './collections/Tags'
 import { Authors } from './collections/Authors'
 
 // Endpoints
-import { publishScheduledEndpoint, searchEndpoint, semanticSearchEndpoint, oauthEndpoints, latestEndpointConfig } from './endpoints'
+import {
+  publishScheduledEndpoint,
+  searchEndpoint,
+  semanticSearchEndpoint,
+  oauthEndpoints,
+  latestEndpointConfig,
+} from './endpoints'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 const realpath = (value: string) => (fs.existsSync(value) ? fs.realpathSync(value) : undefined)
 
-const isCLI = process.argv.some((value) => realpath(value)?.endsWith(path.join('payload', 'bin.js')))
+const isCLI = process.argv.some((value) =>
+  realpath(value)?.endsWith(path.join('payload', 'bin.js')),
+)
 const isProduction = process.env.NODE_ENV === 'production'
 
 const cloudflare =
@@ -43,9 +51,9 @@ export default buildConfig({
     },
     components: {
       afterDashboard: [
-        '#components/Dashboard/StatsWidget',
-        '#components/Dashboard/QuickActions',
-        '#components/Dashboard/RecentTransmissions',
+        '/components/Dashboard/StatsWidget.tsx',
+        '/components/Dashboard/QuickActions.tsx',
+        '/components/Dashboard/RecentTransmissions.tsx',
       ],
     },
   },
@@ -96,7 +104,13 @@ export default buildConfig({
       },
     }),
   ],
-  endpoints: [publishScheduledEndpoint, searchEndpoint, semanticSearchEndpoint, latestEndpointConfig, ...oauthEndpoints],
+  endpoints: [
+    publishScheduledEndpoint,
+    searchEndpoint,
+    semanticSearchEndpoint,
+    latestEndpointConfig,
+    ...oauthEndpoints,
+  ],
 })
 
 // Adapted from https://github.com/opennextjs/opennextjs-cloudflare/blob/d00b3a13e42e65aad76fba41774815726422cc39/packages/cloudflare/src/api/cloudflare-context.ts#L328C36-L328C46
