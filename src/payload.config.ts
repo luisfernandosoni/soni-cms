@@ -8,6 +8,7 @@ import { CloudflareContext, getCloudflareContext } from '@opennextjs/cloudflare'
 import { GetPlatformProxyOptions } from 'wrangler'
 import { r2Storage } from '@payloadcms/storage-r2'
 import { seoPlugin } from '@payloadcms/plugin-seo'
+import { resendAdapter } from '@payloadcms/email-resend'
 
 // Collections
 import { Users } from './collections/Users'
@@ -81,6 +82,11 @@ export default buildConfig({
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: sqliteD1Adapter({ binding: cloudflare.env.D1 }),
+  email: resendAdapter({
+    defaultFromName: 'Soni CMS',
+    defaultFromAddress: process.env.FROM_EMAIL || 'onboarding@resend.dev',
+    apiKey: process.env.RESEND_API_KEY || process.env['soni-blog-mail'] || '',
+  }),
   plugins: [
     r2Storage({
       bucket: (process.env.R2 || cloudflare?.env?.R2) as any,
