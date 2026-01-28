@@ -52,10 +52,6 @@
 	"vectorize": [
 		{
 			"binding": "VECTORIZE",
-			"index_name": "transmissions-embeddings"
-		},
-		{
-			"binding": "VECTORIZE",
 			"index_name": "transmissions-embeddings",
 			"remote": true
 		}
