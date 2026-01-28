@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { AllBlocks } from '../blocks'
 import { formatSlug, ensureUniqueSlug } from '../hooks'
-import { authenticatedOrPublished, canEditTransmission, isEditor } from '../access'
+import { authenticatedOrPublished, canEditOwnContent, isEditor } from '../access'
 
 export const Transmissions: CollectionConfig = {
   slug: 'transmissions',
@@ -14,7 +14,7 @@ export const Transmissions: CollectionConfig = {
   access: {
     read: authenticatedOrPublished,
     create: isEditor,
-    update: canEditTransmission,
+    update: canEditOwnContent,
     delete: isEditor,
   },
   fields: [
@@ -72,15 +72,34 @@ export const Transmissions: CollectionConfig = {
       },
     },
 
-    // === Taxonomy & Relationships ===
+    // === Ownership & Display Author ===
     {
+      // OWNERSHIP: Links to system User for access control
+      name: 'createdBy',
+      type: 'relationship',
+      relationTo: 'users',
+      required: true,
+      label: 'Owner',
+      defaultValue: ({ user }) => user?.id,
+      admin: {
+        position: 'sidebar',
+        readOnly: true,
+        condition: (data, siblingData, { user }) => user?.roles?.includes('admin'),
+      },
+      access: {
+        update: () => false, // Cannot change owner after creation
+      },
+    },
+    {
+      // PUBLIC DISPLAY: The author profile shown on frontend
       name: 'author',
       type: 'relationship',
       relationTo: 'authors',
       required: true,
-      label: 'Author',
+      label: 'Display Author',
       admin: {
         position: 'sidebar',
+        description: 'Public author profile shown on the frontend',
       },
     },
     {

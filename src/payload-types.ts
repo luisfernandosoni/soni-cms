@@ -149,6 +149,10 @@ export interface Transmission {
    * Compose the transmission using modular blocks
    */
   layout: (CinematicVideoBlock | StatementBlock | CodeTerminalBlock | GalleryWallBlock | RichTextBlock)[];
+  createdBy?: (number | null) | User;
+  /**
+   * Public author profile shown on the frontend
+   */
   author: number | Author;
   /**
    * Select the frequency channel for this transmission
@@ -303,6 +307,38 @@ export interface RichTextBlock {
   blockType: 'richText';
 }
 /**
+ * System users and administrators
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users".
+ */
+export interface User {
+  id: number;
+  name?: string | null;
+  /**
+   * User permissions
+   */
+  roles: ('admin' | 'editor' | 'author')[];
+  avatar?: (number | null) | Media;
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "authors".
  */
@@ -386,38 +422,6 @@ export interface Tag {
   slug: string;
   updatedAt: string;
   createdAt: string;
-}
-/**
- * System users and administrators
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users".
- */
-export interface User {
-  id: number;
-  name?: string | null;
-  /**
-   * User permissions
-   */
-  roles: ('admin' | 'editor' | 'author')[];
-  avatar?: (number | null) | Media;
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  sessions?:
-    | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
-      }[]
-    | null;
-  password?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -527,6 +531,7 @@ export interface TransmissionsSelect<T extends boolean = true> {
         galleryWall?: T | GalleryWallBlockSelect<T>;
         richText?: T | RichTextBlockSelect<T>;
       };
+  createdBy?: T;
   author?: T;
   category?: T;
   tags?: T;

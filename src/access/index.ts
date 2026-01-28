@@ -79,19 +79,19 @@ export const authenticatedOrPublished: Access = ({ req: { user } }) => {
 }
 
 /**
- * Authors can only edit their own transmissions
+ * Authors can only edit their own content (via createdBy field)
  * Editors and Admins can edit all
  */
-export const canEditTransmission: Access = ({ req: { user } }) => {
+export const canEditOwnContent: Access = ({ req: { user } }) => {
   if (!user) return false
 
   // Admins and Editors can edit all
   if (hasAnyRole(user, ['admin', 'editor'])) return true
 
-  // Authors can only edit their own (via author relationship)
+  // Authors can only edit their own (via createdBy relationship to Users)
   if (hasRole(user, 'author')) {
     return {
-      author: {
+      createdBy: {
         equals: user.id,
       },
     }
