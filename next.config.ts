@@ -4,7 +4,13 @@ import { withPayload } from '@payloadcms/next/withPayload'
 const nextConfig = {
   // Packages with Cloudflare Workers (workerd) specific code
   // Read more: https://opennext.js.org/cloudflare/howtos/workerd
-  serverExternalPackages: ['typescript', 'drizzle-kit', 'sharp'],
+  serverExternalPackages: [
+    'typescript',
+    'drizzle-kit',
+    'sharp',
+    '@payloadcms/db-d1-sqlite',
+    'graphql',
+  ],
 
   // Your Next.js config here
   webpack: (webpackConfig: any) => {
