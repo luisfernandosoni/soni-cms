@@ -5,9 +5,6 @@ const nextConfig = {
   // Packages with Cloudflare Workers (workerd) specific code
   // Read more: https://opennext.js.org/cloudflare/howtos/workerd
   serverExternalPackages: ['jose', 'pg-cloudflare', 'typescript', 'drizzle-kit', 'sharp'],
-  experimental: {
-    serverComponentsExternalPackages: ['typescript', 'drizzle-kit', 'sharp'],
-  },
 
   // Your Next.js config here
   webpack: (webpackConfig: any) => {
