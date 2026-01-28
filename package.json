@@ -69,7 +69,10 @@
       "sharp",
       "esbuild",
       "unrs-resolver"
-    ]
+    ],
+    "overrides": {
+      "@floating-ui/react": "0.26.28"
+    }
   },
   "cloudflare": {
     "bindings": {
