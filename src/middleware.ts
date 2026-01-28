@@ -69,7 +69,7 @@ function isRateLimited(ip: string): { limited: boolean; remaining: number; reset
  * - Admin routes: Private, no-cache
  * - Media/Assets: Long-lived edge cache
  */
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   const response = NextResponse.next()
 
