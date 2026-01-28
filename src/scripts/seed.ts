@@ -5,6 +5,7 @@
  * Run with: npx tsx src/scripts/seed.ts
  */
 
+import 'dotenv/config'
 import { getPayload } from 'payload'
 import config from '../payload.config'
 
@@ -30,6 +31,7 @@ async function seed() {
       }),
       payload.create({
         collection: 'authors',
+
         data: {
           name: 'Alex Chen',
           role: 'Lead Engineer',
@@ -78,7 +80,28 @@ async function seed() {
     console.log(`   ✅ Created ${categories.length} categories`)
 
     // ============================================
-    // 3. Create Tags
+    // 3. Create Media
+    // ============================================
+    console.log('🖼️ Creating Media...')
+
+    const media = await payload.create({
+      collection: 'media',
+      data: {
+        altText: 'Seed Image',
+      },
+      file: {
+        data: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=', 'base64'),
+        name: 'seed-image.png',
+        mimetype: 'image/png',
+        size: 68,
+      },
+    })
+
+    console.log(`   ✅ Created media: ${media.id}`)
+    const heroImageId = media.id
+
+    // ============================================
+    // 4. Create Tags
     // ============================================
     console.log('🏷️ Creating Tags...')
 
@@ -129,58 +152,119 @@ async function seed() {
         collection: 'transmissions',
         draft: false,
         data: {
-          title: 'The Edge of Tomorrow: Cloudflare Workers AI',
-          slug: 'edge-of-tomorrow-cloudflare-workers-ai',
-          excerpt: 'How vector embeddings and semantic search are revolutionizing content discovery at the edge.',
+          title: 'Welcome to Soni New Media',
+          slug: 'welcome',
+          excerpt: 'A first look at the new digital frontier.',
           status: 'published',
           publishedAt: new Date().toISOString(),
           author: authors[0].id,
           category: categories[0].id,
-          tags: [tags[0].id, tags[3].id],
+          tags: [tags[0].id, tags[1].id],
+          heroImage: heroImageId,
           layout: [
             {
               blockType: 'statement',
               text: 'The future of search is not keywords. It\'s meaning.',
-              size: 'display',
+              size: 'h2',
               alignment: 'center',
             },
+            /*
+            {
+              blockType: 'richText',
+              content: {
+                root: {
+                  type: 'root',
+                  format: '',
+                  indent: 0,
+                  version: 1,
+                  direction: 'ltr',
+                  children: [
+                    {
+                      type: 'paragraph',
+                      format: '',
+                      indent: 0,
+                      version: 1,
+                      children: [
+                        {
+                          type: 'text',
+                          detail: 0,
+                          format: 0,
+                          mode: 'normal',
+                          style: '',
+                          text: 'Cloudflare Workers AI allows us to run machine learning models directly at the edge, reducing latency and protecting user privacy. By generating vector embeddings for every transmission, we unlock a semantic search experience that understands intent, not just string matching.',
+                          version: 1,
+                        },
+                      ],
+                    },
+                  ],
+                },
+              },
+            },
+            */
             {
               blockType: 'codeTerminal',
-              code: `const embedding = await AI.run('@cf/baai/bge-base-en-v1.5', {
-  text: ['Your content here']
-})`,
+              code: `// Generate embedding using Workers AI\nconst embedding = await env.AI.run('@cf/baai/bge-base-en-v1.5', {\n  text: [doc.title + ' ' + doc.excerpt]\n})`,
               language: 'typescript',
-              showLineNumbers: true,
               filename: 'generateEmbedding.ts',
             },
           ],
         },
       }),
-      // @ts-expect-error - heroImage required but not available in seed
       payload.create({
         collection: 'transmissions',
         draft: false,
         data: {
-          title: 'Designing for the Invisible Interface',
-          slug: 'designing-invisible-interface',
-          excerpt: 'The best design is the one you don\'t notice. Exploring ambient computing and zero-UI paradigms.',
+          title: 'Design Systems',
+          slug: 'design-systems',
+          excerpt: 'Building consistent and scalable UIs.',
           status: 'published',
           publishedAt: new Date(Date.now() - 86400000).toISOString(),
-          author: authors[1].id,
+          author: authors[0].id,
           category: categories[1].id,
-          tags: [tags[2].id],
+          tags: [tags[3].id],
+          heroImage: heroImageId,
           layout: [
             {
               blockType: 'statement',
               text: 'Design is not just what it looks like. Design is how it works.',
-              size: 'h1',
-              alignment: 'left',
+              size: 'h2',
+              alignment: 'center',
               attribution: 'Steve Jobs',
+            },
+            /*
+            {
+              blockType: 'galleryWall',
+              layoutType: 'grid',
+              columns: '3',
+              images: [heroImageId],
+            },
+            */
+          ],
+        },
+      }),
+      /*
+      payload.create({
+        collection: 'transmissions',
+        draft: false,
+        data: {
+          title: 'Hidden Draft',
+          slug: 'hidden-draft',
+          excerpt: 'This should not be visible.',
+          author: authors[0].id,
+          category: categories[2].id,
+          tags: [tags[4].id],
+          status: 'draft',
+          heroImage: heroImageId,
+          layout: [
+            {
+              blockType: 'statement',
+              text: 'React Server Components changed everything.',
+              size: 'h3',
             },
           ],
         },
       }),
-      // @ts-expect-error - heroImage required but not available in seed
+      */
       payload.create({
         collection: 'transmissions',
         draft: false,
@@ -193,6 +277,7 @@ async function seed() {
           author: authors[0].id,
           category: categories[0].id,
           tags: [tags[4].id, tags[3].id],
+          heroImage: heroImageId,
           layout: [
             {
               blockType: 'statement',
@@ -214,24 +299,24 @@ const posts = await payload.find({ collection: 'transmissions' })`,
           ],
         },
       }),
-      // @ts-expect-error - heroImage required but not available in seed
       payload.create({
         collection: 'transmissions',
         draft: false,
         data: {
-          title: 'The Renaissance of the Web',
-          slug: 'renaissance-of-the-web',
-          excerpt: 'After years of framework fatigue, the web platform is fighting back with native solutions.',
+          title: 'The Future of AI',
+          slug: 'future-of-ai',
+          excerpt: 'Exploring the intersection of code and cognition.',
           status: 'published',
           publishedAt: new Date(Date.now() - 259200000).toISOString(),
           author: authors[1].id,
-          category: categories[2].id,
-          tags: [tags[4].id],
+          category: categories[0].id,
+          tags: [tags[2].id],
+          heroImage: heroImageId,
           layout: [
             {
               blockType: 'statement',
               text: 'The platform is the framework.',
-              size: 'display',
+              size: 'h1',
               alignment: 'center',
             },
           ],
@@ -279,8 +364,8 @@ const posts = await payload.find({ collection: 'transmissions' })`,
     console.log('   • Password: Admin123!@#')
     console.log('   ⚠️ Change this password immediately!')
 
-  } catch (error) {
-    console.error('❌ Seed failed:', error)
+  } catch (err) {
+    console.error(JSON.stringify(err, null, 2))
     process.exit(1)
   }
 

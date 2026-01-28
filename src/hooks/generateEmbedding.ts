@@ -15,7 +15,7 @@ export const generateEmbedding: CollectionAfterChangeHook = async ({
   operation,
 }) => {
   // Only generate embeddings for published transmissions
-  if (doc.status !== 'published') {
+  if (doc.status !== 'published' || req.context?.disableEmbedding) {
     return doc
   }
 
