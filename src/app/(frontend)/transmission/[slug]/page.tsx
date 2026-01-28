@@ -57,18 +57,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // Generate static params for build-time generation
+// Note: Returns empty array if PAYLOAD_SECRET unavailable during build
 export async function generateStaticParams() {
-  const payloadConfig = await config
-  const payload = await getPayload({ config: payloadConfig })
+  // Skip static generation if secret not available (e.g., Cloudflare Pages build)
+  if (!process.env.PAYLOAD_SECRET) {
+    return []
+  }
 
-  const { docs } = await payload.find({
-    collection: 'transmissions',
-    where: { status: { equals: 'published' } },
-    limit: 100,
-    select: { slug: true },
-  })
+  try {
+    const payloadConfig = await config
+    const payload = await getPayload({ config: payloadConfig })
 
-  return docs.map((doc) => ({ slug: doc.slug }))
+    const { docs } = await payload.find({
+      collection: 'transmissions',
+      where: { status: { equals: 'published' } },
+      limit: 100,
+      select: { slug: true },
+    })
+
+    return docs.map((doc) => ({ slug: doc.slug }))
+  } catch {
+    // If Payload init fails for any reason, skip static generation
+    // Pages will be generated on-demand at runtime
+    return []
+  }
 }
 
 export default async function TransmissionPage({ params }: Props) {
