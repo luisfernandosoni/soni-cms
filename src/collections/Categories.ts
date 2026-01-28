@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { formatSlug, ensureUniqueSlug } from '../hooks'
+import { isEditor } from '../access'
 
 export const Categories: CollectionConfig = {
   slug: 'categories',
@@ -11,6 +12,9 @@ export const Categories: CollectionConfig = {
   },
   access: {
     read: () => true,
+    create: isEditor,
+    update: isEditor,
+    delete: isEditor,
   },
   fields: [
     {

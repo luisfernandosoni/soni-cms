@@ -388,11 +388,19 @@ export interface Tag {
   createdAt: string;
 }
 /**
+ * System users and administrators
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
 export interface User {
   id: number;
+  name?: string | null;
+  /**
+   * User permissions
+   */
+  roles: ('admin' | 'editor' | 'author')[];
+  avatar?: (number | null) | Media;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -641,6 +649,9 @@ export interface TagsSelect<T extends boolean = true> {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  name?: T;
+  roles?: T;
+  avatar?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;

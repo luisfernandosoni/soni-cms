@@ -41,6 +41,10 @@
     //   "bucket_name": "<BUCKET_NAME>",
     // },
   ],
+  // Cron trigger for scheduled publishing (every 10 minutes)
+  "triggers": {
+    "crons": ["*/10 * * * *"]
+  },
 
   // Here's how to configure an additional environment
   // It can be deployed with `CLOUDFLARE_ENV=staging pnpm run deploy`

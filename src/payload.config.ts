@@ -17,6 +17,9 @@ import { Categories } from './collections/Categories'
 import { Tags } from './collections/Tags'
 import { Authors } from './collections/Authors'
 
+// Endpoints
+import { publishScheduledEndpoint } from './endpoints'
+
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 const realpath = (value: string) => (fs.existsSync(value) ? fs.realpathSync(value) : undefined)
@@ -78,6 +81,7 @@ export default buildConfig({
       },
     }),
   ],
+  endpoints: [publishScheduledEndpoint],
 })
 
 // Adapted from https://github.com/opennextjs/opennextjs-cloudflare/blob/d00b3a13e42e65aad76fba41774815726422cc39/packages/cloudflare/src/api/cloudflare-context.ts#L328C36-L328C46

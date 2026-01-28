@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { AllBlocks } from '../blocks'
 import { formatSlug, ensureUniqueSlug } from '../hooks'
+import { authenticatedOrPublished, canEditTransmission, isEditor } from '../access'
 
 export const Transmissions: CollectionConfig = {
   slug: 'transmissions',
@@ -11,7 +12,10 @@ export const Transmissions: CollectionConfig = {
     description: 'Your transmissions to the world',
   },
   access: {
-    read: () => true,
+    read: authenticatedOrPublished,
+    create: isEditor,
+    update: canEditTransmission,
+    delete: isEditor,
   },
   fields: [
     // === Main Content ===
