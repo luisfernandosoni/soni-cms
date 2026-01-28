@@ -147,7 +147,6 @@ async function seed() {
     console.log('📡 Creating Transmissions...')
 
     const transmissions = await Promise.all([
-      // @ts-expect-error - heroImage required but not available in seed
       payload.create({
         collection: 'transmissions',
         draft: false,
