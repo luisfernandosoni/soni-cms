@@ -1,0 +1,11 @@
+name = "soni-new-media-2026"
+pages_build_output_dir = "dist"
+
+# Production Environment
+[vars]
+CMS_URL = "https://soni-cms.soniglf.workers.dev"
+
+# Preview Environment (e.g. Pull Requests)
+[env.preview]
+[env.preview.vars]
+CMS_URL = "https://soni-cms.soniglf.workers.dev"
