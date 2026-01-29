@@ -104,10 +104,10 @@ export class LazyD1PreparedStatement implements D1PreparedStatement {
     return stmt.all()
   }
 
-  async raw<T = unknown[]>(options?: { columnNames?: boolean }): Promise<T[]> {
+  async raw<T = unknown[]>(options?: { columnNames?: boolean }): Promise<any> {
     const stmt = await this._getRealStatement()
-    // @ts-ignore - Signature complexity abstraction
-    return stmt.raw(options)
+    // @ts-ignore - Signature complexity abstraction caused build failure
+    return stmt.raw(options) as any
   }
 
   async _getRealStatement(): Promise<D1PreparedStatement> {
