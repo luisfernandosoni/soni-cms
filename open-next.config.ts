@@ -3,6 +3,6 @@ import { defineCloudflareConfig } from '@opennextjs/cloudflare/config'
 
 export default defineCloudflareConfig({
   build: {
-    external: ['typescript', 'drizzle-kit', 'sharp', 'sqlite', '@payloadcms/db-d1-sqlite'],
+    external: ['typescript', 'drizzle-kit', 'sharp'],
   },
 } as any)
