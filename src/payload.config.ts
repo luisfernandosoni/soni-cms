@@ -48,6 +48,14 @@ const cloudflare =
     ? await getCloudflareContextFromWrangler()
     : await getCloudflareContext({ async: true })
 
+console.log('DEBUG: Cloudflare Context loaded:', !!cloudflare)
+console.log('DEBUG: Cloudflare Env loaded:', !!cloudflare?.env)
+console.log('DEBUG: D1 Binding present:', !!cloudflare?.env?.D1)
+console.log(
+  'DEBUG: PAYLOAD_SECRET present:',
+  !!(process.env.PAYLOAD_SECRET || cloudflare?.env?.PAYLOAD_SECRET),
+)
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -77,11 +85,11 @@ export default buildConfig({
     Media,
   ],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: process.env.PAYLOAD_SECRET || cloudflare?.env?.PAYLOAD_SECRET || 'ERROR_NO_SECRET',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: sqliteD1Adapter({ binding: cloudflare.env.D1 }),
+  db: sqliteD1Adapter({ binding: cloudflare?.env?.D1 }),
   email: resendAdapter({
     defaultFromName: 'Soni CMS',
     defaultFromAddress: process.env.FROM_EMAIL || 'onboarding@resend.dev',
