@@ -13,6 +13,9 @@ const nextConfig = {
   ],
 
   // Your Next.js config here
+  images: {
+    unoptimized: true,
+  },
   webpack: (webpackConfig: any) => {
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],

@@ -1,7 +1,12 @@
 import type { CollectionConfig } from 'payload'
 import { AllBlocks } from '../blocks'
 import { formatSlug, ensureUniqueSlug, purgeCacheAfterChange, generateEmbedding } from '../hooks'
-import { authenticatedOrPublished, canEditOwnContent, canDeleteOwnContent, isAuthor } from '../access'
+import {
+  authenticatedOrPublished,
+  canEditOwnContent,
+  canDeleteOwnContent,
+  isAuthor,
+} from '../access'
 
 export const Transmissions: CollectionConfig = {
   slug: 'transmissions',
@@ -10,6 +15,12 @@ export const Transmissions: CollectionConfig = {
     group: 'Content',
     defaultColumns: ['title', 'author', 'category', 'status', 'publishedAt'],
     description: 'Your transmissions to the world',
+    // RED TEAM HARDENING: Prevent Deep Query DoS
+    listSearchableFields: ['title', 'excerpt'],
+    pagination: {
+      defaultLimit: 12,
+      limits: [12, 24, 48, 100], // Restrict options to prevent abuse
+    },
   },
   access: {
     read: authenticatedOrPublished,

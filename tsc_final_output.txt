@@ -1,0 +1,147 @@
+analysis/Soni-New-Media/App.tsx(2,44): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+analysis/Soni-New-Media/App.tsx(3,33): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/App.tsx(5,34): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/App.tsx(6,33): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/App.tsx(7,20): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/App.tsx(8,30): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/App.tsx(11,32): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/App.tsx(12,41): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/App.tsx(13,46): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/About.tsx(3,29): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/About.tsx(4,65): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/about/Atoms.tsx(3,41): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/CloudflareImage.tsx(3,24): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/CustomCursor.tsx(2,49): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/CustomCursor.tsx(3,28): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/CustomCursor.tsx(10,46): error TS7031: Binding element 'vx' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/CustomCursor.tsx(10,50): error TS7031: Binding element 'vy' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/CustomCursor.tsx(17,46): error TS7031: Binding element 'vx' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/CustomCursor.tsx(17,50): error TS7031: Binding element 'vy' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/DesignPhilosophy.tsx(3,29): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/DesignPhilosophy.tsx(4,69): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Footer.tsx(3,29): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Footer.tsx(4,56): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/footer/Atoms.tsx(3,41): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/footer/Atoms.tsx(4,22): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Hero.tsx(3,29): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Hero.tsx(4,30): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Hero.tsx(5,66): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/hero/Atoms.tsx(3,41): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/hero/Atoms.tsx(4,26): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/kinetic/KineticLayer.tsx(3,24): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/kinetic/KineticLayer.tsx(4,39): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/kinetic/KineticSurface.tsx(3,81): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/kinetic/KineticSurface.tsx(4,35): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Logo.tsx(3,24): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/Magnetic.tsx(3,49): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/Magnetic.tsx(4,28): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Magnetic.tsx(25,59): error TS7031: Binding element 'mx' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/Magnetic.tsx(25,63): error TS7031: Binding element 'my' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/Magnetic.tsx(44,51): error TS7006: Parameter 'v' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/Magnetic.tsx(45,51): error TS7006: Parameter 'v' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/Navbar.tsx(2,24): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/Navbar.tsx(3,29): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Navbar.tsx(4,71): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Navbar.tsx(5,26): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/navbar/Atoms.tsx(3,41): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/navbar/Atoms.tsx(4,26): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/navbar/Atoms.tsx(5,22): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/navbar/Atoms.tsx(6,26): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/philosophy/PhilosophyAtoms.tsx(3,41): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/sentinel/SentinelEnvironment.tsx(3,62): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/sentinel/SentinelHUD.tsx(3,51): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/sentinel/SentinelRings.tsx(3,62): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/sentinel/SentinelRings.tsx(19,31): error TS7006: Parameter 'v' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/sentinel/SentinelRings.tsx(20,31): error TS7006: Parameter 'v' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/sentinel/SentinelRings.tsx(124,39): error TS7006: Parameter 't' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/sentinel/SentinelRings.tsx(125,39): error TS7006: Parameter 't' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/SentinelCore.tsx(3,58): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/SentinelCore.tsx(4,47): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/SentinelCore.tsx(5,30): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/SentinelCore.tsx(6,34): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/SentinelCore.tsx(7,29): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/SentinelCore.tsx(8,37): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/SentinelCore.tsx(22,46): error TS7031: Binding element 'vx' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/SentinelCore.tsx(22,50): error TS7031: Binding element 'vy' implicitly has an 'any' type.
+analysis/Soni-New-Media/components/service/Atoms.tsx(3,41): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/service/Atoms.tsx(4,30): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/service/Atoms.tsx(5,29): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/ServiceCard.tsx(3,58): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/ServiceCard.tsx(4,29): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/ServiceCard.tsx(5,29): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/ServiceCard.tsx(6,32): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/ServiceCard.tsx(7,30): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/ServiceCard.tsx(8,71): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Services.tsx(3,29): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Services.tsx(4,29): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Services.tsx(5,29): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Services.tsx(6,58): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/services/CardAtoms.tsx(3,41): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/services/CardAtoms.tsx(4,30): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/services/CardAtoms.tsx(5,29): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/services/SectionAtoms.tsx(3,41): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/TransmissionsPreview.tsx(2,24): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/Work.tsx(3,29): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Work.tsx(4,26): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Work.tsx(5,58): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/Work.tsx(6,26): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/work/GalleryAtoms.tsx(3,35): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/work/GalleryAtoms.tsx(4,26): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/work/GalleryAtoms.tsx(5,32): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/work/GalleryAtoms.tsx(6,81): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/work/SectionAtoms.tsx(3,41): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/work/SectionAtoms.tsx(4,26): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/work/WorkAtoms.tsx(3,24): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/components/work/WorkAtoms.tsx(4,30): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/components/work/WorkAtoms.tsx(5,26): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/context/KineticContext.tsx(3,83): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/context/KineticContext.tsx(35,70): error TS7006: Parameter 'v' implicitly has an 'any' type.
+analysis/Soni-New-Media/context/KineticContext.tsx(36,70): error TS7006: Parameter 'v' implicitly has an 'any' type.
+analysis/Soni-New-Media/context/LanguageContext.tsx(2,26): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/context/LanguageContext.tsx(3,30): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/hooks/useMobileMagic.ts(2,32): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/index.tsx(4,17): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/index.tsx(12,31): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+analysis/Soni-New-Media/src/pages/Home.tsx(4,32): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/src/pages/Home.tsx(5,36): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/src/pages/Home.tsx(6,32): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/src/pages/Home.tsx(7,33): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/src/pages/Home.tsx(8,48): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/src/pages/Home.tsx(9,44): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/src/pages/Home.tsx(10,34): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+analysis/Soni-New-Media/src/pages/TransmissionDetail.tsx(2,33): error TS2307: Cannot find module 'react-router-dom' or its corresponding type declarations.
+analysis/Soni-New-Media/src/pages/TransmissionDetail.tsx(3,24): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+analysis/Soni-New-Media/src/pages/Transmissions.tsx(2,24): error TS2307: Cannot find module 'motion/react' or its corresponding type declarations.
+src/payload.config.ts(84,7): error TS2322: Type 'import("E:/Antigravity/soni-cms/node_modules/@cloudflare/workers-types/index").R2Bucket' is not assignable to type 'import("E:/Antigravity/soni-cms/node_modules/@payloadcms/storage-r2/dist/types").R2Bucket'.
+  Types of property 'get' are incompatible.
+    Type '{ (key: string, options: R2GetOptions & { onlyIf: R2Conditional | Headers; }): Promise<R2ObjectBody | R2Object>; (key: string, options?: R2GetOptions): Promise<...>; }' is not assignable to type '(key: string, options?: R2GetOptions) => Promise<any>'.
+      Types of parameters 'options' and 'options' are incompatible.
+        Type 'R2GetOptions' is not assignable to type 'R2GetOptions & { onlyIf: R2Conditional | Headers; }'.
+          Type 'import("E:/Antigravity/soni-cms/node_modules/@payloadcms/storage-r2/dist/types").R2GetOptions' is not assignable to type 'import("E:/Antigravity/soni-cms/node_modules/@cloudflare/workers-types/index").R2GetOptions'.
+            Types of property 'range' are incompatible.
+              Type 'R2Range' is not assignable to type 'Headers | R2Range'.
+                Type 'R2Range' is not assignable to type '{ offset?: number; length: number; }'.
+                  Property 'length' is optional in type 'R2Range' but required in type '{ offset?: number; length: number; }'.
+src/utils/cloudflare-lazy-bindings.ts(27,5): error TS2322: Type 'this' is not assignable to type 'D1PreparedStatement'.
+  Type 'LazyD1PreparedStatement' is not assignable to type 'D1PreparedStatement'.
+    The types returned by 'raw(...)' are incompatible between these types.
+      Type 'Promise<any[]>' is not assignable to type 'Promise<[string[], ...any[]]>'.
+        Type 'any[]' is not assignable to type '[string[], ...any[]]'.
+          Source provides no match for required element at position 0 in target.
+src/utils/cloudflare-lazy-bindings.ts(46,9): error TS2416: Property 'raw' in type 'LazyD1PreparedStatement' is not assignable to the same property in base type 'D1PreparedStatement'.
+  Type '<T = unknown[]>(options?: { columnNames?: boolean; }) => Promise<T[]>' is not assignable to type '{ <T = unknown[]>(options: { columnNames: true; }): Promise<[string[], ...T[]]>; <T = unknown[]>(options?: { columnNames?: false; }): Promise<T[]>; }'.
+    Type 'Promise<any[]>' is not assignable to type 'Promise<[string[], ...any[]]>'.
+      Type 'any[]' is not assignable to type '[string[], ...any[]]'.
+        Source provides no match for required element at position 0 in target.
+src/utils/cloudflare-lazy-bindings.ts(80,5): error TS2322: Type 'LazyD1PreparedStatement' is not assignable to type 'D1PreparedStatement'.
+  The types returned by 'raw(...)' are incompatible between these types.
+    Type 'Promise<any[]>' is not assignable to type 'Promise<[string[], ...any[]]>'.
+      Type 'any[]' is not assignable to type '[string[], ...any[]]'.
+        Source provides no match for required element at position 0 in target.
+src/utils/cloudflare-lazy-bindings.ts(110,9): error TS2416: Property 'withSession' in type 'LazyD1Database' is not assignable to the same property in base type 'D1Database'.
+  Type '(token: string) => Promise<D1Database>' is not assignable to type '(constraintOrBookmark?: string) => D1DatabaseSession'.
+    Type 'Promise<D1Database>' is missing the following properties from type 'D1DatabaseSession': prepare, batch, getBookmark
+src/utils/cloudflare-lazy-bindings.ts(124,5): error TS2739: Type 'D1DatabaseSession' is missing the following properties from type 'D1Database': exec, withSession, dump
+src/utils/cloudflare-lazy-bindings.ts(142,3): error TS2322: Type 'LazyD1Database' is not assignable to type 'D1Database'.
+  The types returned by 'withSession(...)' are incompatible between these types.
+    Type 'Promise<D1Database>' is missing the following properties from type 'D1DatabaseSession': prepare, batch, getBookmark

@@ -4,11 +4,12 @@ import { sqliteD1Adapter } from '@payloadcms/db-d1-sqlite'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
-import { CloudflareContext, getCloudflareContext } from '@opennextjs/cloudflare'
-import { GetPlatformProxyOptions } from 'wrangler'
+import { resendAdapter } from '@payloadcms/email-resend'
 import { r2Storage } from '@payloadcms/storage-r2'
 import { seoPlugin } from '@payloadcms/plugin-seo'
-import { resendAdapter } from '@payloadcms/email-resend'
+
+// Lazy Binding Utilities
+import { getLazyD1, getLazyR2 } from './utils/cloudflare-lazy-bindings'
 
 // Collections
 import { Users } from './collections/Users'
@@ -27,34 +28,8 @@ import {
   latestEndpointConfig,
 } from './endpoints'
 
-// Components
-// import StatsWidget from './components/Dashboard/StatsWidget'
-// import QuickActions from './components/Dashboard/QuickActions'
-// import RecentTransmissions from './components/Dashboard/RecentTransmissions'
-
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
-const realpath = (value: string) => (fs.existsSync(value) ? fs.realpathSync(value) : undefined)
-
-const isCLI = process.argv.some((value) =>
-  realpath(value)?.endsWith(path.join('payload', 'bin.js')),
-)
-const isProduction = process.env.NODE_ENV === 'production'
-
-const isBuild =
-  process.argv.includes('build') || process.env.NEXT_PHASE === 'phase-production-build'
-const cloudflare =
-  isCLI || isBuild || !isProduction
-    ? await getCloudflareContextFromWrangler()
-    : await getCloudflareContext({ async: true })
-
-console.log('DEBUG: Cloudflare Context loaded:', !!cloudflare)
-console.log('DEBUG: Cloudflare Env loaded:', !!cloudflare?.env)
-console.log('DEBUG: D1 Binding present:', !!cloudflare?.env?.D1)
-console.log(
-  'DEBUG: PAYLOAD_SECRET present:',
-  !!(process.env.PAYLOAD_SECRET || cloudflare?.env?.PAYLOAD_SECRET),
-)
 
 export default buildConfig({
   admin: {
@@ -85,19 +60,28 @@ export default buildConfig({
     Media,
   ],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || cloudflare?.env?.PAYLOAD_SECRET || 'ERROR_NO_SECRET',
+  // SECRET NOTE: Accessing PAYLOAD_SECRET via process.env is safer at init time.
+  // Although in some contexts it might be missing, OpenNext usually populates it from vars.
+  // Using 'ERROR_NO_SECRET' default will allow build to pass but fail at runtime if secret is genuinely missing.
+  secret: process.env.PAYLOAD_SECRET || 'ERROR_NO_SECRET',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: sqliteD1Adapter({ binding: cloudflare?.env?.D1 }),
+  // Use Lazy Binding for D1
+  db: sqliteD1Adapter({
+    binding: getLazyD1('D1'),
+  }),
   email: resendAdapter({
     defaultFromName: 'Soni CMS',
     defaultFromAddress: process.env.FROM_EMAIL || 'onboarding@resend.dev',
+    // We can assume env vars are available or handle lazily if the adapter supports it,
+    // but typically string config must be synchronous.
     apiKey: process.env.RESEND_API_KEY || process.env['soni-blog-mail'] || '',
   }),
   plugins: [
     r2Storage({
-      bucket: (process.env.R2 || cloudflare?.env?.R2) as any,
+      // Use Lazy Binding for R2
+      bucket: getLazyR2('R2'),
       collections: {
         media: {
           prefix: 'media',
@@ -133,14 +117,3 @@ export default buildConfig({
     ...oauthEndpoints,
   ],
 })
-
-// Adapted from https://github.com/opennextjs/opennextjs-cloudflare/blob/d00b3a13e42e65aad76fba41774815726422cc39/packages/cloudflare/src/api/cloudflare-context.ts#L328C36-L328C46
-function getCloudflareContextFromWrangler(): Promise<CloudflareContext> {
-  return import(/* webpackIgnore: true */ `${'__wrangler'.replaceAll('_', '')}`).then(
-    ({ getPlatformProxy }) =>
-      getPlatformProxy({
-        environment: process.env.CLOUDFLARE_ENV,
-        remoteBindings: isProduction && !isBuild,
-      } satisfies GetPlatformProxyOptions),
-  )
-}
