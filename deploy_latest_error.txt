@@ -1,0 +1,148 @@
+
+> soni-cms@1.0.0 deploy:app
+> opennextjs-cloudflare build && opennextjs-cloudflare deploy
+
+
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé OpenNext ÔÇö Cloudflare build Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÿ
+
+WARN OpenNext is not fully compatible with Windows.
+WARN For optimal performance, it is recommended to use Windows Subsystem for Linux (WSL).
+WARN While OpenNext may function on Windows, it could encounter unpredictable failures during runtime.
+App directory: E:\Antigravity\soni-cms
+Next.js version : 16.1.6
+@opennextjs/cloudflare version: 1.16.1
+@opennextjs/aws version: 3.9.14
+
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé OpenNext ÔÇö Building Next.js app Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÿ
+
+
+> soni-cms@1.0.0 build
+> cross-env NODE_OPTIONS="--no-deprecation --max-old-space-size=8000" next build
+
+Ôû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env
+
+ÔÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 7.8s
+  Running TypeScript ...
+  Collecting page data using 23 workers ...
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] Transmissions beforeOperation: read
+Using vars defined in .env
+Ôû▓ [WARNING] AI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.
+
+
+Using vars defined in .env
+Ôû▓ [WARNING] AI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.
+
+
+  Generating static pages using 23 workers (0/4) ...
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+  Generating static pages using 23 workers (1/4) 
+  Generating static pages using 23 workers (2/4) 
+  Generating static pages using 23 workers (3/4) 
+Ô£ô Generating static pages using 23 workers (4/4) in 775.2ms
+  Finalizing page optimization ...
+
+Route (app)
+Ôöî ãÆ /
+Ôö£ Ôùï /_not-found
+Ôö£ ãÆ /admin/[[...segments]]
+Ôö£ ãÆ /api/[...slug]
+Ôö£ ãÆ /api/graphql
+Ôö£ ãÆ /api/graphql-playground
+Ôö£ ÔùÅ /transmission/[slug]
+Ôöö ãÆ /transmissions
+
+
+ãÆ Proxy (Middleware)
+
+Ôùï  (Static)   prerendered as static content
+ÔùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ãÆ  (Dynamic)  server-rendered on demand
+
+
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé OpenNext ÔÇö Generating bundle Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÿ
+
+Bundling middleware function...
+Bundling static assets...
+Bundling cache assets...
+Building server function: default...
+Applying code patches: 7.677s
+# copyPackageTemplateFiles
+[35mÔÜÖ´©Å Bundling the OpenNext server...
+[0m
+[35mWorker saved in `.open-next\worker.js` ­ƒÜÇ
+[0m
+OpenNext build complete.
+
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé OpenNext ÔÇö Cloudflare deploy Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÿ
+
+WARN OpenNext is not fully compatible with Windows.
+WARN For optimal performance, it is recommended to use Windows Subsystem for Linux (WSL).
+WARN While OpenNext may function on Windows, it could encounter unpredictable failures during runtime.
+Ôû▓ [WARNING] AI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.
+
+
+Incremental cache does not need populating
+Tag cache does not need populating
+
+ Ôøà´©Å wrangler 4.61.0 (update available 4.61.1)
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Ôû▓ [WARNING] Warning: The following routes will attempt to serve Assets on a configured path:
+
+    ÔÇó soninewmedia.com/transmissions (Will match assets: .open-next\assets\transmissions)
+    ÔÇó soninewmedia.com/transmissions/* (Will match assets: .open-next\assets\transmissions\*)
+    ÔÇó www.soninewmedia.com/transmissions (Will match assets: .open-next\assets\transmissions)
+    ÔÇó www.soninewmedia.com/transmissions/* (Will match assets: .open-next\assets\transmissions\*)
+    ÔÇó soninewmedia.com/admin (Will match assets: .open-next\assets\admin)
+    ÔÇó soninewmedia.com/admin/* (Will match assets: .open-next\assets\admin\*)
+    ÔÇó www.soninewmedia.com/admin (Will match assets: .open-next\assets\admin)
+    ÔÇó www.soninewmedia.com/admin/* (Will match assets: .open-next\assets\admin\*)
+    ÔÇó soninewmedia.com/api/* (Will match assets: .open-next\assets\api\*)
+    ÔÇó www.soninewmedia.com/api/* (Will match assets: .open-next\assets\api\*)
+    ÔÇó soninewmedia.com/_next/* (Will match assets: .open-next\assets\_next\*)
+    ÔÇó www.soninewmedia.com/_next/* (Will match assets: .open-next\assets\_next\*)
+  
+  Requests not matching an asset will be forwarded to the Worker's code.
+
+
+
+X [ERROR] A file or directory could not be found.
+
+  
+  Missing file or directory: E:\Antigravity\soni-cms\.wrangler\tmp\deploy-saHN5k\77d9faebf7af9e421806970ce10a58e9d83116d7-resvg.wasm?module
+  
+  This is typically caused by:
+    - The file or directory does not exist
+    - A typo in the file path
+    - The file was moved or deleted
+  
+  Please check the file path and try again.
+
+
+­ƒ¬Á  Logs were written to "C:\Users\sonig\AppData\Roaming\xdg.config\.wrangler\logs\wrangler-2026-01-30_02-51-45_241.log"
+ERROR Wrangler command failed

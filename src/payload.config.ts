@@ -31,6 +31,9 @@ import {
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+console.log('[DEBUG_SONI] payload.config.ts loading...')
+console.log(`[DEBUG_SONI] PAYLOAD_SECRET present: ${!!process.env.PAYLOAD_SECRET}`)
+
 export default buildConfig({
   admin: {
     user: Users.slug,
