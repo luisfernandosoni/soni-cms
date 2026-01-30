@@ -229,7 +229,13 @@ export function getLazyR2(bindingName: string = 'R2'): R2Bucket {
             throw new Error(`Property ${String(prop)} is not a function on the resolved R2Bucket`);
           }
           
+          console.log(`[LazyR2] R2 EXEC: ${String(prop)}`, {
+            argsCount: args.length,
+          });
+          
           const result = await method.apply(bucket, args);
+
+          console.log(`[LazyR2] R2 SUCCESS: ${String(prop)}`);
 
           // S+ TIER: Recursively proxy objects returned by R2 methods (e.g., MultipartUpload)
           if (result && typeof result === 'object' && !ArrayBuffer.isView(result) && !(result instanceof ArrayBuffer)) {

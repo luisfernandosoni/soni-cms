@@ -16,10 +16,9 @@ export const Media: CollectionConfig = {
     {
       name: 'altText',
       type: 'text',
-      required: true,
       label: 'Alt Text',
       admin: {
-        description: 'Describe this image for accessibility (required)',
+        description: 'Describe this image for accessibility (optional)',
       },
     },
     {
