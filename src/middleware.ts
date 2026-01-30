@@ -71,6 +71,13 @@ function isRateLimited(ip: string): { limited: boolean; remaining: number; reset
  */
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+
+  // SURGICAL STERILIZATION (Supreme Board Directive)
+  // Bypass all body-impacting logic for Media uploads to prevent Stream Locking (400 Bad Request)
+  if (pathname === '/api/media' && request.method === 'POST') {
+    return NextResponse.next()
+  }
+
   const response = NextResponse.next()
 
   // Admin routes - never cache, skip rate limiting

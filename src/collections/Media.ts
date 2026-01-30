@@ -12,6 +12,16 @@ export const Media: CollectionConfig = {
     update: isEditor,
     delete: isEditor,
   },
+  hooks: {
+    beforeChange: [
+      ({ data, req }) => {
+        if (process.env.DEBUG_ACCESS === 'true') {
+          console.log(`[VC_ELITE_DEBUG] Media beforeChange: filename=${data?.filename}, hasFile=${!!req.file}`)
+        }
+        return data
+      },
+    ],
+  },
   fields: [
     {
       name: 'altText',

@@ -237,17 +237,24 @@ export function getLazyR2(bindingName: string = 'R2'): R2Bucket {
 
           console.log(`[LazyR2] R2 SUCCESS: ${String(prop)}`);
 
-          // S+ TIER: Recursively proxy objects returned by R2 methods (e.g., MultipartUpload)
-          if (result && typeof result === 'object' && !ArrayBuffer.isView(result) && !(result instanceof ArrayBuffer)) {
-             return new Proxy(result, {
-               get(t, p) {
-                 const val = (t as any)[p];
-                 if (typeof val === 'function') {
-                   return val.bind(t);
-                 }
-                 return val;
-               }
-             });
+          // SURGICAL MULTIPART BRIDGE (Supreme Board Directive)
+          // Payload 3 / S3-SDK expects the result of createMultipartUpload to be an object 
+          // with bindable methods like .uploadPart() and .complete().
+          if (prop === 'createMultipartUpload' || prop === 'resumeMultipartUpload') {
+            return new Proxy(result, {
+              get(t, p) {
+                const val = (t as any)[p];
+                if (typeof val === 'function') {
+                  return async (...mArgs: any[]) => {
+                    console.log(`[LazyR2] MULTIPART EXEC: ${String(p)}`);
+                    const mResult = await val.apply(t, mArgs);
+                    // Handle nested success if necessary (e.g. uploadPart returns part info)
+                    return mResult;
+                  };
+                }
+                return val;
+              }
+            });
           }
 
           return result;
