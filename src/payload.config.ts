@@ -35,7 +35,22 @@ console.log('[DEBUG_SONI] payload.config.ts loading...')
 console.log(`[DEBUG_SONI] PAYLOAD_SECRET present: ${!!process.env.PAYLOAD_SECRET}`)
 
 export default buildConfig({
-  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
+  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'https://soninewmedia.com',
+  csrf: [
+    'https://soninewmedia.com',
+    'https://www.soninewmedia.com',
+    ...(process.env.NODE_ENV !== 'production' ? ['http://localhost:3000'] : []),
+  ],
+  cors: [
+    'https://soninewmedia.com',
+    'https://www.soninewmedia.com',
+    ...(process.env.NODE_ENV !== 'production' ? ['http://localhost:3000'] : []),
+  ],
+  cookie: {
+    domain: '.soninewmedia.com',
+    secure: true,
+    sameSite: 'Lax',
+  },
   admin: {
     user: Users.slug,
     importMap: {
