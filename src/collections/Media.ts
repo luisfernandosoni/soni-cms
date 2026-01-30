@@ -60,6 +60,9 @@ export const Media: CollectionConfig = {
     // Cloudflare Workers: Disable local processing (no sharp)
     crop: false,
     focalPoint: false,
+    imageSizes: [],
+    // CRITICAL: Disable local storage to prevent EROFS errors on the Edge
+    disableLocalStorage: true,
     // MIME type restrictions
     mimeTypes: [
       'image/jpeg',

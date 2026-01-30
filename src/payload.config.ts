@@ -84,7 +84,7 @@ export default buildConfig({
   plugins: [
     r2Storage({
       // Use Lazy Binding for R2
-      bucket: getLazyR2('R2') as any,
+      bucket: getLazyR2('R2'),
       collections: {
         media: {
           prefix: 'media',

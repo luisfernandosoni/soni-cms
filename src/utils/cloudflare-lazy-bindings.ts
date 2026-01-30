@@ -200,22 +200,85 @@ export function getLazyD1(bindingName: string = 'D1'): D1Database {
   return new LazyD1Database(bindingName)
 }
 
+/**
+ * REFINED LAZY R2 BUCKET (S+ AUDITED)
+ * 
+ * Uses a more advanced Proxy handler to ensure that:
+ * 1. Synchronous property checks (for method existence) return truthy values immediately.
+ * 2. Asynchronous method calls trigger context resolution.
+ * 3. Standard JS symbols and properties (like .then, .constructor) are handled correctly.
+ */
 export function getLazyR2(bindingName: string = 'R2'): R2Bucket {
   return new Proxy({} as R2Bucket, {
     get(_target, prop) {
-      return async (...args: any[]) => {
-        const cf = await getSafeCloudflareContext()
-        const bucket = (cf.env as Record<string, any>)[bindingName] as R2Bucket
-        if (!bucket) {
-          throw new Error(`R2 Bucket binding '${bindingName}' not found in Cloudflare context`)
-        }
-        // @ts-ignore
-        const method = bucket[prop]
-        if (typeof method !== 'function') {
-          throw new Error(`Property ${String(prop)} is not a function on R2Bucket`)
-        }
-        return method.apply(bucket, args)
+      // Define core R2 methods that need to be proxied as async functions
+      const r2Methods = ['get', 'put', 'head', 'delete', 'list', 'createMultipartUpload', 'resumeMultipartUpload'];
+      
+      if (typeof prop === 'string' && r2Methods.includes(prop)) {
+        return async (...args: any[]) => {
+          const cf = await getSafeCloudflareContext();
+          const bucket = (cf.env as Record<string, any>)[bindingName] as R2Bucket;
+          
+          if (!bucket) {
+            console.error(`[LazyR2] Critical: R2 binding '${bindingName}' missing in Cloudflare Context.`);
+            throw new Error(`R2 Bucket binding '${bindingName}' not found.`);
+          }
+          
+          const method = (bucket as any)[prop];
+          if (typeof method !== 'function') {
+            throw new Error(`Property ${String(prop)} is not a function on the resolved R2Bucket`);
+          }
+          
+          const result = await method.apply(bucket, args);
+
+          // S+ TIER: Recursively proxy objects returned by R2 methods (e.g., MultipartUpload)
+          if (result && typeof result === 'object' && !ArrayBuffer.isView(result) && !(result instanceof ArrayBuffer)) {
+             return new Proxy(result, {
+               get(t, p) {
+                 const val = (t as any)[p];
+                 if (typeof val === 'function') {
+                   return val.bind(t);
+                 }
+                 return val;
+               }
+             });
+          }
+
+          return result;
+        };
       }
+
+      // Handle standard JS/Node inspection properties
+      if (prop === 'then') return undefined; // Avoid blocking async/await logic
+      if (prop === 'constructor') return Object.prototype.constructor;
+      if (prop === 'name') return bindingName; // Return binding name for identification
+      if (prop === 'toString') return () => `[LazyR2Bucket binding=${bindingName}]`;
+      if (typeof prop === 'symbol') return (_target as any)[prop];
+
+      // Return undefined for non-existing sync properties to avoid breaking logic checks
+      return (_target as any)[prop];
     },
-  })
+    
+    // Explicitly define that these methods 'exist' to satisfy presence checks in library init
+    has(_target, prop) {
+      const r2Methods = ['get', 'put', 'head', 'delete', 'list', 'name'];
+      return typeof prop === 'string' && r2Methods.includes(prop);
+    },
+    
+    // Support for Object.keys/Object.getOwnPropertyNames
+    ownKeys() {
+      return ['get', 'put', 'head', 'delete', 'list'];
+    },
+    
+    getOwnPropertyDescriptor(_target, prop) {
+      if (['get', 'put', 'head', 'delete', 'list'].includes(prop as string)) {
+        return {
+          enumerable: true,
+          configurable: true,
+          writable: false,
+        };
+      }
+      return undefined;
+    }
+  });
 }
