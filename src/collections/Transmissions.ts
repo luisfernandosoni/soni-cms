@@ -29,6 +29,12 @@ export const Transmissions: CollectionConfig = {
     delete: canDeleteOwnContent, // Admins can delete all, Editors only their own
   },
   hooks: {
+    beforeOperation: [
+      (args: any) => {
+        console.log(`[DEBUG_SONI] Transmissions beforeOperation: ${args.operation}`)
+        return args.args
+      },
+    ],
     afterChange: [purgeCacheAfterChange, generateEmbedding],
   },
   fields: [
