@@ -69,8 +69,27 @@
   // These routes serve /transmissions/*, /admin/*, and /api/* from this Worker
   // while the main site (Vite SPA) handles all other paths
   "routes": [
+    // Transmissions Section
+    {
+      "pattern": "soninewmedia.com/transmissions",
+      "zone_name": "soninewmedia.com",
+    },
     {
       "pattern": "soninewmedia.com/transmissions/*",
+      "zone_name": "soninewmedia.com",
+    },
+    {
+      "pattern": "www.soninewmedia.com/transmissions",
+      "zone_name": "soninewmedia.com",
+    },
+    {
+      "pattern": "www.soninewmedia.com/transmissions/*",
+      "zone_name": "soninewmedia.com",
+    },
+
+    // Admin Panel
+    {
+      "pattern": "soninewmedia.com/admin",
       "zone_name": "soninewmedia.com",
     },
     {
@@ -78,21 +97,25 @@
       "zone_name": "soninewmedia.com",
     },
     {
-      "pattern": "soninewmedia.com/api/*",
-      "zone_name": "soninewmedia.com",
-    },
-    {
-      "pattern": "www.soninewmedia.com/transmissions/*",
+      "pattern": "www.soninewmedia.com/admin",
       "zone_name": "soninewmedia.com",
     },
     {
       "pattern": "www.soninewmedia.com/admin/*",
       "zone_name": "soninewmedia.com",
     },
+
+    // API
+    {
+      "pattern": "soninewmedia.com/api/*",
+      "zone_name": "soninewmedia.com",
+    },
     {
       "pattern": "www.soninewmedia.com/api/*",
       "zone_name": "soninewmedia.com",
     },
+
+    // Next.js Assets
     {
       "pattern": "soninewmedia.com/_next/*",
       "zone_name": "soninewmedia.com",
