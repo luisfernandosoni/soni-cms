@@ -26,7 +26,10 @@
   },
   "browser": {
     "sqlite": false,
-    "better-sqlite3": false
+    "better-sqlite3": false,
+    "typescript": false,
+    "drizzle-kit": false,
+    "sharp": false
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.16.1",
