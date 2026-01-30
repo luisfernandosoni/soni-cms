@@ -46,11 +46,6 @@ export default buildConfig({
     'https://www.soninewmedia.com',
     ...(process.env.NODE_ENV !== 'production' ? ['http://localhost:3000'] : []),
   ],
-  cookie: {
-    domain: '.soninewmedia.com',
-    secure: true,
-    sameSite: 'Lax',
-  },
   admin: {
     user: Users.slug,
     importMap: {
