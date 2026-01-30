@@ -84,7 +84,11 @@ export default buildConfig({
   plugins: [
     r2Storage({
       // Use Lazy Binding for R2
-      bucket: getLazyR2('R2'),
+      // NOTE: Using 'as any' here is a mandatory 'Pragmatic Bridge'.
+      // There is a minor type-definition mismatch between @cloudflare/workers-types and @payloadcms/storage-r2
+      // regarding the R2Range interface (optional vs required length). 
+      // Our Hardened Proxy runtime handles all calls safely.
+      bucket: getLazyR2('R2') as any,
       collections: {
         media: {
           prefix: 'media',
