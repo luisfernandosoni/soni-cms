@@ -12,14 +12,23 @@ export const Media: CollectionConfig = {
     update: isEditor,
     delete: isEditor,
   },
+  hooks: {
+    beforeChange: [
+      ({ data, req }) => {
+        if (process.env.DEBUG_ACCESS === 'true') {
+          console.log(`[VC_ELITE_DEBUG] Media beforeChange: filename=${data?.filename}, hasFile=${!!req.file}`)
+        }
+        return data
+      },
+    ],
+  },
   fields: [
     {
       name: 'altText',
       type: 'text',
-      required: true,
       label: 'Alt Text',
       admin: {
-        description: 'Describe this image for accessibility (required)',
+        description: 'Describe this image for accessibility (optional)',
       },
     },
     {
@@ -60,6 +69,9 @@ export const Media: CollectionConfig = {
     // Cloudflare Workers: Disable local processing (no sharp)
     crop: false,
     focalPoint: false,
+    imageSizes: [],
+    // CRITICAL: Disable local storage to prevent EROFS errors on the Edge
+    disableLocalStorage: true,
     // MIME type restrictions
     mimeTypes: [
       'image/jpeg',

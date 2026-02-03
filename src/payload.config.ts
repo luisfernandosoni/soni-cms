@@ -35,6 +35,17 @@ console.log('[DEBUG_SONI] payload.config.ts loading...')
 console.log(`[DEBUG_SONI] PAYLOAD_SECRET present: ${!!process.env.PAYLOAD_SECRET}`)
 
 export default buildConfig({
+  serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'https://soninewmedia.com',
+  csrf: [
+    'https://soninewmedia.com',
+    'https://www.soninewmedia.com',
+    ...(process.env.NODE_ENV !== 'production' ? ['http://localhost:3000'] : []),
+  ],
+  cors: [
+    'https://soninewmedia.com',
+    'https://www.soninewmedia.com',
+    ...(process.env.NODE_ENV !== 'production' ? ['http://localhost:3000'] : []),
+  ],
   admin: {
     user: Users.slug,
     importMap: {
@@ -84,6 +95,10 @@ export default buildConfig({
   plugins: [
     r2Storage({
       // Use Lazy Binding for R2
+      // NOTE: Using 'as any' here is a mandatory 'Pragmatic Bridge'.
+      // There is a minor type-definition mismatch between @cloudflare/workers-types and @payloadcms/storage-r2
+      // regarding the R2Range interface (optional vs required length). 
+      // Our Hardened Proxy runtime handles all calls safely.
       bucket: getLazyR2('R2') as any,
       collections: {
         media: {

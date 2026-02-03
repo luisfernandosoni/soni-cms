@@ -11,6 +11,11 @@ export const Users: CollectionConfig = {
   },
   auth: {
     tokenExpiration: 60 * 60 * 24, // 24 hours
+    cookies: {
+      domain: '.soninewmedia.com',
+      secure: true,
+      sameSite: 'Lax',
+    },
   },
   hooks: {
     beforeLogin: [ensureAdminExists],
