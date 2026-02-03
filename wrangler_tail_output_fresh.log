@@ -833,3 +833,12 @@ X [ERROR]   Error: Failed to publish diagnostics channel message:
 X [ERROR]   Error: Failed to publish diagnostics channel message: 
 
 
+FatalError: Tail disconnected, exiting.
+    at createFatalError (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:714:12)
+    at Timeout._onTimeout (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:272916:21)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7) {
+  telemetryMessage: 'Tail disconnected, exiting.',
+  code: 1
+}
+­ƒ¬Á  Logs were written to "C:\Users\sonig\AppData\Roaming\xdg.config\.wrangler\logs\wrangler-2026-02-03_19-12-21_476.log"

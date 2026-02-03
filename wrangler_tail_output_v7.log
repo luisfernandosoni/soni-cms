@@ -113,3 +113,26 @@ X [ERROR]   Error: Failed to publish diagnostics channel message:
 X [ERROR]   Error: Failed to publish diagnostics channel message: 
 
 
+GET https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 3:28:31 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 3:28:34 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+"*/10 * * * *" @ 3/2/2026, 3:30:08 p.m. - Exception Thrown
+  (warn) Received a ScheduledEvent but we lack a handler for ScheduledEvents (a.k.a. Cron Triggers). Did you remember to export a scheduled() function?
+X [ERROR]   Error: Handler does not export a scheduled() function
+
+
