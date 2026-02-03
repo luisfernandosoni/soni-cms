@@ -20,7 +20,14 @@ export const POST = async (req: any, context: any) => {
   try {
     const res = await REST_POST(config)(req, context)
     if (res.status >= 400) {
-       console.log(`[VC_ELITE_DEBUG] Payload returned status: ${res.status}`)
+      console.log(`[VC_ELITE_DEBUG] Payload returned status: ${res.status}`)
+      try {
+        const clonedRes = res.clone()
+        const text = await clonedRes.text()
+        console.log(`[VC_ELITE_DEBUG] Error Body: ${text.substring(0, 500)}`)
+      } catch (e) {
+        console.log(`[VC_ELITE_DEBUG] Could not read error body`)
+      }
     }
     return res
   } catch (err: any) {
