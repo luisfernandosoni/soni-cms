@@ -75,6 +75,7 @@ export function middleware(request: NextRequest) {
   // SURGICAL STERILIZATION (Supreme Board Directive)
   // Bypass all body-impacting logic for Media uploads to prevent Stream Locking (400 Bad Request)
   if (pathname === '/api/media' && request.method === 'POST') {
+    console.log(`[VC_ELITE_DEBUG] Middleware bypass for /api/media POST`)
     return NextResponse.next()
   }
 

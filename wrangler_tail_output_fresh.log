@@ -95,3 +95,437 @@ X [ERROR]   Error: Failed to publish diagnostics channel message:
 X [ERROR]   Error: Failed to publish diagnostics channel message: 
 
 
+POST https://soninewmedia.com/admin - Ok @ 3/2/2026, 1:19:19 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+"*/10 * * * *" @ 3/2/2026, 1:20:03 p.m. - Exception Thrown
+  (warn) Received a ScheduledEvent but we lack a handler for ScheduledEvents (a.k.a. Cron Triggers). Did you remember to export a scheduled() function?
+X [ERROR]   Error: Handler does not export a scheduled() function
+
+
+GET https://www.soninewmedia.com/api/transmissions/latest - Ok @ 3/2/2026, 1:21:58 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [DEBUG_SONI] Transmissions beforeOperation: read
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://www.soninewmedia.com/api/transmissions?limit=100&sort=-publishedAt - Ok @ 3/2/2026, 1:22:00 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [DEBUG_SONI] Transmissions beforeOperation: read
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 1:22:11 p.m.
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+GET https://www.soninewmedia.com/api/users/me - Ok @ 3/2/2026, 1:22:13 p.m.
+GET https://www.soninewmedia.com/api/payload-preferences/undefined - Ok @ 3/2/2026, 1:22:20 p.m.
+POST https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 1:22:21 p.m.
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+POST https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 1:22:21 p.m.
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+POST https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 1:22:22 p.m.
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 1:22:23 p.m.
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+"*/10 * * * *" @ 3/2/2026, 1:30:03 p.m. - Exception Thrown
+X [ERROR]   Error: Handler does not export a scheduled() function
+
+
+"*/10 * * * *" @ 3/2/2026, 1:40:03 p.m. - Exception Thrown
+X [ERROR]   Error: Handler does not export a scheduled() function
+
+
+GET https://www.soninewmedia.com/api/users/me - Ok @ 3/2/2026, 1:43:50 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://www.soninewmedia.com/api/payload-preferences/undefined - Ok @ 3/2/2026, 1:43:50 p.m.
+GET https://soninewmedia.com/admin - Ok @ 3/2/2026, 1:43:50 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://soninewmedia.com/admin - Ok @ 3/2/2026, 1:44:09 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://soninewmedia.com/admin - Ok @ 3/2/2026, 1:44:28 p.m.
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+POST https://soninewmedia.com/admin - Ok @ 3/2/2026, 1:46:14 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+"*/10 * * * *" @ 3/2/2026, 1:50:03 p.m. - Exception Thrown
+X [ERROR]   Error: Handler does not export a scheduled() function
+
+
+GET https://www.soninewmedia.com/api/transmissions/latest - Ok @ 3/2/2026, 1:53:10 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [DEBUG_SONI] Transmissions beforeOperation: read
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
