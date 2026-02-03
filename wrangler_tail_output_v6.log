@@ -1,0 +1,188 @@
+
+ Ôøà´©Å wrangler 4.61.0 (update available 4.62.0)
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Successfully created tail, expires at 2026-02-04T02:23:06Z
+Connected to soni-cms, waiting for logs...
+GET https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 3:04:40 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://www.soninewmedia.com/api/users/me - Ok @ 3/2/2026, 3:04:44 p.m.
+GET https://www.soninewmedia.com/api/payload-preferences/undefined - Ok @ 3/2/2026, 3:05:13 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+POST https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 3:05:15 p.m.
+  (warn) Error: Failed to find Server Action "40923837b0b77f288485e240e2c1d72c95f9373c9e". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+POST https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 3:05:15 p.m.
+  (warn) Error: Failed to find Server Action "40923837b0b77f288485e240e2c1d72c95f9373c9e". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+POST https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 3:05:18 p.m.
+  (warn) Error: Failed to find Server Action "40923837b0b77f288485e240e2c1d72c95f9373c9e". This request might be from an older or newer deployment.
+Read more: https://nextjs.org/docs/messages/failed-to-find-server-action
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 3:05:20 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Type: multipart/form-data; boundary=----WebKitFormBoundaryHC1w7UcAJvlA7TL4, Length: 5548536
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] Payload returned status: 400
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 3:05:34 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Type: multipart/form-data; boundary=----WebKitFormBoundarylFPp0dcIbQblk8rr, Length: 5548536
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] Payload returned status: 400
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 3:06:12 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Type: multipart/form-data; boundary=----WebKitFormBoundaryupJd6jReiBvAKX9U, Length: 5548536
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] Payload returned status: 400
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 3:06:30 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Type: multipart/form-data; boundary=----WebKitFormBoundaryhyJgf8aHuw4wfxPI, Length: 5548536
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] Payload returned status: 400
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 3:06:45 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Type: multipart/form-data; boundary=----WebKitFormBoundaryIqlVAZnRPtCq5KwS, Length: 5548536
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] Payload returned status: 400
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 3:06:55 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Type: multipart/form-data; boundary=----WebKitFormBoundaryTDUoqXYpJSAhkMkR, Length: 5548536
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] Payload returned status: 400
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+

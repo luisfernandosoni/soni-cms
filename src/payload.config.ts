@@ -35,6 +35,7 @@ console.log('[DEBUG_SONI] payload.config.ts loading...')
 console.log(`[DEBUG_SONI] PAYLOAD_SECRET present: ${!!process.env.PAYLOAD_SECRET}`)
 
 export default buildConfig({
+  debug: true,
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'https://soninewmedia.com',
   csrf: [
     'https://soninewmedia.com',
