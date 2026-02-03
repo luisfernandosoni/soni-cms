@@ -13,7 +13,7 @@
   ],
   "vars": {
     "PAYLOAD_SECRET": "bf40702d84a7e949983995f32924194098492049819203980adfa",
-    "NEXT_PUBLIC_SERVER_URL": "https://soninewmedia.com",
+    "NEXT_PUBLIC_SERVER_URL": "https://www.soninewmedia.com",
     "DEBUG_ACCESS": "true",
   },
   "assets": {

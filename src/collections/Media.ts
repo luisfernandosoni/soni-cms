@@ -28,9 +28,7 @@ export const Media: CollectionConfig = {
     ],
     beforeChange: [
       ({ data, req }) => {
-        if (process.env.DEBUG_ACCESS === 'true') {
-          console.log(`[VC_ELITE_DEBUG] Media beforeChange: filename=${data?.filename}, hasFile=${!!req.file}`)
-        }
+        console.log(`[VC_ELITE_DEBUG] Media beforeChange: filename=${data?.filename}, hasFile=${!!req.file}`)
         return data
       },
     ],

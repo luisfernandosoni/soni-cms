@@ -174,3 +174,93 @@ X [ERROR]   Error: Failed to publish diagnostics channel message:
 X [ERROR]   Error: Handler does not export a scheduled() function
 
 
+POST https://soninewmedia.com/admin - Ok @ 3/2/2026, 4:00:03 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] isAdmin final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] isEditor final: false
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=false, user_id=none
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+"*/10 * * * *" @ 3/2/2026, 4:00:08 p.m. - Exception Thrown
+  (warn) Received a ScheduledEvent but we lack a handler for ScheduledEvents (a.k.a. Cron Triggers). Did you remember to export a scheduled() function?
+X [ERROR]   Error: Handler does not export a scheduled() function
+
+
+GET https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 4:03:56 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://www.soninewmedia.com/api/users/me - Ok @ 3/2/2026, 4:03:57 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://www.soninewmedia.com/api/transmissions/latest - Ok @ 3/2/2026, 4:04:15 p.m.
+  (log) [DEBUG_SONI] Transmissions beforeOperation: read
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 4:04:20 p.m.
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 4:04:22 p.m.

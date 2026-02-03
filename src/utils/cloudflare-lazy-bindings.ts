@@ -211,6 +211,9 @@ export function getLazyD1(bindingName: string = 'D1'): D1Database {
 export function getLazyR2(bindingName: string = 'R2'): R2Bucket {
   return new Proxy({} as R2Bucket, {
     get(_target, prop) {
+      if (typeof prop !== 'symbol' && prop !== 'then') {
+        console.log(`[VC_ELITE_DEBUG] LazyR2 Proxy GET: ${String(prop)}`)
+      }
       // Define core R2 methods that need to be proxied as async functions
       const r2Methods = ['get', 'put', 'head', 'delete', 'list', 'createMultipartUpload', 'resumeMultipartUpload'];
       
