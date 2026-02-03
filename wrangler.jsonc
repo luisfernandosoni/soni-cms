@@ -67,27 +67,9 @@
     "enabled": true,
   },
   // Routes for soninewmedia.com integration (Option A: Path-Based Routing)
-  // These routes serve /transmissions/*, /admin/*, and /api/* from this Worker
-  // while the main site (Vite SPA) handles all other paths
+  // API and Admin routes are served by this Worker.
+  // /transmissions/* is now served by the SPA (Soni-New-Media).
   "routes": [
-    // Transmissions Section
-    {
-      "pattern": "soninewmedia.com/transmissions",
-      "zone_name": "soninewmedia.com",
-    },
-    {
-      "pattern": "soninewmedia.com/transmissions/*",
-      "zone_name": "soninewmedia.com",
-    },
-    {
-      "pattern": "www.soninewmedia.com/transmissions",
-      "zone_name": "soninewmedia.com",
-    },
-    {
-      "pattern": "www.soninewmedia.com/transmissions/*",
-      "zone_name": "soninewmedia.com",
-    },
-
     // Admin Panel
     {
       "pattern": "soninewmedia.com/admin",
