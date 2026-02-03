@@ -1,0 +1,160 @@
+
+> soni-cms@1.0.0 deploy:app
+> npm run build:webpack && opennextjs-cloudflare build && opennextjs-cloudflare deploy
+
+
+> soni-cms@1.0.0 build:webpack
+> cross-env NODE_OPTIONS="--no-deprecation --max-old-space-size=8000" next build --webpack
+
+▲ Next.js 16.1.6 (webpack)
+- Environments: .env
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+Failed to compile.
+
+./node_modules/@payloadcms/ui/dist/assets/payload-favicon-dark.png
+Error: Could not load the "sharp" module using the linux-x64 runtime
+Possible solutions:
+- Ensure optional dependencies can be installed:
+    npm install --include=optional sharp
+- Ensure your package manager supports multi-platform installation:
+    See https://sharp.pixelplumbing.com/install#cross-platform
+- Add platform-specific dependencies:
+    npm install --os=linux --cpu=x64 sharp
+- Consult the installation documentation:
+    See https://sharp.pixelplumbing.com/install
+    at Object.<anonymous> (/mnt/e/Antigravity/soni-cms/node_modules/sharp/lib/sharp.js:120:9)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (/mnt/e/Antigravity/soni-cms/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+
+Import trace for requested module:
+./node_modules/@payloadcms/ui/dist/assets/payload-favicon-dark.png
+./node_modules/@payloadcms/ui/dist/assets/index.js
+./node_modules/@payloadcms/next/dist/utilities/meta.js
+./node_modules/@payloadcms/next/dist/views/Account/metadata.js
+./node_modules/@payloadcms/next/dist/views/Root/metadata.js
+./node_modules/@payloadcms/next/dist/exports/views.js
+./src/app/(payload)/admin/[[...segments]]/not-found.tsx
+
+./node_modules/@payloadcms/ui/dist/assets/payload-favicon-dark.png
+Error: Could not load the "sharp" module using the linux-x64 runtime
+Possible solutions:
+- Ensure optional dependencies can be installed:
+    npm install --include=optional sharp
+- Ensure your package manager supports multi-platform installation:
+    See https://sharp.pixelplumbing.com/install#cross-platform
+- Add platform-specific dependencies:
+    npm install --os=linux --cpu=x64 sharp
+- Consult the installation documentation:
+    See https://sharp.pixelplumbing.com/install
+    at Object.<anonymous> (/mnt/e/Antigravity/soni-cms/node_modules/sharp/lib/sharp.js:120:9)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (/mnt/e/Antigravity/soni-cms/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+
+Import trace for requested module:
+./node_modules/@payloadcms/ui/dist/assets/payload-favicon-dark.png
+
+./node_modules/@payloadcms/ui/dist/assets/payload-favicon-light.png
+Error: Could not load the "sharp" module using the linux-x64 runtime
+Possible solutions:
+- Ensure optional dependencies can be installed:
+    npm install --include=optional sharp
+- Ensure your package manager supports multi-platform installation:
+    See https://sharp.pixelplumbing.com/install#cross-platform
+- Add platform-specific dependencies:
+    npm install --os=linux --cpu=x64 sharp
+- Consult the installation documentation:
+    See https://sharp.pixelplumbing.com/install
+    at Object.<anonymous> (/mnt/e/Antigravity/soni-cms/node_modules/sharp/lib/sharp.js:120:9)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (/mnt/e/Antigravity/soni-cms/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+
+Import trace for requested module:
+./node_modules/@payloadcms/ui/dist/assets/payload-favicon-light.png
+./node_modules/@payloadcms/ui/dist/assets/index.js
+./node_modules/@payloadcms/next/dist/utilities/meta.js
+./node_modules/@payloadcms/next/dist/views/Account/metadata.js
+./node_modules/@payloadcms/next/dist/views/Root/metadata.js
+./node_modules/@payloadcms/next/dist/exports/views.js
+./src/app/(payload)/admin/[[...segments]]/not-found.tsx
+
+./node_modules/@payloadcms/ui/dist/assets/payload-favicon-light.png
+Error: Could not load the "sharp" module using the linux-x64 runtime
+Possible solutions:
+- Ensure optional dependencies can be installed:
+    npm install --include=optional sharp
+- Ensure your package manager supports multi-platform installation:
+    See https://sharp.pixelplumbing.com/install#cross-platform
+- Add platform-specific dependencies:
+    npm install --os=linux --cpu=x64 sharp
+- Consult the installation documentation:
+    See https://sharp.pixelplumbing.com/install
+    at Object.<anonymous> (/mnt/e/Antigravity/soni-cms/node_modules/sharp/lib/sharp.js:120:9)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (/mnt/e/Antigravity/soni-cms/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+
+Import trace for requested module:
+./node_modules/@payloadcms/ui/dist/assets/payload-favicon-light.png
+
+./node_modules/@payloadcms/ui/dist/assets/static-og-image.png
+Error: Could not load the "sharp" module using the linux-x64 runtime
+Possible solutions:
+- Ensure optional dependencies can be installed:
+    npm install --include=optional sharp
+- Ensure your package manager supports multi-platform installation:
+    See https://sharp.pixelplumbing.com/install#cross-platform
+- Add platform-specific dependencies:
+    npm install --os=linux --cpu=x64 sharp
+- Consult the installation documentation:
+    See https://sharp.pixelplumbing.com/install
+    at Object.<anonymous> (/mnt/e/Antigravity/soni-cms/node_modules/sharp/lib/sharp.js:120:9)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+    at mod.require (/mnt/e/Antigravity/soni-cms/node_modules/next/dist/server/require-hook.js:68:28)
+    at require (node:internal/modules/helpers:147:16)
+
+Import trace for requested module:
+./node_modules/@payloadcms/ui/dist/assets/static-og-image.png
+./node_modules/@payloadcms/ui/dist/assets/index.js
+./node_modules/@payloadcms/next/dist/utilities/meta.js
+./node_modules/@payloadcms/next/dist/views/Account/metadata.js
+./node_modules/@payloadcms/next/dist/views/Root/metadata.js
+./node_modules/@payloadcms/next/dist/exports/views.js
+./src/app/(payload)/admin/[[...segments]]/not-found.tsx
+
+
+> Build failed because of webpack errors

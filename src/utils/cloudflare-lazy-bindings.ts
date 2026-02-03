@@ -231,7 +231,8 @@ export function getLazyR2(bindingName: string = 'R2'): R2Bucket {
           
           console.log(`[LazyR2] R2 EXEC: ${String(prop)}`, {
             argsCount: args.length,
-          });
+            bucketName: bindingName,
+          })
           
           const result = await method.apply(bucket, args);
 

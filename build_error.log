@@ -1,0 +1,61 @@
+
+> soni-cms@1.0.0 build
+> cross-env NODE_OPTIONS="--no-deprecation --max-old-space-size=8000" next build --webpack
+
+▲ Next.js 16.1.6 (webpack)
+- Environments: .env
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 90s
+  Running TypeScript ...
+  Collecting page data using 23 workers ...
+⚠ Using edge runtime on a page currently disables static generation for that page
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[11:53:40] [33mWARN[39m: [36mImage resizing is enabled for one or more collections, but sharp not installed. Please install 'sharp' and pass into the config.[39m
+[DEBUG_SONI] Transmissions beforeOperation: read
+Using vars defined in .env
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mAI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.[0m
+
+
+  Generating static pages using 23 workers (0/4) ...
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+  Generating static pages using 23 workers (1/4) 
+  Generating static pages using 23 workers (2/4) 
+  Generating static pages using 23 workers (3/4) 
+✓ Generating static pages using 23 workers (4/4) in 7.5s
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ƒ /admin/[[...segments]]
+├ ƒ /api/[...slug]
+├ ƒ /api/debug-upload
+├ ƒ /api/graphql
+├ ƒ /api/graphql-playground
+├ ● /transmission/[slug]
+└ ƒ /transmissions
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

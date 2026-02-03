@@ -1,0 +1,193 @@
+
+> soni-cms@1.0.0 deploy:app
+> npm run build:webpack && opennextjs-cloudflare build && opennextjs-cloudflare deploy
+
+
+> soni-cms@1.0.0 build:webpack
+> cross-env NODE_OPTIONS="--no-deprecation --max-old-space-size=8000" next build --webpack
+
+▲ Next.js 16.1.6 (webpack)
+- Environments: .env
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+
+
+Retrying 1/3...
+✓ Compiled successfully in 108s
+  Running TypeScript ...
+  Collecting page data using 23 workers ...
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[12:22:36] [33mWARN[39m: [36mImage resizing is enabled for one or more collections, but sharp not installed. Please install 'sharp' and pass into the config.[39m
+[DEBUG_SONI] Transmissions beforeOperation: read
+Using vars defined in .env
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mAI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.[0m
+
+
+  Generating static pages using 23 workers (0/5) ...
+  Generating static pages using 23 workers (1/5) 
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+  Generating static pages using 23 workers (2/5) 
+  Generating static pages using 23 workers (3/5) 
+✓ Generating static pages using 23 workers (5/5) in 7.8s
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ƒ /admin/[[...segments]]
+├ ƒ /api/[...slug]
+├ ƒ /api/debug-upload
+├ ƒ /api/graphql
+├ ƒ /api/graphql-playground
+├ ● /transmission/[slug]
+└ ƒ /transmissions
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+┌─────────────────────────────┐
+│ OpenNext — Cloudflare build │
+└─────────────────────────────┘
+
+App directory: /mnt/e/Antigravity/soni-cms
+Next.js version : 16.1.6
+@opennextjs/cloudflare version: 1.16.1
+@opennextjs/aws version: 3.9.14
+
+┌─────────────────────────────────┐
+│ OpenNext — Building Next.js app │
+└─────────────────────────────────┘
+
+
+> soni-cms@1.0.0 build
+> cross-env NODE_OPTIONS="--no-deprecation --max-old-space-size=8000" next build --webpack
+
+▲ Next.js 16.1.6 (webpack)
+- Environments: .env
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Compiled successfully in 57s
+  Running TypeScript ...
+  Collecting page data using 23 workers ...
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[12:25:45] [33mWARN[39m: [36mImage resizing is enabled for one or more collections, but sharp not installed. Please install 'sharp' and pass into the config.[39m
+[DEBUG_SONI] Transmissions beforeOperation: read
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+Using vars defined in .env
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mAI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.[0m
+
+
+  Generating static pages using 23 workers (0/5) ...
+  Generating static pages using 23 workers (1/5) 
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+  Generating static pages using 23 workers (2/5) 
+  Generating static pages using 23 workers (3/5) 
+✓ Generating static pages using 23 workers (5/5) in 7.4s
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ƒ /admin/[[...segments]]
+├ ƒ /api/[...slug]
+├ ƒ /api/debug-upload
+├ ƒ /api/graphql
+├ ƒ /api/graphql-playground
+├ ● /transmission/[slug]
+└ ƒ /transmissions
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+┌──────────────────────────────┐
+│ OpenNext — Generating bundle │
+└──────────────────────────────┘
+
+Bundling middleware function...
+Bundling static assets...
+Bundling cache assets...
+Building server function: default...
+Applying code patches: 3.491s
+# copyPackageTemplateFiles
+[35m⚙️ Bundling the OpenNext server...
+[0m
+▲ [WARNING] The "typeof" operator will never evaluate to "null" [impossible-typeof]
+
+    .open-next/server-functions/default/.next/server/app/(payload)/admin/[[...segments]]/page.js:48:119822:
+      48 │ ...se"number":case"boolean":case"null":return String(C);case"objec...
+         ╵                                 ~~~~~~
+
+  The expression "typeof x" actually evaluates to "object" in JavaScript, not "null". You need to use "x === null" to test for null.
+
+[35mWorker saved in `.open-next/worker.js` 🚀
+[0m
+OpenNext build complete.
+
+┌──────────────────────────────┐
+│ OpenNext — Cloudflare deploy │
+└──────────────────────────────┘
+
+opennextjs-cloudflare deploy
+
+Deploy a built OpenNext app to Cloudflare Workers
+
+Options:
+      --help            Show help                                      [boolean]
+      --version         Show version number                            [boolean]
+  -c, --config          Path to Wrangler configuration file             [string]
+      --configPath      Path to Wrangler configuration file[deprecated] [string]
+  -e, --env             Wrangler environment to use for operations      [string]
+      --cacheChunkSize  Number of entries per chunk when populating the cache
+                                                                        [number]
+
+Error: Failed to start the remote proxy session, see the error details below:
+
+You must be logged in to use wrangler dev in remote mode. Try logging in, or run wrangler dev --local.
+    at /mnt/e/Antigravity/soni-cms/node_modules/wrangler/wrangler-dist/cli.js:293762:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async startRemoteProxySession (/mnt/e/Antigravity/soni-cms/node_modules/wrangler/wrangler-dist/cli.js:293733:18)
+    at async maybeStartOrUpdateRemoteProxySession (/mnt/e/Antigravity/soni-cms/node_modules/wrangler/wrangler-dist/cli.js:293877:32)
+    at async getPlatformProxy (/mnt/e/Antigravity/soni-cms/node_modules/wrangler/wrangler-dist/cli.js:297660:27)
+    at async getEnvFromPlatformProxy (file:///mnt/e/Antigravity/soni-cms/node_modules/@opennextjs/cloudflare/dist/cli/commands/helpers.js:36:19)
+    at async deployCommand (file:///mnt/e/Antigravity/soni-cms/node_modules/@opennextjs/cloudflare/dist/cli/commands/deploy.js:17:21)
