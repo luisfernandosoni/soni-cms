@@ -1,0 +1,176 @@
+
+ Ôøà´©Å wrangler 4.61.0 (update available 4.62.0)
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Successfully created tail, expires at 2026-02-04T03:34:03Z
+Connected to soni-cms, waiting for logs...
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 3:44:45 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Type: multipart/form-data; boundary=----WebKitFormBoundaryK2tCBKcXg6rU1Myq, Length: 153133
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] Payload returned status: 400
+  (log) [VC_ELITE_DEBUG] Error Body: {"errors":[{"message":"There was a problem while uploading the file."}],"stack":"g3: There was a problem while uploading the file.\n    at dO (worker.js:63848:49)\n    at async Q3 (worker.js:62558:43)\n    at async aW (worker.js:71525:178)\n    at async q3 (worker.js:101763:22)\n    at async worker.js:101793:18\n    at async y2 (worker.js:399568:24)\n    at async rW.do (worker.js:285731:29)\n    at async rW.handle (worker.js:285816:28)\n    at async k4 (worker.js:399625:30)\n    at async rW.hand
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 3:49:46 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null
+  (log) [VC_ELITE_DEBUG] Request: Type=multipart/form-data; boundary=----WebKitFormBoundaryfTbYbAimjG2wE3um, Len=153133, Origin=https://www.soninewmedia.com, Referer=https://www.soninewmedia.com/admin/collections/media/create
+  (log) [VC_ELITE_DEBUG] Manual File Check: name=02592a50-e6a7-47c1-8c7b-8622e67a05dd.jpg, size=152778, type=image/jpeg
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] Payload returned status: 400
+  (log) [VC_ELITE_DEBUG] Error Body: {"errors":[{"message":"There was a problem while uploading the file."}],"stack":"g3: There was a problem while uploading the file.\n    at dO (worker.js:63848:49)\n    at async Q3 (worker.js:62558:43)\n    at async aW (worker.js:71525:178)\n    at async q3 (worker.js:101763:22)\n    at async worker.js:101793:18\n    at async y2 (worker.js:401023:24)\n    at async rW.do (worker.js:285731:29)\n    at async rW.handle (worker.js:285816:28)\n    at async k4 (worker.js:401080:30)\n    at async rW.hand
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 3:49:53 p.m.
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+GET https://www.soninewmedia.com/api/users/me - Ok @ 3/2/2026, 3:49:55 p.m.
+GET https://www.soninewmedia.com/api/payload-preferences/undefined - Ok @ 3/2/2026, 3:49:57 p.m.
+POST https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 3:49:58 p.m.
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+POST https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 3:50:00 p.m.
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 3:50:01 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null
+  (log) [VC_ELITE_DEBUG] Request: Type=multipart/form-data; boundary=----WebKitFormBoundarymYGcZIs70jJA5cSE, Len=153157, Origin=https://www.soninewmedia.com, Referer=https://www.soninewmedia.com/admin/collections/media/create
+  (log) [VC_ELITE_DEBUG] Manual File Check: name=02592a50-e6a7-47c1-8c7b-8622e67a05dd.jpg, size=152778, type=image/jpeg
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] Payload returned status: 400
+  (log) [VC_ELITE_DEBUG] Error Body: {"errors":[{"message":"There was a problem while uploading the file."}],"stack":"g3: There was a problem while uploading the file.\n    at dO (worker.js:63848:49)\n    at async Q3 (worker.js:62558:43)\n    at async aW (worker.js:71525:178)\n    at async q3 (worker.js:101763:22)\n    at async worker.js:101793:18\n    at async y2 (worker.js:401023:24)\n    at async rW.do (worker.js:285731:29)\n    at async rW.handle (worker.js:285816:28)\n    at async k4 (worker.js:401080:30)\n    at async rW.hand
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+"*/10 * * * *" @ 3/2/2026, 3:50:08 p.m. - Exception Thrown
+  (warn) Received a ScheduledEvent but we lack a handler for ScheduledEvents (a.k.a. Cron Triggers). Did you remember to export a scheduled() function?
+X [ERROR]   Error: Handler does not export a scheduled() function
+
+

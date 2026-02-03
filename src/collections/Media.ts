@@ -13,6 +13,13 @@ export const Media: CollectionConfig = {
     delete: isEditor,
   },
   hooks: {
+    beforeOperation: [
+      ({ operation, req }) => {
+        if (operation === 'create') {
+           console.log(`[VC_ELITE_DEBUG] Media beforeOperation: create`)
+        }
+      }
+    ],
     beforeValidate: [
       ({ data, req }) => {
         console.log(`[VC_ELITE_DEBUG] Media beforeValidate: hasData=${!!data}, hasFile=${!!(req as any).file}`)
