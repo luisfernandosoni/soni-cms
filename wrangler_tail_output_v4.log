@@ -417,3 +417,215 @@ X [ERROR]   Error: Failed to publish diagnostics channel message:
 X [ERROR]   Error: Handler does not export a scheduled() function
 
 
+"*/10 * * * *" @ 3/2/2026, 2:50:03 p.m. - Exception Thrown
+  (warn) Received a ScheduledEvent but we lack a handler for ScheduledEvents (a.k.a. Cron Triggers). Did you remember to export a scheduled() function?
+X [ERROR]   Error: Handler does not export a scheduled() function
+
+
+"*/10 * * * *" @ 3/2/2026, 2:50:08 p.m. - Exception Thrown
+  (warn) Received a ScheduledEvent but we lack a handler for ScheduledEvents (a.k.a. Cron Triggers). Did you remember to export a scheduled() function?
+X [ERROR]   Error: Handler does not export a scheduled() function
+
+
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 2:53:57 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Type: multipart/form-data; boundary=----WebKitFormBoundaryaFBMgi510Iwh6grP, Length: 5548532
+  (log) [VC_ELITE_DEBUG] Manual formData parse success: files=1
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] REST_POST 400 ERROR BODY: {"errors":[{"message":"There was a problem while uploading the file."}]}
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+GET https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 2:54:09 p.m.
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+GET https://www.soninewmedia.com/api/users/me - Ok @ 3/2/2026, 2:54:11 p.m.
+GET https://www.soninewmedia.com/api/payload-preferences/undefined - Ok @ 3/2/2026, 2:54:15 p.m.
+POST https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 2:54:15 p.m.
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+POST https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 2:54:16 p.m.
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+POST https://www.soninewmedia.com/admin/collections/media/create - Ok @ 3/2/2026, 2:54:18 p.m.
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+  (log) [VC_ELITE_DEBUG] isAdmin final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] hasRole check: role=admin, has=true, user_id=1
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 2:54:19 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Type: multipart/form-data; boundary=----WebKitFormBoundarynv17MWv5xIwAQZQ6, Length: 2386119
+  (log) [VC_ELITE_DEBUG] Manual formData parse success: files=1
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] REST_POST 400 ERROR BODY: {"errors":[{"message":"There was a problem while uploading the file."}]}
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 2:54:46 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Type: multipart/form-data; boundary=----WebKitFormBoundary3TEDM21zbizLG8hn, Length: 2386119
+  (log) [VC_ELITE_DEBUG] Manual formData parse success: files=1
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] REST_POST 400 ERROR BODY: {"errors":[{"message":"There was a problem while uploading the file."}]}
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+POST https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Ok @ 3/2/2026, 2:56:06 p.m.
+  (log) [VC_ELITE_DEBUG] Middleware bypass for /api/media POST
+  (log) [DEBUG_SONI] payload.config.ts loading...
+  (log) [DEBUG_SONI] PAYLOAD_SECRET present: true
+  (log) [VC_ELITE_DEBUG] Payload API POST: https://www.soninewmedia.com/api/media?depth=0&fallback-locale=null - Type: multipart/form-data; boundary=----WebKitFormBoundary7Tc3t83w9UTTSHdq, Length: 2386119
+  (log) [VC_ELITE_DEBUG] Manual formData parse success: files=1
+  (log) [VC_ELITE_DEBUG] isEditor final: true
+  (log) [VC_ELITE_DEBUG] REST_POST 400 ERROR BODY: {"errors":[{"message":"There was a problem while uploading the file."}]}
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
+X [ERROR]   Error: Failed to publish diagnostics channel message: 
+
+
