@@ -32,9 +32,9 @@ async function getCloudflareContextFromWrangler(): Promise<CloudflareContext> {
   // Dynamic import to avoid bundling Wrangler in the Edge worker
   const wranglerModule = await import(/* webpackIgnore: true */ 'wrangler')
 
-  return wranglerModule.getPlatformProxy({
+  return (await wranglerModule.getPlatformProxy({
     environment: process.env.CLOUDFLARE_ENV,
-    remoteBindings: isProduction && !isBuild, // Only use remote bindings if specifically needed
-    persist: true, // Persist local D1 state
-  } satisfies GetPlatformProxyOptions)
+    remoteBindings: isProduction && !isBuild, 
+    persist: true, 
+  } satisfies GetPlatformProxyOptions)) as unknown as CloudflareContext
 }

@@ -104,7 +104,7 @@ export const Transmissions: CollectionConfig = {
       admin: {
         position: 'sidebar',
         readOnly: true,
-        condition: (data, siblingData, { user }) => user?.roles?.includes('admin'),
+        condition: (data, siblingData, { user }) => !!user?.roles?.includes('admin'),
       },
       access: {
         update: () => false, // Cannot change owner after creation

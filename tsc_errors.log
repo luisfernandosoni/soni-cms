@@ -1,0 +1,8 @@
+src/collections/Transmissions.ts(107,9): error TS2322: Type '(data: Partial<any>, siblingData: Partial<any>, { user }: { blockData: Partial<any>; operation: Operation; path: (string | number)[]; user: (User & { ...; }) | null; }) => boolean | undefined' is not assignable to type 'Condition<any, any>'.
+  Type 'boolean | undefined' is not assignable to type 'boolean'.
+    Type 'undefined' is not assignable to type 'boolean'.
+src/payload.config.ts(39,3): error TS2322: Type 'null' is not assignable to type 'SharpDependency | undefined'.
+src/utils/cloudflare-context.ts(35,3): error TS2322: Type 'PlatformProxy<CloudflareEnv, Record<string, unknown>>' is not assignable to type 'CloudflareContext'.
+  Types of property 'cf' are incompatible.
+    Type 'Record<string, unknown>' is not assignable to type 'IncomingRequestCfProperties<unknown>'.
+      Type 'Record<string, unknown>' is missing the following properties from type 'IncomingRequestCfPropertiesBase': colo, edgeRequestKeepAliveStatus, httpProtocol, requestPriority, and 2 more.

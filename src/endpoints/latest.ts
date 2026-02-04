@@ -44,10 +44,22 @@ export const latestTransmissionsEndpoint: PayloadHandler = async (req) => {
       { headers }
     )
   } catch (error) {
-    payload.logger.error(`Error fetching latest transmissions: ${String(error)}`)
+    // Log more details for debugging
+    console.error('[API_LATEST] Error fetching latest transmissions:', error)
+    
     return Response.json(
-      { success: false, error: 'Failed to fetch transmissions' },
-      { status: 500 }
+      { 
+        success: false, 
+        error: error instanceof Error ? error.message : 'Unknown error',
+        code: 'TRANSMISSIONS_FETCH_FAILED'
+      },
+      { 
+        status: 500,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
+        }
+      }
     )
   }
 }
