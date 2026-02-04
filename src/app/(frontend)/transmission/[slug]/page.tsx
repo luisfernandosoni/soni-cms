@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.soninewmedia.com'
 
   const { docs } = await payload.find({
     collection: 'transmissions',
@@ -36,16 +37,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const heroImage = transmission.heroImage as Media | undefined
+  const fullUrl = `${baseUrl}/transmission/${slug}`
 
   return {
     title: transmission.title,
     description: transmission.excerpt,
+    alternates: {
+      canonical: fullUrl,
+    },
     openGraph: {
       title: transmission.title,
       description: transmission.excerpt || undefined,
+      url: fullUrl,
       type: 'article',
       publishedTime: transmission.publishedAt || undefined,
-      images: heroImage?.url ? [{ url: heroImage.url }] : undefined,
+      modifiedTime: transmission.updatedAt || undefined,
+      images: heroImage?.url ? [{ url: heroImage.url, alt: transmission.title }] : undefined,
     },
     twitter: {
       card: 'summary_large_image',
@@ -107,9 +114,53 @@ export default async function TransmissionPage({ params }: Props) {
   const heroImage = transmission.heroImage as Media | undefined
   const author = transmission.author as Author | undefined
   const category = transmission.category as Category | undefined
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.soninewmedia.com'
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: transmission.title,
+    image: heroImage?.url ? [heroImage.url] : [],
+    datePublished: transmission.publishedAt,
+    dateModified: transmission.updatedAt,
+    author: [
+      {
+        '@type': 'Person',
+        name: author?.name || 'Soni Editorial',
+        url: baseUrl,
+      },
+    ],
+  }
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Transmissions',
+        item: baseUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: transmission.title,
+        item: `${baseUrl}/transmission/${slug}`,
+      },
+    ],
+  }
 
   return (
     <article className="transmission-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Hero Header */}
       <header className="transmission-hero">
         <div className="transmission-hero__backdrop">

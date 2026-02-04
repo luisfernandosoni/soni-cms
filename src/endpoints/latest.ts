@@ -44,13 +44,17 @@ export const latestTransmissionsEndpoint: PayloadHandler = async (req) => {
       { headers }
     )
   } catch (error) {
-    // Log more details for debugging
-    console.error('[API_LATEST] Error fetching latest transmissions:', error)
+    // Log more details for debugging with structured context
+    console.error(`[OBSERVABILITY] Failed to fetch latest transmissions. Reason: ${error instanceof Error ? error.message : 'Unknown'}`, {
+      timestamp: new Date().toISOString(),
+      collection: 'transmissions',
+      action: 'fetch_latest',
+    })
     
     return Response.json(
       { 
         success: false, 
-        error: error instanceof Error ? error.message : 'Unknown error',
+        error: 'System encountered a transmission error. Our engineers have been notified.',
         code: 'TRANSMISSIONS_FETCH_FAILED'
       },
       { 
