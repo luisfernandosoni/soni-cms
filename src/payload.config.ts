@@ -86,9 +86,8 @@ export default buildConfig({
   ],
   editor: lexicalEditor(),
   // SECRET NOTE: Accessing PAYLOAD_SECRET via process.env is safer at init time.
-  // Although in some contexts it might be missing, OpenNext usually populates it from vars.
-  // Using 'ERROR_NO_SECRET' default will allow build to pass but fail at runtime if secret is genuinely missing.
-  secret: process.env.PAYLOAD_SECRET || 'ERROR_NO_SECRET',
+  // We check for both uppercase (standard) and lowercase (user provided) variants.
+  secret: process.env.PAYLOAD_SECRET || process.env.payload_secret || 'ERROR_NO_SECRET',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
