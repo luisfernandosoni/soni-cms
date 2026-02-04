@@ -1,0 +1,5 @@
+- [x] Initial Phase 8 Configuration <!-- id: 100 -->
+- [x] Refactor Scalar Route Handler (url top-level, purple theme) <!-- id: 101 -->
+- [x] Run Local Build Verification (rm -rf .next first) <!-- id: 102 -->
+- [x] Update lessons.md with correct Scalar patterns <!-- id: 103 -->
+- [x] Notify user of successful fix <!-- id: 104 -->
