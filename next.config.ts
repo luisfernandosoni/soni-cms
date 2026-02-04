@@ -12,6 +12,8 @@ const nextConfig = {
     'graphql',
     '@resvg/resvg-wasm',
     '@resvg/resvg-js',
+    '@vercel/og',  // Exclude OG image generation to avoid WASM bundling issues
+    'next/og',     // Exclude Next.js OG wrapper as well
   ],
 
   // Your Next.js config here

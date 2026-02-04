@@ -1,0 +1,128 @@
+
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé OpenNext ÔÇö Cloudflare build Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÿ
+
+WARN OpenNext is not fully compatible with Windows.
+WARN For optimal performance, it is recommended to use Windows Subsystem for Linux (WSL).
+WARN While OpenNext may function on Windows, it could encounter unpredictable failures during runtime.
+App directory: E:\Antigravity\soni-cms
+Next.js version : 16.1.6
+@opennextjs/cloudflare version: 1.16.1
+@opennextjs/aws version: 3.9.14
+
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé OpenNext ÔÇö Building Next.js app Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÿ
+
+
+> soni-cms@1.0.0 build
+> cross-env NODE_OPTIONS="--no-deprecation --max-old-space-size=8000" next build --webpack
+
+Ôû▓ Next.js 16.1.6 (webpack)
+- Environments: .env
+
+ÔÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 7.1s
+  Running TypeScript ...
+  Collecting page data using 23 workers ...
+ÔÜá Using edge runtime on a page currently disables static generation for that page
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+[21:08:56] [33mWARN[39m: [36mImage resizing is enabled for one or more collections, but sharp not installed. Please install 'sharp' and pass into the config.[39m
+[DEBUG_SONI] Transmissions beforeOperation: read
+Using vars defined in .env
+Ôû▓ [WARNING] AI bindings always access remote resources, and so may incur usage charges even in local dev. To suppress this warning, set `remote: true` for the binding definition in your configuration file.
+
+
+  Generating static pages using 23 workers (0/5) ...
+[DEBUG_SONI] payload.config.ts loading...
+[DEBUG_SONI] PAYLOAD_SECRET present: true
+  Generating static pages using 23 workers (1/5) 
+  Generating static pages using 23 workers (2/5) 
+  Generating static pages using 23 workers (3/5) 
+Ô£ô Generating static pages using 23 workers (5/5) in 811.3ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+Ôöî ãÆ /
+Ôö£ Ôùï /_not-found
+Ôö£ ãÆ /admin/[[...segments]]
+Ôö£ ãÆ /api/[...slug]
+Ôö£ ãÆ /api/debug-env
+Ôö£ ãÆ /api/debug-upload
+Ôö£ ãÆ /api/graphql
+Ôö£ ãÆ /api/graphql-playground
+Ôö£ ÔùÅ /transmission/[slug]
+Ôöö ãÆ /transmissions
+
+
+ãÆ Proxy (Middleware)
+
+Ôùï  (Static)   prerendered as static content
+ÔùÅ  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ãÆ  (Dynamic)  server-rendered on demand
+
+
+ÔöîÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÉ
+Ôöé OpenNext ÔÇö Generating bundle Ôöé
+ÔööÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÿ
+
+Bundling middleware function...
+Bundling static assets...
+Bundling cache assets...
+Building server function: default...
+opennextjs-cloudflare build
+
+Build an OpenNext Cloudflare worker
+
+Options:
+      --help                                Show help                  [boolean]
+      --version                             Show version number        [boolean]
+  -c, --config                              Path to Wrangler configuration file
+                                                                        [string]
+      --configPath                          Path to Wrangler configuration file
+                                                           [deprecated] [string]
+  -e, --env                                 Wrangler environment to use for
+                                            operations                  [string]
+  -s, --skipNextBuild, --skipBuild          Skip building the Next.js app
+                                                      [boolean] [default: false]
+      --noMinify                            Disable worker minification
+                                                      [boolean] [default: false]
+      --skipWranglerConfigCheck             Skip checking for a Wrangler config
+                                                      [boolean] [default: false]
+      --openNextConfigPath                  Path to the OpenNext configuration
+                                            file                        [string]
+      --dangerouslyUseUnsupportedNextVersi  Allow using unsupported Next.js
+      on                                    versions  [boolean] [default: false]
+
+Error: 
+--------------------------------------------------------------------------------
+app/api\debug-env\route cannot use the edge runtime.
+OpenNext requires edge runtime function to be defined in a separate function.
+See the docs for more information on how to bundle edge runtime functions.
+--------------------------------------------------------------------------------
+        
+    at computeCopyFilesForPage (file:///E:/Antigravity/soni-cms/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js:108:23)
+    at file:///E:/Antigravity/soni-cms/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js:173:9
+    at Array.forEach (<anonymous>)
+    at copyTracedFiles (file:///E:/Antigravity/soni-cms/node_modules/@opennextjs/aws/dist/build/copyTracedFiles.js:172:12)
+    at generateBundle (file:///E:/Antigravity/soni-cms/node_modules/@opennextjs/cloudflare/dist/cli/build/open-next/createServerBundle.js:121:60)
+    at createServerBundle (file:///E:/Antigravity/soni-cms/node_modules/@opennextjs/cloudflare/dist/cli/build/open-next/createServerBundle.js:75:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async build (file:///E:/Antigravity/soni-cms/node_modules/@opennextjs/cloudflare/dist/cli/build/build.js:73:5)
+    at async buildCommand (file:///E:/Antigravity/soni-cms/node_modules/@opennextjs/cloudflare/dist/cli/commands/build.js:21:5)

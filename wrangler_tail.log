@@ -1,0 +1,622 @@
+{
+    "wallTime": 0,
+    "cpuTime": 0,
+    "truncated": false,
+    "executionModel": "stateless",
+    "outcome": "exception",
+    "scriptVersion": {
+        "id": "153e3ad0-4b79-4047-8ab9-cfc732e65aa8"
+    },
+    "scriptName": "soni-cms",
+    "diagnosticsChannelEvents": [],
+    "exceptions": [
+        {
+            "name": "Error",
+            "message": "Handler does not export a scheduled() function",
+            "timestamp": 1770171009610
+        }
+    ],
+    "logs": [
+        {
+            "message": [
+                "Received a ScheduledEvent but we lack a handler for ScheduledEvents (a.k.a. Cron Triggers). Did you remember to export a scheduled() function?"
+            ],
+            "level": "warn",
+            "timestamp": 1770171009610
+        }
+    ],
+    "eventTimestamp": 1770171008551,
+    "event": {
+        "cron": "*/10 * * * *",
+        "scheduledTime": 1770171008000
+    }
+}
+{
+    "wallTime": 17,
+    "cpuTime": 16,
+    "truncated": false,
+    "executionModel": "stateless",
+    "outcome": "ok",
+    "scriptVersion": {
+        "id": "153e3ad0-4b79-4047-8ab9-cfc732e65aa8"
+    },
+    "scriptName": "soni-cms",
+    "diagnosticsChannelEvents": [],
+    "exceptions": [],
+    "logs": [
+        {
+            "message": [
+                "ReferenceError: MessagePort is not defined"
+            ],
+            "level": "error",
+            "timestamp": 1770171082397
+        },
+        {
+            "message": [
+                "Ô¿»",
+                "ReferenceError: MessagePort is not defined"
+            ],
+            "level": "error",
+            "timestamp": 1770171082397
+        }
+    ],
+    "eventTimestamp": 1770171082396,
+    "event": {
+        "request": {
+            "url": "https://www.soninewmedia.com/admin",
+            "method": "GET",
+            "headers": {
+                "accept": "*/*",
+                "accept-encoding": "gzip, br",
+                "cf-connecting-ip": "201.153.235.40",
+                "cf-ipcountry": "MX",
+                "cf-ray": "9c86a310ec3b8d29",
+                "cf-visitor": "{\"scheme\":\"https\"}",
+                "connection": "Keep-Alive",
+                "host": "www.soninewmedia.com",
+                "user-agent": "curl/8.16.0",
+                "x-forwarded-proto": "https",
+                "x-real-ip": "201.153.235.40"
+            },
+            "cf": {
+                "httpProtocol": "HTTP/1.1",
+                "requestPriority": "",
+                "edgeRequestKeepAliveStatus": 1,
+                "requestHeaderNames": {},
+                "clientTcpRtt": 63,
+                "colo": "DFW",
+                "asn": 8151,
+                "asOrganization": "Gesti├│n de direccionamiento UniNet",
+                "country": "MX",
+                "isEUCountry": false,
+                "city": "Xalapa de Enr├¡quez",
+                "continent": "NA",
+                "region": "Veracruz",
+                "regionCode": "VER",
+                "timezone": "America/Mexico_City",
+                "longitude": "-96.91589",
+                "latitude": "19.53124",
+                "postalCode": "91000",
+                "tlsVersion": "TLSv1.3",
+                "tlsCipher": "AEAD-AES256-GCM-SHA384",
+                "tlsClientRandom": "RXgEdhZc6QTMPvy10VukAS8RoqZSFtHBcgWgiKfbH4s=",
+                "tlsClientCiphersSha1": "kTkJ+HAwBvIuoPFncb1wEDLcgfg=",
+                "tlsClientExtensionsSha1": "p2XN7z/lcnmBD9Q+f8xSyG4x4VA=",
+                "tlsClientExtensionsSha1Le": "ydwLHTahJx17MvHnnvv2lsdgs/g=",
+                "tlsExportedAuthenticator": {
+                    "clientHandshake": "64921931e70163481a14539240595cb9f9cec8f6ba4a444067f7e9801a5a87f16b209638dc91d51e0f9be1f79fbb5313",
+                    "serverHandshake": "2b69727aee4273f1915d7eba3428e5c20faa62d1274b3c69e8ec0ab841f22b7700aa541ee9ca045746f91ea5579d25c4",
+                    "clientFinished": "43da6f2b6e35854304fa64a935cdd194750b7d82eff1fa5ab19cad0a5f73d6ca05952466eb7f25bf8494766ccb7ad1ec",
+                    "serverFinished": "222c8f5ee7ffff54d872904224df648cba37d2432558e96644bbc60bca4eb393e28432582a4114c6b4e1cb44dbef7640"
+                },
+                "tlsClientHelloLength": "458",
+                "tlsClientAuth": {
+                    "certPresented": "0",
+                    "certVerified": "NONE",
+                    "certRevoked": "0",
+                    "certIssuerDN": "",
+                    "certSubjectDN": "",
+                    "certIssuerDNRFC2253": "",
+                    "certSubjectDNRFC2253": "",
+                    "certIssuerDNLegacy": "",
+                    "certSubjectDNLegacy": "",
+                    "certSerial": "",
+                    "certIssuerSerial": "",
+                    "certSKI": "",
+                    "certIssuerSKI": "",
+                    "certFingerprintSHA1": "",
+                    "certFingerprintSHA256": "",
+                    "certNotBefore": "",
+                    "certNotAfter": ""
+                },
+                "verifiedBotCategory": ""
+            }
+        },
+        "response": {
+            "status": 500
+        }
+    }
+}
+{
+    "wallTime": 643,
+    "cpuTime": 642,
+    "truncated": false,
+    "executionModel": "stateless",
+    "outcome": "ok",
+    "scriptVersion": {
+        "id": "153e3ad0-4b79-4047-8ab9-cfc732e65aa8"
+    },
+    "scriptName": "soni-cms",
+    "diagnosticsChannelEvents": [],
+    "exceptions": [],
+    "logs": [
+        {
+            "message": [
+                "ReferenceError: MessagePort is not defined"
+            ],
+            "level": "error",
+            "timestamp": 1770171518617
+        },
+        {
+            "message": [
+                "Ô¿»",
+                "ReferenceError: MessagePort is not defined"
+            ],
+            "level": "error",
+            "timestamp": 1770171518617
+        }
+    ],
+    "eventTimestamp": 1770171517396,
+    "event": {
+        "request": {
+            "url": "https://www.soninewmedia.com/admin",
+            "method": "GET",
+            "headers": {
+                "accept": "*/*",
+                "accept-encoding": "gzip, br",
+                "cf-connecting-ip": "201.153.235.40",
+                "cf-ipcountry": "MX",
+                "cf-ray": "9c86adaf9b196b65",
+                "cf-visitor": "{\"scheme\":\"https\"}",
+                "connection": "Keep-Alive",
+                "host": "www.soninewmedia.com",
+                "user-agent": "curl/8.16.0",
+                "x-forwarded-proto": "https",
+                "x-real-ip": "201.153.235.40"
+            },
+            "cf": {
+                "httpProtocol": "HTTP/1.1",
+                "requestPriority": "",
+                "edgeRequestKeepAliveStatus": 1,
+                "requestHeaderNames": {},
+                "clientTcpRtt": 63,
+                "colo": "DFW",
+                "asn": 8151,
+                "asOrganization": "Gesti├│n de direccionamiento UniNet",
+                "country": "MX",
+                "isEUCountry": false,
+                "city": "Xalapa de Enr├¡quez",
+                "continent": "NA",
+                "region": "Veracruz",
+                "regionCode": "VER",
+                "timezone": "America/Mexico_City",
+                "longitude": "-96.91589",
+                "latitude": "19.53124",
+                "postalCode": "91000",
+                "tlsVersion": "TLSv1.3",
+                "tlsCipher": "AEAD-AES256-GCM-SHA384",
+                "tlsClientRandom": "/3nWPGQn8l7TRY6Gr5Vaxm1GDJVq/E7+0Kf/3fFSWGs=",
+                "tlsClientCiphersSha1": "kTkJ+HAwBvIuoPFncb1wEDLcgfg=",
+                "tlsClientExtensionsSha1": "p2XN7z/lcnmBD9Q+f8xSyG4x4VA=",
+                "tlsClientExtensionsSha1Le": "ydwLHTahJx17MvHnnvv2lsdgs/g=",
+                "tlsExportedAuthenticator": {
+                    "clientHandshake": "a0f645aa37d22af607b6666380f0d7d48e814c3e8f4be5aaf977fb7e2f28cc804839a0b38efa4922ae2c120aab0beaa6",
+                    "serverHandshake": "7869fff2120c24db5eb78939b8a33aadc6123d39b9549b5200a7f84b38faf11a48747ed999c3c95b635ee5ecd92af1dc",
+                    "clientFinished": "dda65e300ce2d9ff6d5d4afacb806efc8cc4e9eb1405525b8af22572ae27a9c4234dc06c16eaa51dda8c96eabadd92fd",
+                    "serverFinished": "2ef4e871b4152285c3ed3d8d8e3c63c9ddc0d43b4c1744ee23137add8ac055305938a96ec55f3c3ac405f2b61b9f04ee"
+                },
+                "tlsClientHelloLength": "458",
+                "tlsClientAuth": {
+                    "certPresented": "0",
+                    "certVerified": "NONE",
+                    "certRevoked": "0",
+                    "certIssuerDN": "",
+                    "certSubjectDN": "",
+                    "certIssuerDNRFC2253": "",
+                    "certSubjectDNRFC2253": "",
+                    "certIssuerDNLegacy": "",
+                    "certSubjectDNLegacy": "",
+                    "certSerial": "",
+                    "certIssuerSerial": "",
+                    "certSKI": "",
+                    "certIssuerSKI": "",
+                    "certFingerprintSHA1": "",
+                    "certFingerprintSHA256": "",
+                    "certNotBefore": "",
+                    "certNotAfter": ""
+                },
+                "verifiedBotCategory": ""
+            }
+        },
+        "response": {
+            "status": 500
+        }
+    }
+}
+{
+    "wallTime": 0,
+    "cpuTime": 0,
+    "truncated": false,
+    "executionModel": "stateless",
+    "outcome": "exception",
+    "scriptVersion": {
+        "id": "153e3ad0-4b79-4047-8ab9-cfc732e65aa8"
+    },
+    "scriptName": "soni-cms",
+    "diagnosticsChannelEvents": [],
+    "exceptions": [
+        {
+            "name": "Error",
+            "message": "Handler does not export a scheduled() function",
+            "timestamp": 1770171608948
+        }
+    ],
+    "logs": [],
+    "eventTimestamp": 1770171608948,
+    "event": {
+        "cron": "*/10 * * * *",
+        "scheduledTime": 1770171608000
+    }
+}
+{
+    "wallTime": 435,
+    "cpuTime": 435,
+    "truncated": false,
+    "executionModel": "stateless",
+    "outcome": "ok",
+    "scriptVersion": {
+        "id": "ef2d73b1-2887-42ee-8721-23510c8e6fe7"
+    },
+    "scriptName": "soni-cms",
+    "diagnosticsChannelEvents": [],
+    "exceptions": [],
+    "logs": [
+        {
+            "message": [
+                "ReferenceError: MessagePort is not defined"
+            ],
+            "level": "error",
+            "timestamp": 1770171700164
+        },
+        {
+            "message": [
+                "Ô¿»",
+                "ReferenceError: MessagePort is not defined"
+            ],
+            "level": "error",
+            "timestamp": 1770171700164
+        }
+    ],
+    "eventTimestamp": 1770171699316,
+    "event": {
+        "request": {
+            "url": "https://www.soninewmedia.com/admin",
+            "method": "GET",
+            "headers": {
+                "accept": "*/*",
+                "accept-encoding": "gzip, br",
+                "cf-connecting-ip": "201.153.235.40",
+                "cf-ipcountry": "MX",
+                "cf-ray": "9c86b220ac0df082",
+                "cf-visitor": "{\"scheme\":\"https\"}",
+                "connection": "Keep-Alive",
+                "host": "www.soninewmedia.com",
+                "user-agent": "curl/8.16.0",
+                "x-forwarded-proto": "https",
+                "x-real-ip": "201.153.235.40"
+            },
+            "cf": {
+                "httpProtocol": "HTTP/1.1",
+                "requestPriority": "",
+                "edgeRequestKeepAliveStatus": 1,
+                "requestHeaderNames": {},
+                "clientTcpRtt": 63,
+                "colo": "DFW",
+                "asn": 8151,
+                "asOrganization": "Gesti├│n de direccionamiento UniNet",
+                "country": "MX",
+                "isEUCountry": false,
+                "city": "Xalapa de Enr├¡quez",
+                "continent": "NA",
+                "region": "Veracruz",
+                "regionCode": "VER",
+                "timezone": "America/Mexico_City",
+                "longitude": "-96.91589",
+                "latitude": "19.53124",
+                "postalCode": "91000",
+                "tlsVersion": "TLSv1.3",
+                "tlsCipher": "AEAD-AES256-GCM-SHA384",
+                "tlsClientRandom": "2lwOaIYT7508EBueOL3I7jUZaJmJeZp8d7yBAEAWdnQ=",
+                "tlsClientCiphersSha1": "kTkJ+HAwBvIuoPFncb1wEDLcgfg=",
+                "tlsClientExtensionsSha1": "p2XN7z/lcnmBD9Q+f8xSyG4x4VA=",
+                "tlsClientExtensionsSha1Le": "ydwLHTahJx17MvHnnvv2lsdgs/g=",
+                "tlsExportedAuthenticator": {
+                    "clientHandshake": "f648b685f42670955b0610c6b1da8f3857a8780e084f199736f949514dbb35bd3ec8e30c99770e4155f5f48c4f6fb82e",
+                    "serverHandshake": "6988a353d3a777764d2cdf79f677be4c8bcda34de6c9476d2ac823c04eb793d6fb35d6cb27c27734236ed5362fad0971",
+                    "clientFinished": "46d9beedb165812bcea5dd0f444af97550ac796ccdec327a5b8fe2038a1c33785b13ca44fbffa94812beae2ee0367e33",
+                    "serverFinished": "68b505296273bf7437ddf61673acb37f632552fbb5b8efafee8f7ed9c75ee511a9523fe72d1f1de158a938ea69862b7d"
+                },
+                "tlsClientHelloLength": "458",
+                "tlsClientAuth": {
+                    "certPresented": "0",
+                    "certVerified": "NONE",
+                    "certRevoked": "0",
+                    "certIssuerDN": "",
+                    "certSubjectDN": "",
+                    "certIssuerDNRFC2253": "",
+                    "certSubjectDNRFC2253": "",
+                    "certIssuerDNLegacy": "",
+                    "certSubjectDNLegacy": "",
+                    "certSerial": "",
+                    "certIssuerSerial": "",
+                    "certSKI": "",
+                    "certIssuerSKI": "",
+                    "certFingerprintSHA1": "",
+                    "certFingerprintSHA256": "",
+                    "certNotBefore": "",
+                    "certNotAfter": ""
+                },
+                "verifiedBotCategory": ""
+            }
+        },
+        "response": {
+            "status": 500
+        }
+    }
+}
+{
+    "wallTime": 346,
+    "cpuTime": 345,
+    "truncated": false,
+    "executionModel": "stateless",
+    "outcome": "ok",
+    "scriptVersion": {
+        "id": "ef2d73b1-2887-42ee-8721-23510c8e6fe7"
+    },
+    "scriptName": "soni-cms",
+    "diagnosticsChannelEvents": [],
+    "exceptions": [],
+    "logs": [
+        {
+            "message": [
+                "Ô¿»",
+                "ReferenceError: MessagePort is not defined"
+            ],
+            "level": "error",
+            "timestamp": 1770171824510
+        }
+    ],
+    "eventTimestamp": 1770171823512,
+    "event": {
+        "request": {
+            "url": "https://www.soninewmedia.com/api/graphql",
+            "method": "HEAD",
+            "headers": {
+                "accept": "*/*",
+                "accept-encoding": "gzip, br",
+                "cf-connecting-ip": "201.153.235.40",
+                "cf-ipcountry": "MX",
+                "cf-ray": "9c86b528d951af10",
+                "cf-visitor": "{\"scheme\":\"https\"}",
+                "connection": "Keep-Alive",
+                "host": "www.soninewmedia.com",
+                "user-agent": "curl/8.16.0",
+                "x-forwarded-proto": "https",
+                "x-real-ip": "201.153.235.40"
+            },
+            "cf": {
+                "httpProtocol": "HTTP/1.1",
+                "requestPriority": "",
+                "edgeRequestKeepAliveStatus": 1,
+                "requestHeaderNames": {},
+                "clientTcpRtt": 63,
+                "colo": "DFW",
+                "asn": 8151,
+                "asOrganization": "Gesti├│n de direccionamiento UniNet",
+                "country": "MX",
+                "isEUCountry": false,
+                "city": "Xalapa de Enr├¡quez",
+                "continent": "NA",
+                "region": "Veracruz",
+                "regionCode": "VER",
+                "timezone": "America/Mexico_City",
+                "longitude": "-96.91589",
+                "latitude": "19.53124",
+                "postalCode": "91000",
+                "tlsVersion": "TLSv1.3",
+                "tlsCipher": "AEAD-AES256-GCM-SHA384",
+                "tlsClientRandom": "E/NBNdhg52U7y+PgYPtHYZUL8V20TdvNL/1RgI6ZWt0=",
+                "tlsClientCiphersSha1": "kTkJ+HAwBvIuoPFncb1wEDLcgfg=",
+                "tlsClientExtensionsSha1": "p2XN7z/lcnmBD9Q+f8xSyG4x4VA=",
+                "tlsClientExtensionsSha1Le": "ydwLHTahJx17MvHnnvv2lsdgs/g=",
+                "tlsExportedAuthenticator": {
+                    "clientHandshake": "f6652f4975e3ffe77e6033c858185716a4424ba9459bcebd9ce2546785718417701a603877d927e5e653496ee0b516b4",
+                    "serverHandshake": "a0f6c4709515b898f0ee21d3c40fb708624209cb63c5d50ad5561bc3b5815e8b8a33dd6a327184d716b4ab0a7a3e41c5",
+                    "clientFinished": "40e8752ae78475a8f7903fa50cb65256a16037ce0f072fac6f50f010c60dfa53f460a40718a504269fa651ad960c23e0",
+                    "serverFinished": "2f0b4f5852c021728147288adea998090ccad9cf36a8e61c8e6d997d886a5ac7ef0440993dc9209141bd52abf86fe67f"
+                },
+                "tlsClientHelloLength": "458",
+                "tlsClientAuth": {
+                    "certPresented": "0",
+                    "certVerified": "NONE",
+                    "certRevoked": "0",
+                    "certIssuerDN": "",
+                    "certSubjectDN": "",
+                    "certIssuerDNRFC2253": "",
+                    "certSubjectDNRFC2253": "",
+                    "certIssuerDNLegacy": "",
+                    "certSubjectDNLegacy": "",
+                    "certSerial": "",
+                    "certIssuerSerial": "",
+                    "certSKI": "",
+                    "certIssuerSKI": "",
+                    "certFingerprintSHA1": "",
+                    "certFingerprintSHA256": "",
+                    "certNotBefore": "",
+                    "certNotAfter": ""
+                },
+                "verifiedBotCategory": ""
+            }
+        },
+        "response": {
+            "status": 500
+        }
+    }
+}
+{
+    "wallTime": 819,
+    "cpuTime": 813,
+    "truncated": false,
+    "executionModel": "stateless",
+    "outcome": "ok",
+    "scriptVersion": {
+        "id": "ef2d73b1-2887-42ee-8721-23510c8e6fe7"
+    },
+    "scriptName": "soni-cms",
+    "diagnosticsChannelEvents": [],
+    "exceptions": [],
+    "logs": [
+        {
+            "message": [
+                "ReferenceError: MessagePort is not defined"
+            ],
+            "level": "error",
+            "timestamp": 1770171973651
+        },
+        {
+            "message": [
+                "Ô¿»",
+                "ReferenceError: MessagePort is not defined"
+            ],
+            "level": "error",
+            "timestamp": 1770171973651
+        }
+    ],
+    "eventTimestamp": 1770171972078,
+    "event": {
+        "request": {
+            "url": "https://www.soninewmedia.com/admin",
+            "method": "GET",
+            "headers": {
+                "accept": "*/*",
+                "accept-encoding": "gzip, br",
+                "cf-connecting-ip": "201.153.235.40",
+                "cf-ipcountry": "MX",
+                "cf-ray": "9c86b8c96f054868",
+                "cf-visitor": "{\"scheme\":\"https\"}",
+                "connection": "Keep-Alive",
+                "host": "www.soninewmedia.com",
+                "user-agent": "curl/8.16.0",
+                "x-forwarded-proto": "https",
+                "x-real-ip": "201.153.235.40"
+            },
+            "cf": {
+                "httpProtocol": "HTTP/1.1",
+                "requestPriority": "",
+                "edgeRequestKeepAliveStatus": 1,
+                "requestHeaderNames": {},
+                "clientTcpRtt": 63,
+                "colo": "DFW",
+                "asn": 8151,
+                "asOrganization": "Gesti├│n de direccionamiento UniNet",
+                "country": "MX",
+                "isEUCountry": false,
+                "city": "Xalapa de Enr├¡quez",
+                "continent": "NA",
+                "region": "Veracruz",
+                "regionCode": "VER",
+                "timezone": "America/Mexico_City",
+                "longitude": "-96.91589",
+                "latitude": "19.53124",
+                "postalCode": "91000",
+                "tlsVersion": "TLSv1.3",
+                "tlsCipher": "AEAD-AES256-GCM-SHA384",
+                "tlsClientRandom": "O8UTe9G5h/QLIZt6xmTPuABeYfQlrL/Tsy/Rc9gdgSk=",
+                "tlsClientCiphersSha1": "kTkJ+HAwBvIuoPFncb1wEDLcgfg=",
+                "tlsClientExtensionsSha1": "p2XN7z/lcnmBD9Q+f8xSyG4x4VA=",
+                "tlsClientExtensionsSha1Le": "ydwLHTahJx17MvHnnvv2lsdgs/g=",
+                "tlsExportedAuthenticator": {
+                    "clientHandshake": "b19bb549ca35974a78ac605bc4a0485f73bedcaee7616851d043ba566701086ef502a21e39ef5469d288df9a390919b6",
+                    "serverHandshake": "537f1427849993e787b244bcacc0bd46fe65e771d90718cf1edb792db761429ddb95dad822b79b51048d802218a8a5cb",
+                    "clientFinished": "189513ac247cf3ef285b4a397fd745060455d95c0e1d1e2f7d9e03c100cd5f8d2c840c5717aab90f72f1d6f4df09dbdd",
+                    "serverFinished": "36fb4e4b166f6d49eeaf5f87bed4060dfc08c2d299b9a3b92b08a2b2f551a519fdedff82019868ad8abdafa482499163"
+                },
+                "tlsClientHelloLength": "458",
+                "tlsClientAuth": {
+                    "certPresented": "0",
+                    "certVerified": "NONE",
+                    "certRevoked": "0",
+                    "certIssuerDN": "",
+                    "certSubjectDN": "",
+                    "certIssuerDNRFC2253": "",
+                    "certSubjectDNRFC2253": "",
+                    "certIssuerDNLegacy": "",
+                    "certSubjectDNLegacy": "",
+                    "certSerial": "",
+                    "certIssuerSerial": "",
+                    "certSKI": "",
+                    "certIssuerSKI": "",
+                    "certFingerprintSHA1": "",
+                    "certFingerprintSHA256": "",
+                    "certNotBefore": "",
+                    "certNotAfter": ""
+                },
+                "verifiedBotCategory": ""
+            }
+        },
+        "response": {
+            "status": 500
+        }
+    }
+}
+{
+    "wallTime": 0,
+    "cpuTime": 0,
+    "truncated": false,
+    "executionModel": "stateless",
+    "outcome": "ok",
+    "scriptVersion": {
+        "id": "dce5a962-4fc9-43b7-a9cb-c03ec4660522"
+    },
+    "scriptName": "soni-cms",
+    "diagnosticsChannelEvents": [],
+    "exceptions": [],
+    "logs": [
+        {
+            "message": [
+                "Scheduled event received",
+                "[object ScheduledController]"
+            ],
+            "level": "log",
+            "timestamp": 1770172213228
+        }
+    ],
+    "eventTimestamp": 1770172212160,
+    "event": {
+        "cron": "*/10 * * * *",
+        "scheduledTime": 1770172208000
+    }
+}
+X [ERROR] Failed to fetch auth token: 400 Bad Request
+
+
+This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). The promise rejected with the reason:
+Error: Not logged in.
+    at requireLoggedIn (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:122131:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async performApiFetch (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:122030:3)
+    at async fetchInternal (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:122072:20)
+    at async fetchResult (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:122263:47)
+    at async deleteTail (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:226928:5)
+    at async _WebSocket.exit (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:271290:11)
+­ƒ¬Á  Logs were written to "C:\Users\sonig\AppData\Roaming\xdg.config\.wrangler\logs\wrangler-2026-02-04_02-09-55_252.log"

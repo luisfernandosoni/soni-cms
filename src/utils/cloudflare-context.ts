@@ -3,17 +3,16 @@ import {
   getCloudflareContext as getOpenNextContext,
 } from '@opennextjs/cloudflare'
 import { GetPlatformProxyOptions } from 'wrangler'
-import fs from 'fs'
-import path from 'path'
 
 // Helper to check for local dev conditions
-const realpath = (value: string) => (fs.existsSync(value) ? fs.realpathSync(value) : undefined)
-const isCLI = process.argv.some((value) =>
-  realpath(value)?.endsWith(path.join('payload', 'bin.js')),
-)
 const isProduction = process.env.NODE_ENV === 'production'
 const isBuild =
-  process.argv.includes('build') || process.env.NEXT_PHASE === 'phase-production-build'
+  process.env.NEXT_PHASE === 'phase-production-build' || 
+  process.argv.includes('build')
+
+// CLI detection without static fs import
+const isCLI = !isProduction && !isBuild && typeof process !== 'undefined' && 
+  process.argv && process.argv.some(val => val.includes('payload'))
 
 /**
  * Retrieves the Cloudflare Context safely across environments.

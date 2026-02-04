@@ -1,0 +1,118 @@
+
+ Ôøà´©Å wrangler 4.62.0
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Ôû▓ [WARNING] Warning: The following routes will attempt to serve Assets on a configured path:
+
+    ÔÇó soninewmedia.com/admin (Will match assets: .open-next\assets\admin)
+    ÔÇó soninewmedia.com/admin/* (Will match assets: .open-next\assets\admin\*)
+    ÔÇó www.soninewmedia.com/admin (Will match assets: .open-next\assets\admin)
+    ÔÇó www.soninewmedia.com/admin/* (Will match assets: .open-next\assets\admin\*)
+    ÔÇó soninewmedia.com/api/* (Will match assets: .open-next\assets\api\*)
+    ÔÇó www.soninewmedia.com/api/* (Will match assets: .open-next\assets\api\*)
+    ÔÇó soninewmedia.com/_next/* (Will match assets: .open-next\assets\_next\*)
+    ÔÇó www.soninewmedia.com/_next/* (Will match assets: .open-next\assets\_next\*)
+  
+  Requests not matching an asset will be forwarded to the Worker's code.
+
+
+Ôû▓ [WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]
+
+    .open-next/server-functions/default/handler.mjs:269:359:
+      269 Ôöé ...ttify)try{let prettier=await eval('import("prettier")'),config...
+          ÔòÁ                                 ~~~~
+
+  You can read more about direct eval and bundling here: https://esbuild.github.io/link/direct-eval
+
+
+Ôû▓ [WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]
+
+    .open-next/server-functions/default/handler.mjs:554:50727:
+      554 Ôöé ...e__(31608)(importPath):await eval(`import('${importPath}')`)}}...
+          ÔòÁ                                 ~~~~
+
+  You can read more about direct eval and bundling here: https://esbuild.github.io/link/direct-eval
+
+
+Ôû▓ [WARNING] Comparison with -0 using the "===" operator will also match 0 [equals-negative-zero]
+
+    .open-next/server-functions/default/handler.mjs:2257:36323:
+      2257 Ôöé ...<0)x7+=moduloVal;else if(x7===-0)return 0}return x7}}__name(c...
+           ÔòÁ                                  ~~
+
+  Floating-point equality is defined such that 0 and -0 are equal, so "x === -0" returns true for both 0 and -0. You need to use "Object.is(x, -0)" instead to test for -0.
+
+
+Ôû▓ [WARNING] Duplicate key "options" in object literal [duplicate-object-key]
+
+    .open-next/server-functions/default/handler.mjs:6053:312827:
+      6053 Ôöé ...,padding:d10}).fn(a11):{}},options:[a10,b10]}}}),hj={};functi...
+           ÔòÁ                               ~~~~~~~
+
+  The original key "options" is here:
+
+    .open-next/server-functions/default/handler.mjs:6053:312575:
+      6053 Ôöé ...et c10;return{name:"arrow",options:c10=a10,fn(a11){let{elemen...
+           ÔòÁ                               ~~~~~~~
+
+
+Ôû▓ [WARNING] The "typeof" operator will never evaluate to "null" [impossible-typeof]
+
+    .open-next/server-functions/default/handler.mjs:6068:107:
+      6068 Ôöé ...e"number":case"boolean":case"null":return String(C4);case"obj...
+           ÔòÁ                                ~~~~~~
+
+  The expression "typeof x" actually evaluates to "object" in JavaScript, not "null". You need to use "x === null" to test for null.
+
+
+­ƒîÇ Building list of assets...
+Ô£¿ Read 141 files from the assets directory E:\Antigravity\soni-cms\.open-next\assets
+­ƒîÇ Starting asset upload...
+­ƒîÇ Found 18 new or modified static assets to upload. Proceeding with upload...
++ /BUILD_ID
++ /_next/static/chunks/app/(payload)/api/[...slug]/route-7f2245576e08032b.js
++ /_next/static/chunks/main-app-a2b7457d61d06be8.js
++ /_next/static/chunks/app/(payload)/admin/[[...segments]]/not-found-c82179e5c883232c.js
++ /_next/static/chunks/app/(payload)/layout-3514f62c14c9bc9d.js
++ /_next/static/chunks/webpack-43ccbc8be2809870.js
++ /_next/static/chunks/next/dist/client/components/builtin/global-error-e391c0c3128ff74a.js
++ /_next/static/chunks/app/(frontend)/page-06bdf6e2d389762e.js
++ /_next/static/chunks/1966.b8f83f7ba376c962.js
++ /_next/static/chunks/app/(payload)/admin/[[...segments]]/not-found-c82179e5c883232c.js
++ /_next/static/chunks/3899.3f761f7e3a944e8c.js
++ /_next/static/chunks/main-773c3f3840c82d9a.js
++ /_next/static/chunks/app/(payload)/api/[...slug]/route-7f2245576e08032b.js
++ /_next/static/chunks/app/(frontend)/page-06bdf6e2d389762e.js
++ /_next/static/chunks/app/(frontend)/layout-2d01053518e82e3f.js
++ /_next/static/chunks/app/_not-found/page-f17cf63d62fa3a0d.js
++ /_next/static/chunks/app/(frontend)/transmission/[slug]/page-39a7ffe752105229.js
++ /_next/static/chunks/9972-1bfd688caa81f3be.js
+Uploaded 6 of 18 assets
+Uploaded 12 of 18 assets
+Uploaded 18 of 18 assets
+Ô£¿ Success! Uploaded 18 files (95 already uploaded) (2.07 sec)
+
+Total Upload: 38730.64 KiB / gzip: 7640.85 KiB
+Worker Startup Time: 25 ms
+Your Worker has access to the following bindings:
+Binding                                                                      Resource                  
+env.D1 (soni_blog_db)                                                        D1 Database               
+env.VECTORIZE (transmissions-embeddings)                                     Vectorize Index           
+env.R2 (soni-blog-assets)                                                    R2 Bucket                 
+env.AI                                                                       AI                        
+env.ASSETS                                                                   Assets                    
+env.PAYLOAD_SECRET ("bf40702d84a7e949983995f32924194098492...")              Environment Variable      
+env.NEXT_PUBLIC_SERVER_URL ("https://www.soninewmedia.com")                  Environment Variable      
+env.DEBUG_ACCESS ("true")                                                    Environment Variable      
+
+Uploaded soni-cms (20.53 sec)
+Deployed soni-cms triggers (2.46 sec)
+  soninewmedia.com/admin (zone name: soninewmedia.com)
+  soninewmedia.com/admin/* (zone name: soninewmedia.com)
+  www.soninewmedia.com/admin (zone name: soninewmedia.com)
+  www.soninewmedia.com/admin/* (zone name: soninewmedia.com)
+  soninewmedia.com/api/* (zone name: soninewmedia.com)
+  www.soninewmedia.com/api/* (zone name: soninewmedia.com)
+  soninewmedia.com/_next/* (zone name: soninewmedia.com)
+  www.soninewmedia.com/_next/* (zone name: soninewmedia.com)
+  schedule: */10 * * * *
+Current Version ID: 153e3ad0-4b79-4047-8ab9-cfc732e65aa8

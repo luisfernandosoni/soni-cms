@@ -1,0 +1,111 @@
+
+ Ôøà´©Å wrangler 4.62.0
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Ôû▓ [WARNING] Warning: The following routes will attempt to serve Assets on a configured path:
+
+    ÔÇó soninewmedia.com/admin (Will match assets: .open-next\assets\admin)
+    ÔÇó soninewmedia.com/admin/* (Will match assets: .open-next\assets\admin\*)
+    ÔÇó www.soninewmedia.com/admin (Will match assets: .open-next\assets\admin)
+    ÔÇó www.soninewmedia.com/admin/* (Will match assets: .open-next\assets\admin\*)
+    ÔÇó soninewmedia.com/api/* (Will match assets: .open-next\assets\api\*)
+    ÔÇó www.soninewmedia.com/api/* (Will match assets: .open-next\assets\api\*)
+    ÔÇó soninewmedia.com/_next/* (Will match assets: .open-next\assets\_next\*)
+    ÔÇó www.soninewmedia.com/_next/* (Will match assets: .open-next\assets\_next\*)
+  
+  Requests not matching an asset will be forwarded to the Worker's code.
+
+
+Ôû▓ [WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]
+
+    .open-next/server-functions/default/handler.mjs:269:359:
+      269 Ôöé ...ttify)try{let prettier=await eval('import("prettier")'),config...
+          ÔòÁ                                 ~~~~
+
+  You can read more about direct eval and bundling here: https://esbuild.github.io/link/direct-eval
+
+
+Ôû▓ [WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]
+
+    .open-next/server-functions/default/handler.mjs:554:50727:
+      554 Ôöé ...e__(31608)(importPath):await eval(`import('${importPath}')`)}}...
+          ÔòÁ                                 ~~~~
+
+  You can read more about direct eval and bundling here: https://esbuild.github.io/link/direct-eval
+
+
+Ôû▓ [WARNING] Comparison with -0 using the "===" operator will also match 0 [equals-negative-zero]
+
+    .open-next/server-functions/default/handler.mjs:2132:36323:
+      2132 Ôöé ...<0)x7+=moduloVal;else if(x7===-0)return 0}return x7}}__name(c...
+           ÔòÁ                                  ~~
+
+  Floating-point equality is defined such that 0 and -0 are equal, so "x === -0" returns true for both 0 and -0. You need to use "Object.is(x, -0)" instead to test for -0.
+
+
+Ôû▓ [WARNING] Duplicate key "options" in object literal [duplicate-object-key]
+
+    .open-next/server-functions/default/handler.mjs:6051:312827:
+      6051 Ôöé ...,padding:d10}).fn(a11):{}},options:[a10,b10]}}}),hj={};functi...
+           ÔòÁ                               ~~~~~~~
+
+  The original key "options" is here:
+
+    .open-next/server-functions/default/handler.mjs:6051:312575:
+      6051 Ôöé ...et c10;return{name:"arrow",options:c10=a10,fn(a11){let{elemen...
+           ÔòÁ                               ~~~~~~~
+
+
+Ôû▓ [WARNING] The "typeof" operator will never evaluate to "null" [impossible-typeof]
+
+    .open-next/server-functions/default/handler.mjs:6066:107:
+      6066 Ôöé ...e"number":case"boolean":case"null":return String(C4);case"obj...
+           ÔòÁ                                ~~~~~~
+
+  The expression "typeof x" actually evaluates to "object" in JavaScript, not "null". You need to use "x === null" to test for null.
+
+
+­ƒîÇ Building list of assets...
+Ô£¿ Read 143 files from the assets directory E:\Antigravity\soni-cms\.open-next\assets
+­ƒîÇ Starting asset upload...
+­ƒîÇ Found 11 new or modified static assets to upload. Proceeding with upload...
++ /BUILD_ID
++ /_next/static/chunks/next/dist/client/components/builtin/app-error-62084b556e629f31.js
++ /_next/static/chunks/next/dist/client/components/builtin/app-error-62084b556e629f31.js
++ /_next/static/chunks/next/dist/client/components/builtin/app-error-62084b556e629f31.js
++ /_next/static/chunks/next/dist/client/components/builtin/app-error-62084b556e629f31.js
++ /_next/static/chunks/next/dist/client/components/builtin/app-error-62084b556e629f31.js
++ /_next/static/chunks/next/dist/client/components/builtin/app-error-62084b556e629f31.js
++ /_next/static/7VSh9tPprA-zx20fSgxMd/_buildManifest.js
++ /_next/static/chunks/next/dist/client/components/builtin/app-error-62084b556e629f31.js
++ /_next/static/chunks/next/dist/client/components/builtin/app-error-62084b556e629f31.js
++ /_next/static/chunks/next/dist/client/components/builtin/app-error-62084b556e629f31.js
+Uploaded 4 of 11 assets
+Uploaded 7 of 11 assets
+Uploaded 11 of 11 assets
+Ô£¿ Success! Uploaded 11 files (103 already uploaded) (1.31 sec)
+
+Total Upload: 38784.21 KiB / gzip: 7642.55 KiB
+Worker Startup Time: 26 ms
+Your Worker has access to the following bindings:
+Binding                                                                      Resource                  
+env.D1 (soni_blog_db)                                                        D1 Database               
+env.VECTORIZE (transmissions-embeddings)                                     Vectorize Index           
+env.R2 (soni-blog-assets)                                                    R2 Bucket                 
+env.AI                                                                       AI                        
+env.ASSETS                                                                   Assets                    
+env.PAYLOAD_SECRET ("bf40702d84a7e949983995f32924194098492...")              Environment Variable      
+env.NEXT_PUBLIC_SERVER_URL ("https://www.soninewmedia.com")                  Environment Variable      
+env.DEBUG_ACCESS ("true")                                                    Environment Variable      
+
+Uploaded soni-cms (20.89 sec)
+Deployed soni-cms triggers (3.05 sec)
+  soninewmedia.com/admin (zone name: soninewmedia.com)
+  soninewmedia.com/admin/* (zone name: soninewmedia.com)
+  www.soninewmedia.com/admin (zone name: soninewmedia.com)
+  www.soninewmedia.com/admin/* (zone name: soninewmedia.com)
+  soninewmedia.com/api/* (zone name: soninewmedia.com)
+  www.soninewmedia.com/api/* (zone name: soninewmedia.com)
+  soninewmedia.com/_next/* (zone name: soninewmedia.com)
+  www.soninewmedia.com/_next/* (zone name: soninewmedia.com)
+  schedule: */10 * * * *
+Current Version ID: ee79d1e0-b2f4-4767-b5f6-bbd9a5200888

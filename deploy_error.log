@@ -1,0 +1,226 @@
+
+ Ôøà´©Å wrangler 4.61.0 (update available 4.62.0)
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Ôû▓ [WARNING] Warning: The following routes will attempt to serve Assets on a configured path:
+
+    ÔÇó soninewmedia.com/admin (Will match assets: .open-next\assets\admin)
+    ÔÇó soninewmedia.com/admin/* (Will match assets: .open-next\assets\admin\*)
+    ÔÇó www.soninewmedia.com/admin (Will match assets: .open-next\assets\admin)
+    ÔÇó www.soninewmedia.com/admin/* (Will match assets: .open-next\assets\admin\*)
+    ÔÇó soninewmedia.com/api/* (Will match assets: .open-next\assets\api\*)
+    ÔÇó www.soninewmedia.com/api/* (Will match assets: .open-next\assets\api\*)
+    ÔÇó soninewmedia.com/_next/* (Will match assets: .open-next\assets\_next\*)
+    ÔÇó www.soninewmedia.com/_next/* (Will match assets: .open-next\assets\_next\*)
+  
+  Requests not matching an asset will be forwarded to the Worker's code.
+
+
+Ôû▓ [WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]
+
+    .open-next/server-functions/default/handler.mjs:269:359:
+      269 Ôöé ...ttify)try{let prettier=await eval('import("prettier")'),config...
+          ÔòÁ                                 ~~~~
+
+  You can read more about direct eval and bundling here: https://esbuild.github.io/link/direct-eval
+
+
+Ôû▓ [WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]
+
+    .open-next/server-functions/default/handler.mjs:554:50727:
+      554 Ôöé ...e__(31608)(importPath):await eval(`import('${importPath}')`)}}...
+          ÔòÁ                                 ~~~~
+
+  You can read more about direct eval and bundling here: https://esbuild.github.io/link/direct-eval
+
+
+Ôû▓ [WARNING] Comparison with -0 using the "===" operator will also match 0 [equals-negative-zero]
+
+    .open-next/server-functions/default/handler.mjs:2257:36323:
+      2257 Ôöé ...<0)x7+=moduloVal;else if(x7===-0)return 0}return x7}}__name(c...
+           ÔòÁ                                  ~~
+
+  Floating-point equality is defined such that 0 and -0 are equal, so "x === -0" returns true for both 0 and -0. You need to use "Object.is(x, -0)" instead to test for -0.
+
+
+Ôû▓ [WARNING] Duplicate key "options" in object literal [duplicate-object-key]
+
+    .open-next/server-functions/default/handler.mjs:6053:314777:
+      6053 Ôöé ...,padding:d10}).fn(a11):{}},options:[a10,b10]}}}),hj={};functi...
+           ÔòÁ                               ~~~~~~~
+
+  The original key "options" is here:
+
+    .open-next/server-functions/default/handler.mjs:6053:314525:
+      6053 Ôöé ...et c10;return{name:"arrow",options:c10=a10,fn(a11){let{elemen...
+           ÔòÁ                               ~~~~~~~
+
+
+Ôû▓ [WARNING] The "typeof" operator will never evaluate to "null" [impossible-typeof]
+
+    .open-next/server-functions/default/handler.mjs:6068:107:
+      6068 Ôöé ...e"number":case"boolean":case"null":return String(C4);case"obj...
+           ÔòÁ                                ~~~~~~
+
+  The expression "typeof x" actually evaluates to "object" in JavaScript, not "null". You need to use "x === null" to test for null.
+
+
+
+X [ERROR] Build failed with 3 errors:
+
+  X [ERROR] ENOENT: no such file or directory, open 'E:\Antigravity\soni-cms\.open-next\server-functions\default\mnt\e\Antigravity\soni-cms\.open-next\server-functions\default\node_modules\next\dist\compiled\@vercel\og\noto-sans-v27-latin-regular.ttf.bin' [plugin wrangler-module-collector]
+  
+      node_modules/wrangler/node_modules/esbuild/lib/main.js:1217:21:
+        1217 Ôöé         let result = await callback({
+             ÔòÁ                      ^
+  
+      at async open (node:internal/fs/promises:637:25)
+      at async Object.readFile (node:internal/fs/promises:1269:14)
+      at async E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42832:37
+      at async requestCallbacks.on-resolve (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:1217:22)
+      at async handleRequest (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:628:11)
+  
+    This error came from the "onResolve" callback registered here:
+  
+      node_modules/wrangler/wrangler-dist/cli.js:42798:19:
+        42798 Ôöé             build5.onResolve(
+              ÔòÁ                    ~~~~~~~~~
+  
+      at E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42798:20
+      at Array.forEach (<anonymous>)
+      at E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42797:22
+      at Array.forEach (<anonymous>)
+      at setup (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42793:28)
+      at handlePlugins (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:1141:21)
+      at buildOrContextImpl (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:854:5)
+      at Object.buildOrContext (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:680:5)
+      at E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:2026:15
+  
+    The plugin "wrangler-module-collector" was triggered by this import
+  
+      .open-next/server-functions/default/handler.mjs:5929:68977:
+        5929 Ôöé ...it import("/mnt/e/Antigravity/soni-cms/.open-next/server-func...
+             ÔòÁ              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  X [ERROR] ENOENT: no such file or directory, open 'E:\Antigravity\soni-cms\.open-next\server-functions\default\mnt\e\Antigravity\soni-cms\.open-next\server-functions\default\node_modules\next\dist\compiled\@vercel\og\resvg.wasm?module' [plugin wrangler-module-collector]
+  
+      node_modules/wrangler/node_modules/esbuild/lib/main.js:1217:21:
+        1217 Ôöé         let result = await callback({
+             ÔòÁ                      ^
+  
+      at async open (node:internal/fs/promises:637:25)
+      at async Object.readFile (node:internal/fs/promises:1269:14)
+      at async E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42832:37
+      at async requestCallbacks.on-resolve (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:1217:22)
+      at async handleRequest (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:628:11)
+  
+    This error came from the "onResolve" callback registered here:
+  
+      node_modules/wrangler/wrangler-dist/cli.js:42798:19:
+        42798 Ôöé             build5.onResolve(
+              ÔòÁ                    ~~~~~~~~~
+  
+      at E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42798:20
+      at Array.forEach (<anonymous>)
+      at E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42797:22
+      at Array.forEach (<anonymous>)
+      at setup (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42793:28)
+      at handlePlugins (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:1141:21)
+      at buildOrContextImpl (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:854:5)
+      at Object.buildOrContext (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:680:5)
+      at E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:2026:15
+  
+    The plugin "wrangler-module-collector" was triggered by this import
+  
+      .open-next/server-functions/default/handler.mjs:5927:51800:
+        5927 Ôöé ..._wasm from"/mnt/e/Antigravity/soni-cms/.open-next/server-func...
+             ÔòÁ              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  X [ERROR] ENOENT: no such file or directory, open 'E:\Antigravity\soni-cms\.open-next\server-functions\default\mnt\e\Antigravity\soni-cms\.open-next\server-functions\default\node_modules\next\dist\compiled\@vercel\og\yoga.wasm?module' [plugin wrangler-module-collector]
+  
+      node_modules/wrangler/node_modules/esbuild/lib/main.js:1217:21:
+        1217 Ôöé         let result = await callback({
+             ÔòÁ                      ^
+  
+      at async open (node:internal/fs/promises:637:25)
+      at async Object.readFile (node:internal/fs/promises:1269:14)
+      at async E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42832:37
+      at async requestCallbacks.on-resolve (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:1217:22)
+      at async handleRequest (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:628:11)
+  
+    This error came from the "onResolve" callback registered here:
+  
+      node_modules/wrangler/wrangler-dist/cli.js:42798:19:
+        42798 Ôöé             build5.onResolve(
+              ÔòÁ                    ~~~~~~~~~
+  
+      at E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42798:20
+      at Array.forEach (<anonymous>)
+      at E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42797:22
+      at Array.forEach (<anonymous>)
+      at setup (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42793:28)
+      at handlePlugins (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:1141:21)
+      at buildOrContextImpl (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:854:5)
+      at Object.buildOrContext (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:680:5)
+      at E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:2026:15
+  
+    The plugin "wrangler-module-collector" was triggered by this import
+  
+      .open-next/server-functions/default/handler.mjs:5927:51948:
+        5927 Ôöé ..._wasm from"/mnt/e/Antigravity/soni-cms/.open-next/server-func...
+             ÔòÁ              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+
+
+Ôû▓ [WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]
+
+    .open-next/server-functions/default/handler.mjs:269:359:
+      269 Ôöé ...ttify)try{let prettier=await eval('import("prettier")'),config...
+          ÔòÁ                                 ~~~~
+
+  You can read more about direct eval and bundling here: https://esbuild.github.io/link/direct-eval
+
+
+Ôû▓ [WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]
+
+    .open-next/server-functions/default/handler.mjs:554:50727:
+      554 Ôöé ...e__(31608)(importPath):await eval(`import('${importPath}')`)}}...
+          ÔòÁ                                 ~~~~
+
+  You can read more about direct eval and bundling here: https://esbuild.github.io/link/direct-eval
+
+
+Ôû▓ [WARNING] Comparison with -0 using the "===" operator will also match 0 [equals-negative-zero]
+
+    .open-next/server-functions/default/handler.mjs:2257:36323:
+      2257 Ôöé ...<0)x7+=moduloVal;else if(x7===-0)return 0}return x7}}__name(c...
+           ÔòÁ                                  ~~
+
+  Floating-point equality is defined such that 0 and -0 are equal, so "x === -0" returns true for both 0 and -0. You need to use "Object.is(x, -0)" instead to test for -0.
+
+
+Ôû▓ [WARNING] Duplicate key "options" in object literal [duplicate-object-key]
+
+    .open-next/server-functions/default/handler.mjs:6053:314777:
+      6053 Ôöé ...,padding:d10}).fn(a11):{}},options:[a10,b10]}}}),hj={};functi...
+           ÔòÁ                               ~~~~~~~
+
+  The original key "options" is here:
+
+    .open-next/server-functions/default/handler.mjs:6053:314525:
+      6053 Ôöé ...et c10;return{name:"arrow",options:c10=a10,fn(a11){let{elemen...
+           ÔòÁ                               ~~~~~~~
+
+
+Ôû▓ [WARNING] The "typeof" operator will never evaluate to "null" [impossible-typeof]
+
+    .open-next/server-functions/default/handler.mjs:6068:107:
+      6068 Ôöé ...e"number":case"boolean":case"null":return String(C4);case"obj...
+           ÔòÁ                                ~~~~~~
+
+  The expression "typeof x" actually evaluates to "object" in JavaScript, not "null". You need to use "x === null" to test for null.
+
+
+­ƒ¬Á  Logs were written to "C:\Users\sonig\AppData\Roaming\xdg.config\.wrangler\logs\wrangler-2026-02-04_00-26-00_812.log"

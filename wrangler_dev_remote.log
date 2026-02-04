@@ -1,0 +1,203 @@
+
+ Ôøà´©Å wrangler 4.62.0
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+Support for remote bindings in `wrangler dev` is now available as a replacement for `wrangler dev --remote`. Try it out now by running `wrangler dev` with the `remote` option enabled on your resources and let us know how it goes!
+This gives you access to remote resources in development while retaining all the usual benefits of local dev: fast iteration speed, breakpoint debugging, and more.
+
+Refer to https://developers.cloudflare.com/workers/development-testing/#remote-bindings for more information.
+--------------------
+­ƒÆí Recommendation: for development, use a preview D1 database rather than the one you'd use in production.
+­ƒÆí Create a new D1 database with "wrangler d1 create <name>" and add its id as preview_database_id to the d1_database "D1" in your wrangler.jsonc file
+--------------------
+
+Using vars defined in .env
+Your Worker has access to the following bindings:
+Binding                                                    Resource                  
+env.D1 (soni_blog_db)                                      D1 Database               
+env.VECTORIZE (transmissions-embeddings)                   Vectorize Index           
+env.R2 (soni-blog-assets)                                  R2 Bucket                 
+env.AI                                                     AI                        
+env.ASSETS                                                 Assets                    
+env.PAYLOAD_SECRET ("(hidden)")                            Environment Variable      
+env.NEXT_PUBLIC_SERVER_URL ("(hidden)")                    Environment Variable      
+env.DEBUG_ACCESS ("true")                                  Environment Variable      
+env.GOOGLE_CLIENT_ID ("(hidden)")                          Environment Variable      
+env.GOOGLE_CLIENT_SECRET ("(hidden)")                      Environment Variable      
+
+Ôû▓ [WARNING] Warning: The following routes will attempt to serve Assets on a configured path:
+
+    ÔÇó soninewmedia.com/admin (Will match assets: .open-next\assets\admin)
+    ÔÇó soninewmedia.com/admin/* (Will match assets: .open-next\assets\admin\*)
+    ÔÇó www.soninewmedia.com/admin (Will match assets: .open-next\assets\admin)
+    ÔÇó www.soninewmedia.com/admin/* (Will match assets: .open-next\assets\admin\*)
+    ÔÇó soninewmedia.com/api/* (Will match assets: .open-next\assets\api\*)
+    ÔÇó www.soninewmedia.com/api/* (Will match assets: .open-next\assets\api\*)
+    ÔÇó soninewmedia.com/_next/* (Will match assets: .open-next\assets\_next\*)
+    ÔÇó www.soninewmedia.com/_next/* (Will match assets: .open-next\assets\_next\*)
+  
+  Requests not matching an asset will be forwarded to the Worker's code.
+
+
+Ôû▓ [WARNING] Scheduled Workers are not automatically triggered during local development.
+
+  To manually trigger a scheduled event, run:
+    curl "http://127.0.0.1:3001/cdn-cgi/handler/scheduled"
+  For more details, see https://developers.cloudflare.com/workers/configuration/cron-triggers/#test-cron-triggers-locally
+
+
+Ôû▓ [WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]
+
+    .open-next/server-functions/default/handler.mjs:269:359:
+      269 Ôöé ...ttify)try{let prettier=await eval('import("prettier")'),config...
+          ÔòÁ                                 ~~~~
+
+  You can read more about direct eval and bundling here: https://esbuild.github.io/link/direct-eval
+
+
+Ôû▓ [WARNING] Using direct eval with a bundler is not recommended and may cause problems [direct-eval]
+
+    .open-next/server-functions/default/handler.mjs:554:50727:
+      554 Ôöé ...e__(31608)(importPath):await eval(`import('${importPath}')`)}}...
+          ÔòÁ                                 ~~~~
+
+  You can read more about direct eval and bundling here: https://esbuild.github.io/link/direct-eval
+
+
+Ôû▓ [WARNING] Comparison with -0 using the "===" operator will also match 0 [equals-negative-zero]
+
+    .open-next/server-functions/default/handler.mjs:2257:36323:
+      2257 Ôöé ...<0)x7+=moduloVal;else if(x7===-0)return 0}return x7}}__name(c...
+           ÔòÁ                                  ~~
+
+  Floating-point equality is defined such that 0 and -0 are equal, so "x === -0" returns true for both 0 and -0. You need to use "Object.is(x, -0)" instead to test for -0.
+
+
+Ôû▓ [WARNING] Duplicate key "options" in object literal [duplicate-object-key]
+
+    .open-next/server-functions/default/handler.mjs:6053:312827:
+      6053 Ôöé ...,padding:d10}).fn(a11):{}},options:[a10,b10]}}}),hj={};functi...
+           ÔòÁ                               ~~~~~~~
+
+  The original key "options" is here:
+
+    .open-next/server-functions/default/handler.mjs:6053:312575:
+      6053 Ôöé ...et c10;return{name:"arrow",options:c10=a10,fn(a11){let{elemen...
+           ÔòÁ                               ~~~~~~~
+
+
+Ôû▓ [WARNING] The "typeof" operator will never evaluate to "null" [impossible-typeof]
+
+    .open-next/server-functions/default/handler.mjs:6068:107:
+      6068 Ôöé ...e"number":case"boolean":case"null":return String(C4);case"obj...
+           ÔòÁ                                ~~~~~~
+
+  The expression "typeof x" actually evaluates to "object" in JavaScript, not "null". You need to use "x === null" to test for null.
+
+
+ÔÄö Starting remote preview...
+­ƒîÇ Building list of assets...
+Total Upload: 38742.32 KiB / gzip: 7642.45 KiB
+Ô£¿ Read 141 files from the assets directory E:\Antigravity\soni-cms\.open-next\assets
+­ƒîÇ Starting asset upload...
+No updated asset files to upload. Proceeding with deployment...
+[wrangler:info] Ready on http://127.0.0.1:3001
+X [ERROR] Build failed with 8 errors:
+
+  X [ERROR] Could not resolve "./cloudflare/images.js"
+  
+      .open-next/worker.js:2:35:
+        2 Ôöé import { handleImageRequest } from "./cloudflare/images.js";
+          ÔòÁ                                    ~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  X [ERROR] Could not resolve "./cloudflare/init.js"
+  
+      .open-next/worker.js:4:48:
+        4 Ôöé ...rt { runWithCloudflareRequestContext } from "./cloudflare/init.js";
+          ÔòÁ                                                ~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  X [ERROR] Could not resolve "./cloudflare/skew-protection.js"
+  
+      .open-next/worker.js:6:47:
+        6 Ôöé ...GetSkewProtectionResponse } from "./cloudflare/skew-protection.js";
+          ÔòÁ                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  X [ERROR] Could not resolve "./middleware/handler.mjs"
+  
+      .open-next/worker.js:8:45:
+        8 Ôöé ...t { handler as middlewareHandler } from "./middleware/handler.mjs";
+          ÔòÁ                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  X [ERROR] Could not resolve "./.build/durable-objects/queue.js"
+  
+      .open-next/worker.js:10:31:
+        10 Ôöé export { DOQueueHandler } from "./.build/durable-objects/queue.js";
+           ÔòÁ                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  X [ERROR] Could not resolve "./.build/durable-objects/sharded-tag-cache.js"
+  
+      .open-next/worker.js:12:34:
+        12 Ôöé ...edTagCache } from "./.build/durable-objects/sharded-tag-cache.js";
+           ÔòÁ                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  X [ERROR] Could not resolve "./.build/durable-objects/bucket-cache-purge.js"
+  
+      .open-next/worker.js:14:33:
+        14 Ôöé ...achePurge } from "./.build/durable-objects/bucket-cache-purge.js";
+           ÔòÁ                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  X [ERROR] Could not resolve "./server-functions/default/handler.mjs"
+  
+      .open-next/worker.js:55:49:
+        55 Ôöé ...andler } = await import("./server-functions/default/handler.mjs");
+           ÔòÁ                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+
+
+ÔÄö Starting remote preview...
+ÔÄö Detected changes, restarted server.
+X [ERROR] Build failed with 1 error:
+
+  X [ERROR] Could not resolve "E:\\Antigravity\\soni-cms\\.open-next\\worker.js"
+  
+      .wrangler/tmp/bundle-eZ3ixY/middleware-insertion-facade.js:1:43:
+        1 Ôöé ...ER_EXPORTS from "E:\\Antigravity\\soni-cms\\.open-next\\worker.js";
+          ÔòÁ                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+
+
+­ƒîÇ Building list of assets...
+Total Upload: 38742.32 KiB / gzip: 7642.45 KiB
+X [ERROR] Error on remote worker: Error: ENOENT: no such file or directory, scandir 'E:\Antigravity\soni-cms\.open-next\assets'
+
+      at async readdirRecursive (node:internal/fs/promises:873:7)
+      at async buildAssetManifest (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:289543:21)
+      at async syncAssets (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:289381:24)
+      at async createRemoteWorkerInit (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:292384:36)
+      at async #previewToken (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:292585:25)
+      at async #updatePreviewToken (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:292683:23)
+      at async #onBundleComplete (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:292759:11)
+      at async Mutex.runWith (E:\Antigravity\soni-cms\node_modules\miniflare\dist\src\index.js:51730:48) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'scandir',
+    path: 'E:\\Antigravity\\soni-cms\\.open-next\\assets'
+  }
+
+
+
+X [ERROR] ENOENT: no such file or directory, scandir 'E:\Antigravity\soni-cms\.open-next\assets'
+
+
+[32mIf you think this is a bug then please create an issue at https://github.com/cloudflare/workers-sdk/issues/new/choose[0m
+? Would you like to report this error to Cloudflare? Wrangler's output and the error details will be shared with the Wrangler team to help us diagnose and fix the issue.
+­ƒñû Using fallback value in non-interactive context: no
+­ƒ¬Á  Logs were written to "C:\Users\sonig\AppData\Roaming\xdg.config\.wrangler\logs\wrangler-2026-02-04_02-51-13_988.log"

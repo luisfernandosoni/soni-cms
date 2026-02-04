@@ -1,0 +1,9 @@
+
+ Ôøà´©Å wrangler 4.62.0
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+X [ERROR] The entry-point file at ".open-next\worker.js" was not found.
+
+
+­ƒ¬Á  Logs were written to "C:\Users\sonig\AppData\Roaming\xdg.config\.wrangler\logs\wrangler-2026-02-04_03-00-17_914.log"
+Assertion failed: !(handle->flags & UV_HANDLE_CLOSING), file src\win\async.c, line 76

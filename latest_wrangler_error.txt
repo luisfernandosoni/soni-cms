@@ -1,0 +1,380 @@
+
+--- 2026-02-03T23:31:13.269Z debug
+🪵  Writing logs to "C:\Users\sonig\AppData\Roaming\xdg.config\.wrangler\logs\wrangler-2026-02-03_23-31-13_130.log"
+---
+
+--- 2026-02-03T23:31:13.269Z debug
+.env file not found at "E:\Antigravity\soni-cms\.env.local". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2026-02-03T23:31:14.188Z log
+
+ ⛅️ wrangler 4.61.0 (update available 4.62.0)
+─────────────────────────────────────────────
+---
+
+--- 2026-02-03T23:31:14.196Z debug
+Metrics dispatcher: Posting data {"deviceId":"0488b318-5f45-42ca-ba6b-1e7162cb0e2a","event":"wrangler command started","timestamp":1770161474196,"properties":{"amplitude_session_id":1770161474193,"amplitude_event_id":0,"wranglerVersion":"4.61.0","wranglerMajorVersion":4,"wranglerMinorVersion":61,"wranglerPatchVersion":0,"osPlatform":"Windows","osVersion":"Windows 11 Home","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":true,"argsUsed":[],"argsCombination":"","agent":null,"command":"wrangler deploy","args":{}}}
+---
+
+--- 2026-02-03T23:31:14.244Z debug
+fetching auth token grant_type=refresh_token&refresh_token=2yUGHKUveCq8ee2NKN93Z6Rc73xTaje0L4mdZ_y5Ue4.onO24rjr9k7yljgMuI_HBn0rvJ52IaxnYihyKevJg-c&client_id=54d11594-84e4-41aa-b438-e81b8fa78ee7
+---
+
+--- 2026-02-03T23:31:14.244Z debug
+Checking if domain has Access enabled: dash.cloudflare.com
+---
+
+--- 2026-02-03T23:31:14.244Z debug
+Access switch not cached for: dash.cloudflare.com
+---
+
+--- 2026-02-03T23:31:14.336Z debug
+Caching access switch for: dash.cloudflare.com
+---
+
+--- 2026-02-03T23:31:14.336Z debug
+Fetching auth token from https://dash.cloudflare.com/oauth2/token
+---
+
+--- 2026-02-03T23:31:14.562Z debug
+Retrieving cached values for account from node_modules\.cache\wrangler
+---
+
+--- 2026-02-03T23:31:14.563Z debug
+Starting verifyWorkerMatchesCITag() with tag: undefined, name: soni-cms
+---
+
+--- 2026-02-03T23:31:14.563Z debug
+No WRANGLER_CI_MATCH_TAG variable provided, aborting verifyWorkerMatchesCITag()
+---
+
+--- 2026-02-03T23:31:14.564Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/77fb74f83f6bcc4464afeef70abb69b7/workers/services/soni-cms
+---
+
+--- 2026-02-03T23:31:14.564Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:14.564Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:14.564Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:14.564Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-02-03T23:31:15.290Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-02-03T23:31:15.290Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:15.290Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:15.290Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-02-03T23:31:15.291Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/77fb74f83f6bcc4464afeef70abb69b7/workers/scripts/soni-cms/secrets
+---
+
+--- 2026-02-03T23:31:15.291Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:15.291Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:15.291Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:15.291Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-02-03T23:31:15.716Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-02-03T23:31:15.716Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:15.716Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:15.716Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-02-03T23:31:15.752Z warn
+▲ [WARNING] Warning: The following routes will attempt to serve Assets on a configured path:
+
+    • soninewmedia.com/admin (Will match assets:
+  .open-next\assets\admin)
+    • soninewmedia.com/admin/* (Will match assets:
+  .open-next\assets\admin\*)
+    • www.soninewmedia.com/admin (Will match
+  assets: .open-next\assets\admin)
+    • www.soninewmedia.com/admin/* (Will match
+  assets: .open-next\assets\admin\*)
+    • soninewmedia.com/api/* (Will match assets:
+  .open-next\assets\api\*)
+    • www.soninewmedia.com/api/* (Will match
+  assets: .open-next\assets\api\*)
+    • soninewmedia.com/_next/* (Will match assets:
+  .open-next\assets\_next\*)
+    • www.soninewmedia.com/_next/* (Will match
+  assets: .open-next\assets\_next\*)
+  
+  Requests not matching an asset will be forwarded
+  to the Worker's code.
+
+
+---
+
+--- 2026-02-03T23:31:15.753Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/77fb74f83f6bcc4464afeef70abb69b7/workers/scripts/soni-cms/deployments
+---
+
+--- 2026-02-03T23:31:15.753Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:15.753Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:15.753Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:15.753Z debug
+-- END CF API REQUEST
+---
+
+--- 2026-02-03T23:31:15.996Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2026-02-03T23:31:15.996Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:15.996Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2026-02-03T23:31:15.996Z debug
+-- END CF API RESPONSE
+---
+
+--- 2026-02-03T23:31:17.922Z debug
+Metrics dispatcher: Posting data {"deviceId":"0488b318-5f45-42ca-ba6b-1e7162cb0e2a","event":"wrangler command errored","timestamp":1770161477922,"properties":{"amplitude_session_id":1770161474193,"amplitude_event_id":1,"wranglerVersion":"4.61.0","wranglerMajorVersion":4,"wranglerMinorVersion":61,"wranglerPatchVersion":0,"osPlatform":"Windows","osVersion":"Windows 11 Home","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":true,"argsUsed":[],"argsCombination":"","agent":null,"command":"wrangler deploy","args":{},"durationMs":4649,"durationSeconds":4.649,"durationMinutes":0.07748333333333333,"errorType":"BuildFailure"}}
+---
+
+--- 2026-02-03T23:31:17.924Z log
+
+---
+
+--- 2026-02-03T23:31:17.929Z error
+X [ERROR] Build failed with 3 errors:
+
+  X [ERROR]
+  ENOENT: no such file or directory, open
+  'E:\Antigravity\soni-cms\.open-next\server-functions\default\mnt\e\Antigravity\soni-cms\.open-next\server-functions\default\node_modules\next\dist\compiled\@vercel\og\noto-sans-v27-latin-regular.ttf.bin'
+  [plugin wrangler-module-collector]
+  
+  
+  node_modules/wrangler/node_modules/esbuild/lib/main.js:1217:21:
+        1217 │         let result =
+  await callback({
+             ╵                      ^
+  
+      at async open
+  (node:internal/fs/promises:637:25)
+      at async Object.readFile
+  (node:internal/fs/promises:1269:14)
+      at async
+  E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42832:37
+      at async requestCallbacks.on-resolve
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:1217:22)
+      at async handleRequest
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:628:11)
+  
+    This error came from the "onResolve" callback
+  registered here:
+  
+  
+  node_modules/wrangler/wrangler-dist/cli.js:42798:19:
+        42798 │
+  build5.onResolve(
+              ╵
+  ~~~~~~~~~
+  
+      at
+  E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42798:20
+      at Array.forEach (<anonymous>)
+      at
+  E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42797:22
+      at Array.forEach (<anonymous>)
+      at setup
+  (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42793:28)
+      at handlePlugins
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:1141:21)
+      at buildOrContextImpl
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:854:5)
+      at Object.buildOrContext
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:680:5)
+      at
+  E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:2026:15
+  
+    The plugin "wrangler-module-collector" was
+  triggered by this import
+  
+  
+  .open-next/server-functions/default/handler.mjs:5929:68977:
+        5929 │ ...it
+  import("/mnt/e/Antigravity/soni-cms/.open-next/server-func...
+             ╵
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  X [ERROR]
+  ENOENT: no such file or directory, open
+  'E:\Antigravity\soni-cms\.open-next\server-functions\default\mnt\e\Antigravity\soni-cms\.open-next\server-functions\default\node_modules\next\dist\compiled\@vercel\og\resvg.wasm?module'
+  [plugin wrangler-module-collector]
+  
+  
+  node_modules/wrangler/node_modules/esbuild/lib/main.js:1217:21:
+        1217 │         let result =
+  await callback({
+             ╵                      ^
+  
+      at async open
+  (node:internal/fs/promises:637:25)
+      at async Object.readFile
+  (node:internal/fs/promises:1269:14)
+      at async
+  E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42832:37
+      at async requestCallbacks.on-resolve
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:1217:22)
+      at async handleRequest
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:628:11)
+  
+    This error came from the "onResolve" callback
+  registered here:
+  
+  
+  node_modules/wrangler/wrangler-dist/cli.js:42798:19:
+        42798 │
+  build5.onResolve(
+              ╵
+  ~~~~~~~~~
+  
+      at
+  E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42798:20
+      at Array.forEach (<anonymous>)
+      at
+  E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42797:22
+      at Array.forEach (<anonymous>)
+      at setup
+  (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42793:28)
+      at handlePlugins
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:1141:21)
+      at buildOrContextImpl
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:854:5)
+      at Object.buildOrContext
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:680:5)
+      at
+  E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:2026:15
+  
+    The plugin "wrangler-module-collector" was
+  triggered by this import
+  
+  
+  .open-next/server-functions/default/handler.mjs:5927:51800:
+        5927 │ ..._wasm
+  from"/mnt/e/Antigravity/soni-cms/.open-next/server-func...
+             ╵
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  X [ERROR]
+  ENOENT: no such file or directory, open
+  'E:\Antigravity\soni-cms\.open-next\server-functions\default\mnt\e\Antigravity\soni-cms\.open-next\server-functions\default\node_modules\next\dist\compiled\@vercel\og\yoga.wasm?module'
+  [plugin wrangler-module-collector]
+  
+  
+  node_modules/wrangler/node_modules/esbuild/lib/main.js:1217:21:
+        1217 │         let result =
+  await callback({
+             ╵                      ^
+  
+      at async open
+  (node:internal/fs/promises:637:25)
+      at async Object.readFile
+  (node:internal/fs/promises:1269:14)
+      at async
+  E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42832:37
+      at async requestCallbacks.on-resolve
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:1217:22)
+      at async handleRequest
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:628:11)
+  
+    This error came from the "onResolve" callback
+  registered here:
+  
+  
+  node_modules/wrangler/wrangler-dist/cli.js:42798:19:
+        42798 │
+  build5.onResolve(
+              ╵
+  ~~~~~~~~~
+  
+      at
+  E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42798:20
+      at Array.forEach (<anonymous>)
+      at
+  E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42797:22
+      at Array.forEach (<anonymous>)
+      at setup
+  (E:\Antigravity\soni-cms\node_modules\wrangler\wrangler-dist\cli.js:42793:28)
+      at handlePlugins
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:1141:21)
+      at buildOrContextImpl
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:854:5)
+      at Object.buildOrContext
+  (E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:680:5)
+      at
+  E:\Antigravity\soni-cms\node_modules\wrangler\node_modules\esbuild\lib\main.js:2026:15
+  
+    The plugin "wrangler-module-collector" was
+  triggered by this import
+  
+  
+  .open-next/server-functions/default/handler.mjs:5927:51948:
+        5927 │ ..._wasm
+  from"/mnt/e/Antigravity/soni-cms/.open-next/server-func...
+             ╵
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+
+
+---
+
