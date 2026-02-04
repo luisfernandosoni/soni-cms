@@ -16,14 +16,19 @@ const isCLI = !isProduction && !isBuild && typeof process !== 'undefined' &&
 
 /**
  * Retrieves the Cloudflare Context safely across environments.
- * - In Production (Edge): Uses OpenNext's AsyncLocalStorage.
- * - In Development (Node): Spins up Wrangler Platform Proxy to emulate bindings.
+ * - In Production (Edge Runtime): Uses OpenNext's AsyncLocalStorage via getOpenNextContext.
+ * - In Node.js (CLI, Migrations, Local Dev): Spins up Wrangler Platform Proxy.
  */
 export async function getSafeCloudflareContext(): Promise<CloudflareContext> {
-  if (isCLI || isBuild || !isProduction) {
+  // Detection for Node.js vs Edge Runtime
+  // In Node.js, we MUST use Wrangler Platform Proxy to access bindings.
+  const isNode = typeof process !== 'undefined' && process.release?.name === 'node'
+  
+  if (isNode || isCLI || isBuild) {
     return getCloudflareContextFromWrangler()
   }
-  // In production, we assume we are inside a request
+
+  // In production (Edge), we assume we are inside a request
   return getOpenNextContext({ async: true })
 }
 
