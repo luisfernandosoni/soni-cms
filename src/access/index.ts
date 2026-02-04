@@ -9,11 +9,7 @@ export type UserRole = 'admin' | 'editor' | 'author'
  * Check if user has a specific role
  */
 const hasRole = (user: any, role: UserRole): boolean => {
-  const result = !!user?.roles && user.roles.includes(role)
-  if (process.env.DEBUG_ACCESS === 'true') {
-    console.log(`[VC_ELITE_DEBUG] hasRole check: role=${role}, has=${result}, user_id=${user?.id || 'none'}`)
-  }
-  return result
+  return !!user?.roles && user.roles.includes(role)
 }
 
 /**
@@ -32,22 +28,14 @@ const hasAnyRole = (user: any, roles: UserRole[]): boolean => {
  * Only admins can access
  */
 export const isAdmin: Access = ({ req: { user } }) => {
-  const check = hasRole(user, 'admin')
-  if (process.env.DEBUG_ACCESS === 'true') {
-    console.log(`[VC_ELITE_DEBUG] isAdmin final: ${check}`)
-  }
-  return check
+  return hasRole(user, 'admin')
 }
 
 /**
  * Admins and editors can access
  */
 export const isEditor: Access = ({ req: { user } }) => {
-  const check = hasAnyRole(user, ['admin', 'editor'])
-  if (process.env.DEBUG_ACCESS === 'true') {
-    console.log(`[VC_ELITE_DEBUG] isEditor final: ${check}`)
-  }
-  return check
+  return hasAnyRole(user, ['admin', 'editor'])
 }
 
 /**

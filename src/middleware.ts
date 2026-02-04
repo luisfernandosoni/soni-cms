@@ -2,121 +2,34 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 /**
- * Rate Limiting Configuration
- */
-const RATE_LIMIT_WINDOW_MS = 60 * 1000 // 1 minute
-const RATE_LIMIT_MAX_REQUESTS = 100 // 100 requests per window
-
-// In-memory store for rate limiting (resets on worker cold start)
-// For production, consider using Cloudflare KV or Durable Objects
-const rateLimitStore = new Map<string, { count: number; resetTime: number }>()
-
-/**
- * Get client IP from request
- */
-function getClientIP(request: NextRequest): string {
-  const cfIP = request.headers.get('cf-connecting-ip')
-  const xForwardedFor = request.headers.get('x-forwarded-for')
-  const xRealIP = request.headers.get('x-real-ip')
-
-  return cfIP || xForwardedFor?.split(',')[0]?.trim() || xRealIP || 'unknown'
-}
-
-/**
- * Check if request is rate limited
- */
-function isRateLimited(ip: string): { limited: boolean; remaining: number; resetTime: number } {
-  const now = Date.now()
-  const record = rateLimitStore.get(ip)
-
-  // Clean up expired entries periodically
-  if (rateLimitStore.size > 10000) {
-    for (const [key, value] of rateLimitStore.entries()) {
-      if (value.resetTime < now) {
-        rateLimitStore.delete(key)
-      }
-    }
-  }
-
-  if (!record || record.resetTime < now) {
-    // New window
-    rateLimitStore.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS })
-    return {
-      limited: false,
-      remaining: RATE_LIMIT_MAX_REQUESTS - 1,
-      resetTime: now + RATE_LIMIT_WINDOW_MS,
-    }
-  }
-
-  record.count++
-
-  if (record.count > RATE_LIMIT_MAX_REQUESTS) {
-    return { limited: true, remaining: 0, resetTime: record.resetTime }
-  }
-
-  return {
-    limited: false,
-    remaining: RATE_LIMIT_MAX_REQUESTS - record.count,
-    resetTime: record.resetTime,
-  }
-}
-
-/**
- * Intelligent Cache Headers & Rate Limiting Middleware
- *
- * Applies optimal caching strategies based on route type:
- * - Public API routes: Edge-cached with stale-while-revalidate + rate limiting
- * - Admin routes: Private, no-cache
- * - Media/Assets: Long-lived edge cache
+ * Intelligent Cache Headers Middleware (Cloudflare-Native)
+ * 
+ * Skills: backend-architect, clean-code, security-auditor
+ * 
+ * NOTE: Rate Limiting is now enforced via Cloudflare WAF Rules at the edge.
+ * This middleware focuses solely on caching strategies.
+ * 
+ * @see https://developers.cloudflare.com/waf/rate-limiting-rules/
  */
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // SURGICAL STERILIZATION (Supreme Board Directive)
-  // Bypass all body-impacting logic for Media uploads to prevent Stream Locking (400 Bad Request)
+  // Bypass all processing for Media uploads to prevent Stream Locking
   if (pathname === '/api/media' && request.method === 'POST') {
-    console.log(`[VC_ELITE_DEBUG] Middleware bypass for /api/media POST`)
     return NextResponse.next()
   }
 
   const response = NextResponse.next()
 
-  // Admin routes - never cache, skip rate limiting
+  // Admin routes - never cache
   if (pathname.startsWith('/admin')) {
     response.headers.set('Cache-Control', 'private, no-cache, no-store, must-revalidate')
     response.headers.set('Pragma', 'no-cache')
     return response
   }
 
-  // Rate limiting for API routes
+  // API routes - apply caching strategies
   if (pathname.startsWith('/api/')) {
-    const clientIP = getClientIP(request)
-    const { limited, remaining, resetTime } = isRateLimited(clientIP)
-
-    // Add rate limit headers
-    response.headers.set('X-RateLimit-Limit', String(RATE_LIMIT_MAX_REQUESTS))
-    response.headers.set('X-RateLimit-Remaining', String(remaining))
-    response.headers.set('X-RateLimit-Reset', String(Math.ceil(resetTime / 1000)))
-
-    if (limited) {
-      return new NextResponse(
-        JSON.stringify({
-          error: 'Too Many Requests',
-          message: 'Rate limit exceeded. Please try again later.',
-        }),
-        {
-          status: 429,
-          headers: {
-            'Content-Type': 'application/json',
-            'Retry-After': String(Math.ceil((resetTime - Date.now()) / 1000)),
-            'X-RateLimit-Limit': String(RATE_LIMIT_MAX_REQUESTS),
-            'X-RateLimit-Remaining': '0',
-            'X-RateLimit-Reset': String(Math.ceil(resetTime / 1000)),
-          },
-        },
-      )
-    }
-
     // Don't cache mutation endpoints
     if (request.method !== 'GET') {
       response.headers.set('Cache-Control', 'no-store')
@@ -135,7 +48,7 @@ export function middleware(request: NextRequest) {
       return response
     }
 
-    // Other public API - moderate cache
+    // Static taxonomy data - long cache
     if (
       pathname.startsWith('/api/categories') ||
       pathname.startsWith('/api/tags') ||
@@ -150,7 +63,7 @@ export function middleware(request: NextRequest) {
     return response
   }
 
-  // Media/Assets - long-lived cache
+  // Media/Assets - immutable cache
   if (
     pathname.startsWith('/media/') ||
     pathname.match(/\.(jpg|jpeg|png|gif|webp|svg|ico|mp4|webm)$/i)
@@ -161,6 +74,7 @@ export function middleware(request: NextRequest) {
 
   return response
 }
+
 
 export const config = {
   matcher: [
