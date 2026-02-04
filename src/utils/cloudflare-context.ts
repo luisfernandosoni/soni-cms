@@ -22,7 +22,11 @@ const isCLI = !isProduction && !isBuild && typeof process !== 'undefined' &&
 export async function getSafeCloudflareContext(): Promise<CloudflareContext> {
   // Detection for Node.js vs Edge Runtime
   // In Node.js, we MUST use Wrangler Platform Proxy to access bindings.
-  const isNode = typeof process !== 'undefined' && process.release?.name === 'node'
+  // We use multiple checks to ensure we don't accidentally load Wrangler in Edge.
+  const isEdge = (typeof process !== 'undefined' && (process.env?.NEXT_RUNTIME === 'edge' || (process.env as any)?.NEXT_RUNTIME === 'edge')) ||
+                 (typeof self !== 'undefined' && (self as any).caches !== undefined && (self as any).fetch !== undefined)
+                 
+  const isNode = typeof process !== 'undefined' && process.release?.name === 'node' && !isEdge
   
   if (isNode || isCLI || isBuild) {
     return getCloudflareContextFromWrangler()
@@ -34,12 +38,18 @@ export async function getSafeCloudflareContext(): Promise<CloudflareContext> {
 
 // Adapted from Cloudflare documentation and OpenNext examples for handling local dev
 async function getCloudflareContextFromWrangler(): Promise<CloudflareContext> {
-  // Dynamic import to avoid bundling Wrangler in the Edge worker
-  const wranglerModule = await import(/* webpackIgnore: true */ 'wrangler')
+  try {
+    // Dynamic import to avoid bundling Wrangler in the Edge worker
+    const wranglerModule = await import(/* webpackIgnore: true */ 'wrangler')
 
-  return (await wranglerModule.getPlatformProxy({
-    environment: process.env.CLOUDFLARE_ENV,
-    remoteBindings: isProduction && !isBuild, 
-    persist: true, 
-  } satisfies GetPlatformProxyOptions)) as unknown as CloudflareContext
+    return (await wranglerModule.getPlatformProxy({
+      environment: process.env.CLOUDFLARE_ENV,
+      remoteBindings: isProduction && !isBuild, 
+      persist: true, 
+    } satisfies GetPlatformProxyOptions)) as unknown as CloudflareContext
+  } catch (error) {
+    console.error('[CloudflareContext] Failed to load Wrangler Proxy:', error)
+    // Fallback to empty context to prevent crash, though functionality will be limited
+    return { env: {}, cf: {}, ctx: {} as any } as any
+  }
 }
