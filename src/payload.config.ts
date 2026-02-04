@@ -34,10 +34,19 @@ const dirname = path.dirname(filename)
 console.log('[DEBUG_SONI] payload.config.ts loading...')
 console.log(`[DEBUG_SONI] PAYLOAD_SECRET present: ${!!process.env.PAYLOAD_SECRET}`)
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 export default buildConfig({
-  debug: true,
+  debug: !isProduction, // Mask verbose errors in production
   sharp: undefined,
   serverURL: process.env.NEXT_PUBLIC_SERVER_URL || 'https://www.soninewmedia.com',
+  // SECURITY: Hardened Rate Limiting (Phase 4 Fortress)
+  // Skills: api-design-principles, security-auditor
+  rateLimit: {
+    window: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per window
+    trustProxy: true, // Cloudflare is a proxy
+  } as any,
   csrf: [
     'https://soninewmedia.com',
     'https://www.soninewmedia.com',

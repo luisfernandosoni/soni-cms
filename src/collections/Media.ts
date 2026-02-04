@@ -7,7 +7,9 @@ export const Media: CollectionConfig = {
     group: 'Content',
   },
   access: {
-    read: () => true,
+    // Public can read if they have the specific ID (e.g. from a Transmission)
+    // but listing is discouraged/managed.
+    read: () => true, 
     create: isEditor,
     update: isEditor,
     delete: isEditor,
