@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url'
 import { resendAdapter } from '@payloadcms/email-resend'
 import { r2Storage } from '@payloadcms/storage-r2'
 import { seoPlugin } from '@payloadcms/plugin-seo'
+import { openapi } from '@veiag/payload-oapi'
 
 // Lazy Binding Utilities
 import { getLazyD1, getLazyR2 } from './utils/cloudflare-lazy-bindings'
@@ -127,6 +128,14 @@ export default buildConfig({
       generateURL: ({ doc }) => {
         const slug = (doc as any)?.slug
         return slug ? `https://soninewmedia.com/transmission/${slug}` : 'https://soninewmedia.com'
+      },
+    }),
+    openapi({
+      openapiVersion: '3.0',
+      metadata: {
+        title: 'Soni CMS API',
+        version: '1.0.0',
+        description: 'Technical documentation for Soni CMS API endpoints',
       },
     }),
   ],
