@@ -1,0 +1,14 @@
+{
+  "rules": [
+    {
+      "action": "js_challenge",
+      "expression": "starts_with(http.request.uri.path, \"/admin\")",
+      "description": "Challenge Admin Access"
+    },
+    {
+      "action": "js_challenge",
+      "expression": "cf.client.bot",
+      "description": "Challenge Known Bots"
+    }
+  ]
+}
